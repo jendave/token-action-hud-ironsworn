@@ -1,19 +1,20 @@
 {
-  "id": "token-action-hud-template",
-  "title": "Token Action HUD Template",
-  "description": "Token Action HUD is a repositionable HUD of actions for a selected token",
+  "id": "token-action-hud-ironworn",
+  "title": "Token Action HUD for Ironsworn/Starforged",
+  "description": "Token Action HUD for Ironsworn/Starforged is a repositionable HUD of actions for a selected token",
   "authors": [
     {
-      "name": "Larkinabout",
-      "url": "https://github.com/Larkinabout"
+      "name": "David Y. Hudson",
+      "discord": "jendave",
+      "url": "https://jendave.itch.io/"
     }
   ],
   "url": "This is auto replaced",
   "flags": {},
   "version": "This is auto replaced",
   "compatibility": {
-    "minimum": "11",
-    "verified": "11.313"
+    "minimum": "12",
+    "verified": "12"
   },
   "esmodules": [
     "./scripts/init.js"
@@ -34,14 +35,13 @@
   "relationships": {
     "systems": [
       {
-        "id": "template",
+        "id": "foundry-ironsworn",
         "type": "system",
-        "compatibility": [
-          {
-            "minimum": "1.0.0",
-            "verified": "1.0.0"
-          }
-        ]
+        "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
+        "compatibility": {
+          "minimum": "1.24.4",
+          "verified": "1.24"
+        }
       }
     ],
     "requires": [
@@ -65,7 +65,8 @@
   "socket": false,
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "readme": "https://github.com/Larkinabout/fvtt-token-action-hud-template#readme",
+  "license": "https://raw.githubusercontent.com/jendave/fvtt-token-action-hud-ironsworn/main/LICENSE",
+  "readme": "https://raw.githubusercontent.com/jendave/fvtt-token-action-hud-ironsworn/main/readme.md",
   "protected": false,
   "coreTranslation": false,
   "library": false
