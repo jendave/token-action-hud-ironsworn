@@ -30,7 +30,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @returns {object} The available roll handlers
          */
         getAvailableRollHandlers () {
-            const coreTitle = 'Core Template'
+            const coreTitle = 'Core Ironsworn'
             const choices = { core: coreTitle }
             return choices
         }

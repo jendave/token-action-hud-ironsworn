@@ -1,6 +1,6 @@
 {
   "tokenActionHud": {
-    "template": {
+    "ironsworn": {
       "armor": "Armor",
       "containers": "Containers",
       "consumables": "Consumables",
@@ -9,6 +9,9 @@
       "item": "Item",
       "weapons": "Weapons",
       "treasure": "Treasure",
+      "combat": "Combat",
+      "token": "Token",
+      "utility": "Utility",
       "settings": {
         "displayUnequipped": {
           "hint": "Choose whether to display unequipped items on the HUD",
