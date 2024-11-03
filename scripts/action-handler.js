@@ -1,6 +1,7 @@
 // System Module Imports
 import { ACTION_TYPE, ITEM_TYPE } from './constants.js'
 import { Utils } from './utils.js'
+import { STATS } from './constants.js'
 
 export let ActionHandler = null
 
@@ -19,9 +20,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             // Set actor and token variables
             this.actors = (!this.actor) ? this._getActors() : [this.actor]
             this.actorType = this.actor?.type
-
-            // Settings
-            this.displayUnequipped = Utils.getSetting('displayUnequipped')
 
             // Set items variable
             if (this.actor) {
@@ -42,7 +40,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         #buildCharacterActions () {
-            this.#buildInventory()
+        //    this.#buildInventory()
+            this.#buildStats()
         }
 
         /**
@@ -65,13 +64,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
             for (const [itemId, itemData] of this.items) {
                 const type = itemData.type
-                const equipped = itemData.equipped
-
-                if (equipped || this.displayUnequipped) {
-                    const typeMap = inventoryMap.get(type) ?? new Map()
-                    typeMap.set(itemId, itemData)
-                    inventoryMap.set(type, typeMap)
-                }
+                const typeMap = inventoryMap.get(type) ?? new Map()
+                typeMap.set(itemId, itemData)
+                inventoryMap.set(type, typeMap)
             }
 
             for (const [type, typeMap] of inventoryMap) {
@@ -100,6 +95,35 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 // TAH Core method to add actions to the action list
                 this.addActions(actions, groupData)
             }
+        }
+
+        /**
+ * Build stats
+ * @private
+ */
+        #buildStats () {
+            const actionTypeId = 'stats'
+            const groupData = { id: 'stats', type: 'system' }
+
+            // Get actions
+            const actions = []
+            for (const stat in STATS) {
+                const id = stat
+                // for (const char in this.actor.system.characteristics) {
+                //     const id = char
+                const name = STATS[stat]
+                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                const encodedValue = [actionTypeId, id].join(this.delimiter)
+                actions.push({
+                    id,
+                    name,
+                    listName,
+                    encodedValue
+                })
+            }
+            // TAH Core method to add actions to the action list
+            this.addActions(actions, groupData)
         }
     }
 })

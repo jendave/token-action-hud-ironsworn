@@ -14,30 +14,42 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
     const groupsArray = Object.values(groups)
     DEFAULTS = {
         layout: [
+            // {
+            //     nestId: 'progress',
+            //     id: 'progress',
+            //     name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubtypeProgress'),
+            //     groups: [
+            //         { ...groups.progress, nestId: 'progress_progress' },
+            //         { ...groups.vow, nestId: 'progress_vow' }
+            //     ]
+            // },
+            // {
+            //     nestId: 'connection',
+            //     id: 'connection',
+            //     name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubTypeConnection'),
+            //     groups: [
+            //         { ...groups.progress, nestId: 'connection_connnection' }
+            //     ]
+            // },
             {
-                nestId: 'inventory',
-                id: 'inventory',
-                name: coreModule.api.Utils.i18n('Ironwsworn.Inventory'),
+                nestId: 'stats',
+                id: 'stats',
+                name: coreModule.api.Utils.i18n('IRONSWORN.Stats'),
                 groups: [
-                    { ...groups.weapons, nestId: 'inventory_weapons' },
-                    { ...groups.armor, nestId: 'inventory_armor' },
-                    { ...groups.equipment, nestId: 'inventory_equipment' },
-                    { ...groups.consumables, nestId: 'inventory_consumables' },
-                    { ...groups.containers, nestId: 'inventory_containers' },
-                    { ...groups.treasure, nestId: 'inventory_treasure' }
-                ]
-            },
-            {
-                nestId: 'utility',
-                id: 'utility',
-                name: coreModule.api.Utils.i18n('tokenActionHud.utility'),
-                groups: [
-                    { ...groups.combat, nestId: 'utility_combat' },
-                    { ...groups.token, nestId: 'utility_token' },
-                    { ...groups.rests, nestId: 'utility_rests' },
-                    { ...groups.utility, nestId: 'utility_utility' }
+                    { ...groups.stats, nestId: 'stats_stats' }
                 ]
             }
+            // {
+            //     nestId: 'utility',
+            //     id: 'utility',
+            //     name: coreModule.api.Utils.i18n('tokenActionHud.utility'),
+            //     groups: [
+            //         { ...groups.combat, nestId: 'utility_combat' },
+            //         { ...groups.token, nestId: 'utility_token' },
+            //         { ...groups.rests, nestId: 'utility_rests' },
+            //         { ...groups.utility, nestId: 'utility_utility' }
+            //     ]
+            // }
         ],
         groups: groupsArray
     }

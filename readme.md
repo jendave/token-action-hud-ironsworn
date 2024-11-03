@@ -1,6 +1,6 @@
 # Token Action HUD Ironsworn/Starforged
 
-![Downloads](https://img.shields.io/github/downloads/jendave/fvtt-token-action-hud-ironsworn/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge) [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ftoken-action-hud-ironsworn&colorB=448d34&style=for-the-badge)](https://forge-vtt.com/bazaar#package=token-action-hud-ironsworn)
+![Downloads](https://img.shields.io/github/downloads/jendave/token-action-hud-ironsworn/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge) [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ftoken-action-hud-ironsworn&colorB=448d34&style=for-the-badge)](https://forge-vtt.com/bazaar#package=token-action-hud-ironsworn)
 
 Token Action HUD is a repositionable HUD of actions for a selected token.
 
@@ -27,7 +27,7 @@ Token Action HUD is a repositionable HUD of actions for a selected token.
 
 1. On Foundry VTT's **Configuration and Setup** screen, go to **Add-on Modules**
 2. Click **Install Module**
-3. In the Manifest URL field, paste: `https://github.com/jendave/fvtt-token-action-hud-ironsworn/releases/latest/download/module.json`
+3. In the Manifest URL field, paste: `https://github.com/jendave/token-action-hud-ironsworn/releases/latest/download/module.json`
 4. Click **Install** next to the pasted Manifest URL
 
 ### Required Modules
@@ -40,9 +40,9 @@ Token Action HUD uses the [Color Picker](https://foundryvtt.com/packages/color-p
 
 ## Support
 
-For a guide on using Token Action HUD, go to: [How to Use Token Action HUD](https://github.com/jendave/fvtt-token-action-hud-core/wiki/How-to-Use-Token-Action-HUD)
+For a guide on using Token Action HUD, go to: [How to Use Token Action HUD](https://github.com/jendave/token-action-hud-core/wiki/How-to-Use-Token-Action-HUD)
 
-For questions, feature requests or bug reports, please open an issue [here](https://github.com/jendave/fvtt-token-action-hud-core/issues).
+For questions, feature requests or bug reports, please open an issue [here](https://github.com/jendave/token-action-hud-core/issues).
 
 Pull requests are welcome. Please include a reason for the request or create an issue before starting one.
 

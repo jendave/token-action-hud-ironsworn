@@ -46,7 +46,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} event        The event
          * @param {string} encodedValue The encoded value
          */
-        async handleActionHover (event, encodedValue) {}
+        async handleActionHover (event, encodedValue) { }
 
         /**
          * Handle group click
@@ -55,7 +55,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} event The event
          * @param {object} group The group
          */
-        async handleGroupClick (event, group) {}
+        async handleGroupClick (event, group) { }
 
         /**
          * Handle action
@@ -68,12 +68,15 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         async #handleAction (event, actor, token, actionTypeId, actionId) {
             switch (actionTypeId) {
-            case 'item':
-                this.#handleItemAction(event, actor, actionId)
-                break
-            case 'utility':
-                this.#handleUtilityAction(token, actionId)
-                break
+                case 'items':
+                    this.#handleItemAction(event, actor, actionId)
+                    break
+                case 'stats':
+                    this.#handleStatAction(event, actor, actionId)
+                    break
+                case 'utilities':
+                    this.#handleUtilityAction(token, actionId)
+                    break
             }
         }
 
@@ -90,6 +93,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
 
         /**
+ * Handle stat action
+ * @private
+ * @param {object} event    The event
+ * @param {object} actor    The actor
+ * @param {string} actionId The action id
+ */
+        #handleStatAction (_event, actor, actionId) {
+            CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+        }
+
+        /**
          * Handle utility action
          * @private
          * @param {object} token    The token
@@ -97,11 +111,11 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         async #handleUtilityAction (token, actionId) {
             switch (actionId) {
-            case 'endTurn':
-                if (game.combat?.current?.tokenId === token.id) {
-                    await game.combat?.nextTurn()
-                }
-                break
+                case 'endTurn':
+                    if (game.combat?.current?.tokenId === token.id) {
+                        await game.combat?.nextTurn()
+                    }
+                    break
             }
         }
     }
