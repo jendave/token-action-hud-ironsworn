@@ -21,7 +21,7 @@ export const REQUIRED_CORE_MODULE_VERSION = '2.0'
  * Action types
  */
 export const ACTION_TYPE = {
-    stats: 'IRONSWORN.Stats'
+    stat: 'IRONSWORN.Stats'
     // move: 'IRONSWORN.ITEMS.TypeMove',
     // asset: 'IRONSWORN.ITEMS.TypeAsset',
     // utility: 'tokenActionHud.utility'
@@ -31,18 +31,18 @@ export const ACTION_TYPE = {
  * Groups
  */
 export const GROUP = {
-    stats: { id: 'stats', name: 'IRONSWORN.Stats', type: 'system' },
+    stat: { id: 'stat', name: 'IRONSWORN.Stats', type: 'system' },
     progress: { id: 'progress', name: 'IRONSWORN.ITEMS.SubtypeProgress', type: 'system' },
-    vows: { id: 'vows', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
-    connections: { id: 'connections', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
-    paths: { id: 'paths', name: 'IRONSWORN.Asset Categories.Starforged.Path Assets.Title', type: 'system' },
-    companions: { id: 'companions', name: 'IRONSWORN.Asset Categories.Starforged.Companion Assets.Title', type: 'system' },
-    deeds: { id: 'deeds', name: 'IRONSWORN.Asset Categories.Starforged.Deed Assets.Title', type: 'system' },
-    modules: { id: 'modules', name: 'IRONSWORN.Asset Categories.Starforged.Module Assets.Title', type: 'system' },
-    supportVehicles: { id: 'supportVehicles', name: 'IRONSWORN.Asset Categories.Starforged.Support Vehicle Assets.Title', type: 'system' },
-    commandVehicles: { id: 'commandVehicles', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets.Title', type: 'system' },
-    rituals: { id: 'rituals', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets.Title', type: 'system' },
-    combatTalents: { id: 'combatTalents', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' }
+    vow: { id: 'vow', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
+    connection: { id: 'connection', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
+    path: { id: 'path', name: 'IRONSWORN.Asset Categories.Starforged.Path Assets.Title', type: 'system' },
+    companion: { id: 'companion', name: 'IRONSWORN.Asset Categories.Starforged.Companion Assets.Title', type: 'system' },
+    deed: { id: 'deed', name: 'IRONSWORN.Asset Categories.Starforged.Deed Assets.Title', type: 'system' },
+    module: { id: 'module', name: 'IRONSWORN.Asset Categories.Starforged.Module Assets.Title', type: 'system' },
+    supportVehicle: { id: 'supportVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Support Vehicle Assets.Title', type: 'system' },
+    commandVehicle: { id: 'commandVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets.Title', type: 'system' },
+    ritual: { id: 'ritual', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets.Title', type: 'system' },
+    combatTalent: { id: 'combatTalent', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' }
     // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
 
@@ -50,19 +50,19 @@ export const GROUP = {
  * Item types
  */
 export const ITEM_TYPE = {
-    asset: { groupId: 'assets' },
+    asset: { groupId: 'asset' },
     progress: { groupId: 'progress' },
-    connection: { groupId: 'connections' },
-    vow: { groupId: 'vows' },
-    bondset: { groupId: 'bondsets' },
-    path: { groupId: 'paths' },
-    companion: { groupId: 'companions' },
-    ritual: { groupId: 'rituals' },
-    deed: { groupId: 'deeds' },
-    module: { groupId: 'modules' },
-    commandVehicle: { groupId: 'commandVehicles' },
-    supportVehicle: { groupId: 'supportVehicles' },
-    combatTalent: { groupId: 'combatTalents' }
+    connection: { groupId: 'connection' },
+    vow: { groupId: 'vow' },
+    bondset: { groupId: 'bondset' },
+    path: { groupId: 'path' },
+    companion: { groupId: 'companion' },
+    ritual: { groupId: 'ritual' },
+    deed: { groupId: 'deed' },
+    module: { groupId: 'module' },
+    commandVehicle: { groupId: 'commandVehicle' },
+    supportVehicle: { groupId: 'supportVehicle' },
+    combatTalent: { groupId: 'combatTalent' }
 }
 
 /**

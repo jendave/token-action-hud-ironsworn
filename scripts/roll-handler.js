@@ -74,10 +74,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     }
                     this.#handleProgressAction(event, actor, actionId)
                     break
-                case 'stats':
+                case 'stat':
                     this.#handleStatAction(event, actor, actionId)
                     break
-                case 'utilities':
+                case 'utility':
                     this.#handleUtilityAction(token, actionId)
                     break
             }

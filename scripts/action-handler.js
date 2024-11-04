@@ -16,7 +16,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @override
          * @param {array} groupIds
          */a
-        async buildSystemActions (groupIds) {
+        async buildSystemActions(groupIds) {
             // Set actor and token variables
             this.actors = (!this.actor) ? this._getActors() : [this.actor]
             this.actorType = this.actor?.type
@@ -39,7 +39,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * Build character actions
          * @private
          */
-        #buildCharacterActions () {
+        #buildCharacterActions() {
             this.#buildInventory()
             this.#buildStats()
         }
@@ -49,78 +49,49 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          * @returns {object}
          */
-        #buildMultipleTokenActions () {
+        #buildMultipleTokenActions() {
         }
 
         /**
          * Build inventory
          * @private
          */
-        async #buildInventory () {
+        async #buildInventory() {
             if (this.items.size === 0) return
 
             const actionTypeId = 'item'
             const inventoryMap = new Map()
 
             for (const [itemId, itemData] of this.items) {
-                // let itemDataTemp = itemData //structuredClone(itemData)
-                // if (itemDataTemp.type === 'progress') {
-                //     if (itemDataTemp.system.subtype === 'vow') {
-                //         itemDataTemp.type = 'vow'
-                //     } else if (itemDataTemp.type.system.subtype === 'bond') {
-                //         itemDataTemp.type = 'connection'
-                //     }
-                // } else if (itemDataTemp.type === 'asset') {
-                //     if (itemDataTemp.system.category === 'Path') {
-                //         itemDataTemp.type = 'path'
-                //     } else if (itemDataTemp.system.category === 'Companion') {
-                //         itemDataTemp.type = 'companion'
-                //     } else if (itemDataTemp.system.category === 'Combat Talent') {
-                //         itemDataTemp.type = 'combatTalent'
-                //     } else if (itemDataTemp.system.category === 'Ritual') {
-                //         itemDataTemp.type = 'ritual'
-                //     } else if (itemDataTemp.system.category === 'Deed') {
-                //         itemDataTemp.type = 'deed'
-                //     } else if (itemDataTemp.system.category === 'Module') {
-                //         itemDataTemp.type = 'module'
-                //     } else if (itemDataTemp.system.category === 'Command Vehicle') {
-                //         itemDataTemp.type = 'commandVehicle'
-                //     } else if (itemDataTemp.system.category === 'Support Vehicle') {
-                //         itemDataTemp.type = 'supportVehicle'
-                //     }
-                // }
-                // const type = itemDataTemp.type
-                // const typeMap = inventoryMap.get(type) ?? new Map()
-                // typeMap.set(itemId, itemDataTemp)
-                // inventoryMap.set(type, typeMap)
-                if (itemData.type === 'progress') {
-                    if (itemData.system.subtype === 'vow') {
-                        itemData.type = 'vow'
-                    } else if (itemData.system.subtype === 'bond') {
-                        itemData.type = 'connection'
+                let itemDataTemp = structuredClone(itemData)
+                if (itemDataTemp.type === 'progress') {
+                    if (itemDataTemp.system.subtype === 'vow') {
+                        itemDataTemp.type = 'vow'
+                    } else if (itemDataTemp.system.subtype === 'bond') {
+                        itemDataTemp.type = 'connection'
                     }
-                } else if (itemData.type === 'asset') {
-                    if (itemData.system.category === 'Path') {
-                        itemData.type = 'path'
-                    } else if (itemData.system.category === 'Companion') {
-                        itemData.type = 'companion'
-                    } else if (itemData.system.category === 'Combat Talent') {
-                        itemData.type = 'combatTalent'
-                    } else if (itemData.system.category === 'Ritual') {
-                        itemData.type = 'ritual'
-                    } else if (itemData.system.category === 'Deed') {
-                        itemData.type = 'deed'
-                    } else if (itemData.system.category === 'Module') {
-                        itemData.type = 'module'
-                    } else if (itemData.system.category === 'Command Vehicle') {
-                        itemData.type = 'commandVehicle'
-                    } else if (itemData.system.category === 'Support Vehicle') {
-                        itemData.type = 'supportVehicle'
+                } else if (itemDataTemp.type === 'asset') {
+                    if (itemDataTemp.system.category === 'Path') {
+                        itemDataTemp.type = 'path'
+                    } else if (itemDataTemp.system.category === 'Companion') {
+                        itemDataTemp.type = 'companion'
+                    } else if (itemDataTemp.system.category === 'Combat Talent') {
+                        itemDataTemp.type = 'combatTalent'
+                    } else if (itemDataTemp.system.category === 'Ritual') {
+                        itemDataTemp.type = 'ritual'
+                    } else if (itemDataTemp.system.category === 'Deed') {
+                        itemDataTemp.type = 'deed'
+                    } else if (itemDataTemp.system.category === 'Module') {
+                        itemDataTemp.type = 'module'
+                    } else if (itemDataTemp.system.category === 'Command Vehicle') {
+                        itemDataTemp.type = 'commandVehicle'
+                    } else if (itemDataTemp.system.category === 'Support Vehicle') {
+                        itemDataTemp.type = 'supportVehicle'
                     }
                 }
-                const type = itemData.type
+                const type = itemDataTemp.type
                 const typeMap = inventoryMap.get(type) ?? new Map()
-                typeMap.set(itemId, itemData)
+                typeMap.set(itemId, itemDataTemp)
                 inventoryMap.set(type, typeMap)
             }
 
@@ -155,9 +126,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * Build stats
          * @private
          */
-        #buildStats () {
-            const actionTypeId = 'stats'
-            const groupData = { id: 'stats', type: 'system' }
+        #buildStats() {
+            const actionTypeId = 'stat'
+            const groupData = { id: 'stat', type: 'system' }
 
             // Get actions
             const actions = []

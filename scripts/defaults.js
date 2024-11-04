@@ -19,14 +19,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'asset',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeAsset'),
                 groups: [
-                    { ...groups.paths, nestId: 'asset_path' },
-                    { ...groups.companions, nestId: 'asset_companion' },
-                    { ...groups.rituals, nestId: 'asset_ritual' },
-                    { ...groups.deeds, nestId: 'asset_deed' },
-                    { ...groups.modules, nestId: 'asset_modules' },
-                    { ...groups.commandVehicles, nestId: 'asset_commandVehicles' },
-                    { ...groups.supportVehicles, nestId: 'asset_supportVehicles' },
-                    { ...groups.combatTalents, nestId: 'asset_combatTalents' }
+                    { ...groups.path, nestId: 'asset_path' },
+                    { ...groups.companion, nestId: 'asset_companion' },
+                    { ...groups.ritual, nestId: 'asset_ritual' },
+                    { ...groups.deed, nestId: 'asset_deed' },
+                    { ...groups.module, nestId: 'asset_module' },
+                    { ...groups.commandVehicle, nestId: 'asset_commandVehicle' },
+                    { ...groups.supportVehicle, nestId: 'asset_supportVehicle' },
+                    { ...groups.combatTalent, nestId: 'asset_combatTalent' }
                 ]
             },
             {
@@ -43,7 +43,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'connection',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubtypeConnection'),
                 groups: [
-                    { ...groups.connections, nestId: 'connection_connection' }
+                    { ...groups.connection, nestId: 'connection_connection' }
                 ]
             },
             {
@@ -51,7 +51,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'stat',
                 name: coreModule.api.Utils.i18n('IRONSWORN.Stats'),
                 groups: [
-                    { ...groups.stats, nestId: 'stat_stat' }
+                    { ...groups.stat, nestId: 'stat_stat' }
                 ]
             }
             // {
