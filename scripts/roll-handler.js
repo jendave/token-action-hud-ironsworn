@@ -12,7 +12,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} event        The event
          * @param {string} encodedValue The encoded value
          */
-        async handleActionClick (event, encodedValue) {
+        async handleActionClick(event, encodedValue) {
             const [actionTypeId, actionId] = encodedValue.split('|')
 
             const renderable = ['item']
@@ -46,7 +46,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} event        The event
          * @param {string} encodedValue The encoded value
          */
-        async handleActionHover (event, encodedValue) { }
+        async handleActionHover(event, encodedValue) { }
 
         /**
          * Handle group click
@@ -55,7 +55,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} event The event
          * @param {object} group The group
          */
-        async handleGroupClick (event, group) { }
+        async handleGroupClick(event, group) { }
 
         /**
          * Handle action
@@ -66,9 +66,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {string} actionTypeId The action type id
          * @param {string} actionId     The actionId
          */
-        async #handleAction (event, actor, token, actionTypeId, actionId) {
+        async #handleAction(event, actor, token, actionTypeId, actionId) {
             switch (actionTypeId) {
-                case 'progress':
+                case 'item':
+                    if (actor.items[actionId].type === 'progress') {
+                        this.#handleProgressAction(event, actor, actionId)
+                    }
                     this.#handleProgressAction(event, actor, actionId)
                     break
                 case 'stats':
@@ -87,8 +90,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} actor    The actor
          * @param {string} actionId The action id
          */
-        #handleProgressAction (event, actor, actionId) {
-            CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForProgress(actionId, actor)
+        #handleProgressAction(event, actor, actionId) {
+            CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForProgress(this.actor.items[actionId].name, actor)
         }
 
         /**
@@ -98,7 +101,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
  * @param {object} actor    The actor
  * @param {string} actionId The action id
  */
-        #handleStatAction (_event, actor, actionId) {
+        #handleStatAction(_event, actor, actionId) {
             CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
         }
 
@@ -108,7 +111,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} token    The token
          * @param {string} actionId The action id
          */
-        async #handleUtilityAction (token, actionId) {
+        async #handleUtilityAction(token, actionId) {
             switch (actionId) {
                 case 'endTurn':
                     if (game.combat?.current?.tokenId === token.id) {

@@ -62,8 +62,37 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const actionTypeId = 'item'
             const inventoryMap = new Map()
 
-            for (let [itemId, itemData] of this.items) {
-               // let tempType = itemData.type
+            for (const [itemId, itemData] of this.items) {
+                // let itemDataTemp = itemData //structuredClone(itemData)
+                // if (itemDataTemp.type === 'progress') {
+                //     if (itemDataTemp.system.subtype === 'vow') {
+                //         itemDataTemp.type = 'vow'
+                //     } else if (itemDataTemp.type.system.subtype === 'bond') {
+                //         itemDataTemp.type = 'connection'
+                //     }
+                // } else if (itemDataTemp.type === 'asset') {
+                //     if (itemDataTemp.system.category === 'Path') {
+                //         itemDataTemp.type = 'path'
+                //     } else if (itemDataTemp.system.category === 'Companion') {
+                //         itemDataTemp.type = 'companion'
+                //     } else if (itemDataTemp.system.category === 'Combat Talent') {
+                //         itemDataTemp.type = 'combatTalent'
+                //     } else if (itemDataTemp.system.category === 'Ritual') {
+                //         itemDataTemp.type = 'ritual'
+                //     } else if (itemDataTemp.system.category === 'Deed') {
+                //         itemDataTemp.type = 'deed'
+                //     } else if (itemDataTemp.system.category === 'Module') {
+                //         itemDataTemp.type = 'module'
+                //     } else if (itemDataTemp.system.category === 'Command Vehicle') {
+                //         itemDataTemp.type = 'commandVehicle'
+                //     } else if (itemDataTemp.system.category === 'Support Vehicle') {
+                //         itemDataTemp.type = 'supportVehicle'
+                //     }
+                // }
+                // const type = itemDataTemp.type
+                // const typeMap = inventoryMap.get(type) ?? new Map()
+                // typeMap.set(itemId, itemDataTemp)
+                // inventoryMap.set(type, typeMap)
                 if (itemData.type === 'progress') {
                     if (itemData.system.subtype === 'vow') {
                         itemData.type = 'vow'

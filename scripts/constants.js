@@ -45,20 +45,6 @@ export const GROUP = {
     combatTalents: { id: 'combatTalents', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' }
     // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
-/** system.category asset
- * Ritual
- * Deed
- * "Module"
- * "Command Vehicle"
- * "Support Vehicle"
- * "Path"
- * "Companion"
- */
-
-
-
-
-
 
 /**
  * Item types
