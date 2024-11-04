@@ -40,7 +40,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         #buildCharacterActions () {
-        //    this.#buildInventory()
+            this.#buildInventory()
             this.#buildStats()
         }
 
@@ -62,7 +62,33 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const actionTypeId = 'item'
             const inventoryMap = new Map()
 
-            for (const [itemId, itemData] of this.items) {
+            for (let [itemId, itemData] of this.items) {
+               // let tempType = itemData.type
+                if (itemData.type === 'progress') {
+                    if (itemData.system.subtype === 'vow') {
+                        itemData.type = 'vow'
+                    } else if (itemData.system.subtype === 'bond') {
+                        itemData.type = 'connection'
+                    }
+                } else if (itemData.type === 'asset') {
+                    if (itemData.system.category === 'Path') {
+                        itemData.type = 'path'
+                    } else if (itemData.system.category === 'Companion') {
+                        itemData.type = 'companion'
+                    } else if (itemData.system.category === 'Combat Talent') {
+                        itemData.type = 'combatTalent'
+                    } else if (itemData.system.category === 'Ritual') {
+                        itemData.type = 'ritual'
+                    } else if (itemData.system.category === 'Deed') {
+                        itemData.type = 'deed'
+                    } else if (itemData.system.category === 'Module') {
+                        itemData.type = 'module'
+                    } else if (itemData.system.category === 'Command Vehicle') {
+                        itemData.type = 'commandVehicle'
+                    } else if (itemData.system.category === 'Support Vehicle') {
+                        itemData.type = 'supportVehicle'
+                    }
+                }
                 const type = itemData.type
                 const typeMap = inventoryMap.get(type) ?? new Map()
                 typeMap.set(itemId, itemData)
@@ -91,16 +117,15 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         encodedValue
                     }
                 })
-
                 // TAH Core method to add actions to the action list
                 this.addActions(actions, groupData)
             }
         }
 
         /**
- * Build stats
- * @private
- */
+         * Build stats
+         * @private
+         */
         #buildStats () {
             const actionTypeId = 'stats'
             const groupData = { id: 'stats', type: 'system' }
@@ -109,8 +134,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const actions = []
             for (const stat in STATS) {
                 const id = stat
-                // for (const char in this.actor.system.characteristics) {
-                //     const id = char
                 const name = STATS[stat]
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`

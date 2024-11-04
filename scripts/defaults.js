@@ -14,29 +14,44 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
     const groupsArray = Object.values(groups)
     DEFAULTS = {
         layout: [
-            // {
-            //     nestId: 'progress',
-            //     id: 'progress',
-            //     name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubtypeProgress'),
-            //     groups: [
-            //         { ...groups.progress, nestId: 'progress_progress' },
-            //         { ...groups.vow, nestId: 'progress_vow' }
-            //     ]
-            // },
-            // {
-            //     nestId: 'connection',
-            //     id: 'connection',
-            //     name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubTypeConnection'),
-            //     groups: [
-            //         { ...groups.progress, nestId: 'connection_connnection' }
-            //     ]
-            // },
             {
-                nestId: 'stats',
-                id: 'stats',
+                nestId: 'asset',
+                id: 'asset',
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeAsset'),
+                groups: [
+                    { ...groups.paths, nestId: 'asset_path' },
+                    { ...groups.companions, nestId: 'asset_companion' },
+                    { ...groups.rituals, nestId: 'asset_ritual' },
+                    { ...groups.deeds, nestId: 'asset_deed' },
+                    { ...groups.modules, nestId: 'asset_modules' },
+                    { ...groups.commandVehicles, nestId: 'asset_commandVehicles' },
+                    { ...groups.supportVehicles, nestId: 'asset_supportVehicles' },
+                    { ...groups.combatTalents, nestId: 'asset_combatTalents' }
+                ]
+            },
+            {
+                nestId: 'progress',
+                id: 'progress',
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubtypeProgress'),
+                groups: [
+                    { ...groups.progress, nestId: 'progress_progress' },
+                    { ...groups.vows, nestId: 'progress_vow' }
+                ]
+            },
+            {
+                nestId: 'connection',
+                id: 'connection',
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubtypeConnection'),
+                groups: [
+                    { ...groups.connections, nestId: 'connection_connection' }
+                ]
+            },
+            {
+                nestId: 'stat',
+                id: 'stat',
                 name: coreModule.api.Utils.i18n('IRONSWORN.Stats'),
                 groups: [
-                    { ...groups.stats, nestId: 'stats_stats' }
+                    { ...groups.stats, nestId: 'stat_stat' }
                 ]
             }
             // {

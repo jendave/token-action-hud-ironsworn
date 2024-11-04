@@ -68,8 +68,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         async #handleAction (event, actor, token, actionTypeId, actionId) {
             switch (actionTypeId) {
-                case 'items':
-                    this.#handleItemAction(event, actor, actionId)
+                case 'progress':
+                    this.#handleProgressAction(event, actor, actionId)
                     break
                 case 'stats':
                     this.#handleStatAction(event, actor, actionId)
@@ -87,9 +87,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} actor    The actor
          * @param {string} actionId The action id
          */
-        #handleItemAction (event, actor, actionId) {
-            const item = actor.items.get(actionId)
-            item.toChat(event)
+        #handleProgressAction (event, actor, actionId) {
+            CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForProgress(actionId, actor)
         }
 
         /**

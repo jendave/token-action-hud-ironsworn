@@ -21,7 +21,7 @@ export const REQUIRED_CORE_MODULE_VERSION = '2.0'
  * Action types
  */
 export const ACTION_TYPE = {
-    stats: 'IRONSWORN.Stats',
+    stats: 'IRONSWORN.Stats'
     // move: 'IRONSWORN.ITEMS.TypeMove',
     // asset: 'IRONSWORN.ITEMS.TypeAsset',
     // utility: 'tokenActionHud.utility'
@@ -32,29 +32,51 @@ export const ACTION_TYPE = {
  */
 export const GROUP = {
     stats: { id: 'stats', name: 'IRONSWORN.Stats', type: 'system' },
-    // progress: { id: 'progress', name: 'IRONSWORN.ITEMS.SubtypeProgress', type: 'system' },
-    // vow: { id: 'vow', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
-    // connection: { id: 'connection', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
-    // path_starforged: { id: 'path_starforged', name: 'IRONSWORN.Asset Categories.Starforged.Path Assets', type: 'system' },
-    // companion_starforged: { id: 'companion_starforged', name: 'IRONSWORN.Asset Categories.Starforged.Companion Assets', type: 'system' },
-    // deed_starforged: { id: 'deed_starforged', name: 'IRONSWORN.Asset Categories.Starforged.Deed Assets', type: 'system' },
-    // module_starforged: { id: 'module_starforged', name: 'IRONSWORN.Asset Categories.Starforged.Module Assets', type: 'system' },
-    // support_vehicle_starforged: { id: 'support_vehicle_starforged', name: 'IRONSWORN.Asset Categories.Starforged.Support Vehicle Assets', type: 'system' },
-    // command_vehicle_starforged: { id: 'command_vehicle_starforged', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets', type: 'system' },
-    // ritual_classic: { id: 'ritual_starforged', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets', type: 'system' },
-    // path_classic: { id: 'path_starforged', name: 'IRONSWORN.Asset Categories.Classic.Path Assets', type: 'system' },
-    // companion_classic: { id: 'companion_starforged', name: 'IRONSWORN.Asset Categories.Classic.Companion Assets', type: 'system' },
-    // combat_talent_classic: { id: 'combat_talent_starforged', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets', type: 'system' },
+    progress: { id: 'progress', name: 'IRONSWORN.ITEMS.SubtypeProgress', type: 'system' },
+    vows: { id: 'vows', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
+    connections: { id: 'connections', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
+    paths: { id: 'paths', name: 'IRONSWORN.Asset Categories.Starforged.Path Assets.Title', type: 'system' },
+    companions: { id: 'companions', name: 'IRONSWORN.Asset Categories.Starforged.Companion Assets.Title', type: 'system' },
+    deeds: { id: 'deeds', name: 'IRONSWORN.Asset Categories.Starforged.Deed Assets.Title', type: 'system' },
+    modules: { id: 'modules', name: 'IRONSWORN.Asset Categories.Starforged.Module Assets.Title', type: 'system' },
+    supportVehicles: { id: 'supportVehicles', name: 'IRONSWORN.Asset Categories.Starforged.Support Vehicle Assets.Title', type: 'system' },
+    commandVehicles: { id: 'commandVehicles', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets.Title', type: 'system' },
+    rituals: { id: 'rituals', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets.Title', type: 'system' },
+    combatTalents: { id: 'combatTalents', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' }
     // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
+/** system.category asset
+ * Ritual
+ * Deed
+ * "Module"
+ * "Command Vehicle"
+ * "Support Vehicle"
+ * "Path"
+ * "Companion"
+ */
+
+
+
+
+
 
 /**
  * Item types
  */
 export const ITEM_TYPE = {
-    assets: { groupId: 'assets' },
+    asset: { groupId: 'assets' },
     progress: { groupId: 'progress' },
-    bondset: { groupId: 'bondsets' }
+    connection: { groupId: 'connections' },
+    vow: { groupId: 'vows' },
+    bondset: { groupId: 'bondsets' },
+    path: { groupId: 'paths' },
+    companion: { groupId: 'companions' },
+    ritual: { groupId: 'rituals' },
+    deed: { groupId: 'deeds' },
+    module: { groupId: 'modules' },
+    commandVehicle: { groupId: 'commandVehicles' },
+    supportVehicle: { groupId: 'supportVehicles' },
+    combatTalent: { groupId: 'combatTalents' }
 }
 
 /**
