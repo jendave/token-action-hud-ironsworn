@@ -1,7 +1,8 @@
 {
   "tokenActionHud": {
     "ironsworn": {
-      "moves": "Moves"
+      "moves": "Moves",
+      "meters": "Meters"
     }
   }
 }

@@ -21,7 +21,8 @@ export const REQUIRED_CORE_MODULE_VERSION = '2.0'
  * Action types
  */
 export const ACTION_TYPE = {
-    stat: 'IRONSWORN.Stats'
+    stat: 'IRONSWORN.Stats',
+    meter: 'tokenActionHud.ironsworn.meters'
     // move: 'IRONSWORN.ITEMS.TypeMove',
     // asset: 'IRONSWORN.ITEMS.TypeAsset',
     // utility: 'tokenActionHud.utility'
@@ -32,6 +33,7 @@ export const ACTION_TYPE = {
  */
 export const GROUP = {
     stat: { id: 'stat', name: 'IRONSWORN.Stats', type: 'system' },
+    meter: { id: 'meter', name: 'tokenActionHud.ironsworn.meters', type: 'system' },
     progress: { id: 'progress', name: 'IRONSWORN.ITEMS.SubtypeProgress', type: 'system' },
     vow: { id: 'vow', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
     connection: { id: 'connection', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
@@ -75,3 +77,14 @@ export const STATS = {
     shadow: 'Shadow',
     wits: 'Wits'
 }
+
+/**
+ * Meters
+ */
+export const METERS = {
+    health: 'Health',
+    spirit: 'Spirit',
+    supply: 'Supply'
+}
+
+//     momentum: 'Momentum',

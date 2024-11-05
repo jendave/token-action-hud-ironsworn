@@ -53,6 +53,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 groups: [
                     { ...groups.stat, nestId: 'stat_stat' }
                 ]
+            },
+            {
+                nestId: 'meter',
+                id: 'meter',
+                name: coreModule.api.Utils.i18n('tokenActionHud.ironsworn.meters'),
+                groups: [
+                    { ...groups.meter, nestId: 'meter_meter' }
+                ]
             }
             // {
             //     nestId: 'utility',

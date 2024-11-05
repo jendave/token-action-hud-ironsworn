@@ -77,6 +77,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'stat':
                     this.#handleStatAction(event, actor, actionId)
                     break
+                case 'meter':
+                        this.#handleMeterAction(event, actor, actionId)
+                        break
                 case 'utility':
                     this.#handleUtilityAction(token, actionId)
                     break
@@ -115,6 +118,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         #handleStatAction(_event, actor, actionId) {
             CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
         }
+
+                /**
+ * Handle meter action
+ * @private
+ * @param {object} event    The event
+ * @param {object} actor    The actor
+ * @param {string} actionId The action id
+ */
+                #handleMeterAction(_event, actor, actionId) {
+                    CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+                }
 
         /**
          * Handle utility action

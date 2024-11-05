@@ -1,7 +1,6 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE } from './constants.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS } from './constants.js'
 import { Utils } from './utils.js'
-import { STATS } from './constants.js'
 
 export let ActionHandler = null
 
@@ -42,6 +41,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         #buildCharacterActions() {
             this.#buildInventory()
             this.#buildStats()
+            this.#buildMeters()
         }
 
         /**
@@ -141,6 +141,35 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
                 const info1 = { text: this.actor.system[stat] }
+                actions.push({
+                    id,
+                    name,
+                    listName,
+                    encodedValue,
+                    info1
+                })
+            }
+            // TAH Core method to add actions to the action list
+            this.addActions(actions, groupData)
+        }
+
+        /**
+ * Build meters
+ * @private
+ */
+        #buildMeters() {
+            const actionTypeId = 'meter'
+            const groupData = { id: 'meter', type: 'system' }
+
+            // Get actions
+            const actions = []
+            for (const meter in METERS) {
+                const id = meter
+                const name = METERS[meter]
+                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                const encodedValue = [actionTypeId, id].join(this.delimiter)
+                const info1 = { text: this.actor.system[meter].value }
                 actions.push({
                     id,
                     name,
