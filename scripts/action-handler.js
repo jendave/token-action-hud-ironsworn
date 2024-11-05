@@ -63,7 +63,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const inventoryMap = new Map()
 
             for (const [itemId, itemData] of this.items) {
-                let itemDataTemp = structuredClone(itemData)
+                const itemDataTemp = structuredClone(itemData)
                 if (itemDataTemp.type === 'progress') {
                     if (itemDataTemp.system.subtype === 'vow') {
                         itemDataTemp.type = 'vow'
@@ -109,12 +109,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
+                    const info1 = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { text: Math.floor(itemData.system.current / 4).toString() } : null
 
                     return {
                         id,
                         name,
                         listName,
-                        encodedValue
+                        encodedValue,
+                        info1
                     }
                 })
                 // TAH Core method to add actions to the action list
@@ -138,11 +140,13 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
+                const info1 = { text: this.actor.system[stat] }
                 actions.push({
                     id,
                     name,
                     listName,
-                    encodedValue
+                    encodedValue,
+                    info1
                 })
             }
             // TAH Core method to add actions to the action list
