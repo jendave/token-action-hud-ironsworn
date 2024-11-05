@@ -38,9 +38,9 @@ Token Action HUD uses the [Color Picker](https://foundryvtt.com/packages/color-p
 
 ## Support
 
-For a guide on using Token Action HUD, go to: [How to Use Token Action HUD](https://github.com/jendave/token-action-hud-core/wiki/How-to-Use-Token-Action-HUD)
+For a guide on using Token Action HUD, go to: [How to Use Token Action HUD](https://github.com/jendave/token-action-hud-ironsworn/wiki/How-to-Use-Token-Action-HUD)
 
-For questions, feature requests or bug reports, please open an issue [here](https://github.com/jendave/token-action-hud-core/issues).
+For questions, feature requests or bug reports, please open an issue [here](https://github.com/jendave/token-action-hud-ironsworn/issues).
 
 Pull requests are welcome. Please include a reason for the request or create an issue before starting one.
 
