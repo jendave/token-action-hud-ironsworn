@@ -42,7 +42,8 @@ export const GROUP = {
     supportVehicle: { id: 'supportVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Support Vehicle Assets.Title', type: 'system' },
     commandVehicle: { id: 'commandVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets.Title', type: 'system' },
     ritual: { id: 'ritual', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets.Title', type: 'system' },
-    combatTalent: { id: 'combatTalent', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' }
+    combatTalent: { id: 'combatTalent', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' },
+    move: { id: 'move', name: 'IRONSWORN.ITEMS.TypeMove', type: 'system' }
     // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
 
@@ -62,7 +63,8 @@ export const ITEM_TYPE = {
     module: { groupId: 'module' },
     commandVehicle: { groupId: 'commandVehicle' },
     supportVehicle: { groupId: 'supportVehicle' },
-    combatTalent: { groupId: 'combatTalent' }
+    combatTalent: { groupId: 'combatTalent' },
+    move: { groupId: 'move' }
 }
 
 /**
