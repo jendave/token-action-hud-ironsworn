@@ -19,14 +19,14 @@ Token Action HUD is a repositionable HUD of actions for a selected token.
 
 1. On Foundry VTT's **Configuration and Setup** screen, go to **Add-on Modules**
 2. Click **Install Module**
-3. Search for **Token Action HUD Pathfinder 2**
+3. Search for **Token Action HUD Ironsworn/Starforged**
 4. Click **Install** next to the module listing
 
 ### Method 2
 
 1. On Foundry VTT's **Configuration and Setup** screen, go to **Add-on Modules**
 2. Click **Install Module**
-3. In the Manifest URL field, paste: `https://github.com/jendave/token-action-hud-ironsworn/releases/latest/download/module.json`
+3. In the Manifest URL field, paste: `https://github.com/jendave/token-action-hud-ironsworn/releases/download/latest/module.zip`
 4. Click **Install** next to the pasted Manifest URL
 
 ### Required Modules
