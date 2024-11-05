@@ -41,9 +41,15 @@ Token Action HUD uses the [Color Picker](https://foundryvtt.com/packages/color-p
 
 For a guide on using Token Action HUD, go to: [How to Use Token Action HUD](https://github.com/jendave/token-action-hud-ironsworn/wiki/How-to-Use-Token-Action-HUD)
 
-For questions, feature requests or bug reports, please open an issue [here](https://github.com/jendave/token-action-hud-ironsworn/issues).
+For questions, feature requests or bug reports, please open an [issue](https://github.com/jendave/token-action-hud-ironsworn/issues).
 
-Pull requests are welcome. Please include a reason for the request or create an issue before starting one.
+[Pull requests](https://github.com/jendave/token-action-hud-ironsworn/pulls) are welcome. Please include a reason for the request or create an issue before starting one.
+
+## Troubleshooting and Tips
+
+- If the HUD layout appears incomplete or is inconsistent among users:
+  - In `Configure Settings`, select `Token Action HUD Core`, select `Layout`, click on `Reset All Layouts` and click on `Yes`.
+  - This will reset the layout for all users.
 
 ## Acknowledgements
 
@@ -57,9 +63,9 @@ This Foundry VTT module is licensed under a [Creative Commons Attribution 4.0 In
 
 ## Contact
 
-* [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
-* [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
-* [GitHub Repository](https://github.com/jendave/token-note-hover)
+- [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
+- [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
+- [GitHub Repository](https://github.com/jendave/token-note-hover)
 
 ## FoundryVTT Modules and Other Resources
 
@@ -67,16 +73,16 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 
 ### [FoundryVTT](https://foundryvtt.com/community/david-hudson/packages) Modules
 
-* [Starforged Custom Oracles](https://foundryvtt.com/packages/starforged-custom-oracles)
-* [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
-* [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
-* [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
-* [Token Note Hover](https://github.com/jendave/token-note-hover)
+- [Starforged Custom Oracles](https://foundryvtt.com/packages/starforged-custom-oracles)
+- [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
+- [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
+- [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
+- [Token Note Hover](https://github.com/jendave/token-note-hover)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 
-* [The City on the Breeze - Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
-* [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
-* [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
-* [I Owe My Soul to the Corporate Planet - Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-corporate-planet)
-* [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
+- [The City on the Breeze - Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
+- [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
+- [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
+- [I Owe My Soul to the Corporate Planet - Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-corporate-planet)
+- [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
