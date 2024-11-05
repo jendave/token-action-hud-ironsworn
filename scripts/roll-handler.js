@@ -69,10 +69,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         async #handleAction(event, actor, token, actionTypeId, actionId) {
             switch (actionTypeId) {
                 case 'item':
-                    if (actor.items[actionId].type === 'progress') {
+                    if (actor.items.get(actionId).type === 'progress') {
                         this.#handleProgressAction(event, actor, actionId)
                     }
-                    this.#handleProgressAction(event, actor, actionId)
+                    this.#handleAssetAction(event, actor, actionId)
                     break
                 case 'stat':
                     this.#handleStatAction(event, actor, actionId)
@@ -91,7 +91,18 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {string} actionId The action id
          */
         #handleProgressAction(event, actor, actionId) {
-            CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForProgress(this.actor.items[actionId].name, actor)
+            actor.items.get(actionId).sheet.render(true)
+        }
+
+        /**
+ * Handle item action
+ * @private
+ * @param {object} event    The event
+ * @param {object} actor    The actor
+ * @param {string} actionId The action id
+ */
+        #handleAssetAction(event, actor, actionId) {
+            actor.items.get(actionId).sheet.render(true)
         }
 
         /**
