@@ -1,10 +1,11 @@
 # Token Action HUD Ironsworn/Starforged
 
-![Downloads](https://img.shields.io/github/downloads/jendave/token-action-hud-ironsworn/latest/module.zip?color=2b82fc&label=DOWNLOADS&style=for-the-badge) [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ftoken-action-hud-ironsworn&colorB=448d34&style=for-the-badge)](https://forge-vtt.com/bazaar#package=token-action-hud-ironsworn)
+![GitHub all releases](https://img.shields.io/github/downloads/jendave/token-action-hud-ironsworn/total)
+[![Latest Version](https://img.shields.io/github/v/release/jendave/token-note-hover?display_name=tag&sort=semver&label=Latest%20Version)](https://github.com/jendave/token-action-hud-ironsworn/releases/latest)
+![Foundry Version](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjendave%2Ftoken-action-hud-ironsworn%2Fmain%2Fmodule.json)
+[![License](https://img.shields.io/github/license/jendave/token-action-hud-ironsworn)](LICENSE)
 
 Token Action HUD is a repositionable HUD of actions for a selected token.
-
-![Token Action HUD](.github/readme/token-action-hud.gif)
 
 ## Features
 
