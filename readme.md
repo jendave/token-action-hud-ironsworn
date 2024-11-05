@@ -8,11 +8,9 @@ Token Action HUD is a repositionable HUD of actions for a selected token.
 
 ## Features
 
-- Make rolls directly from the HUD instead of opening your character sheet.
-- Use items from the HUD or right-click an item to open its sheet.
+- Make stat rolls directly from the HUD instead of opening your character sheet.
+- Open assets, progress tracks and connections from the HUD.
 - Move the HUD and choose to expand the menus up or down.
-- Unlock the HUD to customise layout and groups per user, and actions per actor.
-- Add your own macros, journal entries and roll table compendiums.
 
 ## Installation
 
@@ -48,8 +46,36 @@ Pull requests are welcome. Please include a reason for the request or create an 
 
 ## Acknowledgements
 
-Thank you to the Community Helpers on Foundry's Discord who provide tireless support for people seeking help with the HUD.
+Created for the incredible [Ironsworn and Ironsworn: Starforged](https://tomkinpress.com/) family of games.
+
+Many thanks to Ben Straub for his fantastic [Ironsworn & Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn).
 
 ## License
 
 This Foundry VTT module is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) and this work is licensed under [Foundry Virtual Tabletop EULA - Limited License Agreement for module development](https://foundryvtt.com/article/license/).
+
+## Contact
+
+* [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
+* [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
+* [GitHub Repository](https://github.com/jendave/token-note-hover)
+
+## FoundryVTT Modules and Other Resources
+
+Please check out my other modules and resources for Ironsworn, Ironsworn: Starforged and other systems.
+
+### [FoundryVTT](https://foundryvtt.com/community/david-hudson/packages) Modules
+
+* [Starforged Custom Oracles](https://foundryvtt.com/packages/starforged-custom-oracles)
+* [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
+* [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
+* [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
+* [Token Note Hover](https://github.com/jendave/token-note-hover)
+
+### [Itch.io](https://jendave.itch.io/) Resources
+
+* [The City on the Breeze - Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
+* [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
+* [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
+* [I Owe My Soul to the Corporate Planet - Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-corporate-planet)
+* [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
