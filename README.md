@@ -1,17 +1,21 @@
-# Token Action HUD Ironsworn/Starforged
+# Token Action HUD Ironsworn
 
 ![GitHub all releases](https://img.shields.io/github/downloads/jendave/token-action-hud-ironsworn/total)
 [![Latest Version](https://img.shields.io/github/v/release/jendave/token-note-hover?display_name=tag&sort=semver&label=Latest%20Version)](https://github.com/jendave/token-action-hud-ironsworn/releases/latest)
 ![Foundry Version](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjendave%2Ftoken-action-hud-ironsworn%2Fmain%2Fmodule.json)
 [![License](https://img.shields.io/github/license/jendave/token-action-hud-ironsworn)](LICENSE)
 
-Token Action HUD is a repositionable HUD of actions for a selected token.
+The `Token Action HUD Ironsworn` is a repositionable HUD of actions for a selected token for the Ironsworn and Ironsworn: Starforged family of games.
 
 ## Features
 
-- Make stat rolls directly from the HUD instead of opening your character sheet.
-- Open assets, progress tracks and connections from the HUD.
+- Make stat and meter rolls directly from the HUD instead of opening your character sheet.
+- Open assets, progress tracks, and connections from the HUD.
 - Move the HUD and choose to expand the menus up or down.
+
+### Supported Systems
+
+- [Ironsworn and Ironsworn: Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
 
 ## Installation
 
@@ -19,14 +23,14 @@ Token Action HUD is a repositionable HUD of actions for a selected token.
 
 1. On Foundry VTT's **Configuration and Setup** screen, go to **Add-on Modules**
 2. Click **Install Module**
-3. Search for **Token Action HUD Ironsworn/Starforged**
+3. Search for **Token Action HUD Ironsworn**
 4. Click **Install** next to the module listing
 
 ### Method 2
 
 1. On Foundry VTT's **Configuration and Setup** screen, go to **Add-on Modules**
 2. Click **Install Module**
-3. In the Manifest URL field, paste: `https://github.com/jendave/token-action-hud-ironsworn/releases/download/latest/module.zip`
+3. In the Manifest URL field, paste: `https://github.com/jendave/token-action-hud-ironsworn/releases/download/latest/module.json`
 4. Click **Install** next to the pasted Manifest URL
 
 ### Required Modules
@@ -55,7 +59,7 @@ For questions, feature requests or bug reports, please open an [issue](https://g
 
 Created for the incredible [Ironsworn and Ironsworn: Starforged](https://tomkinpress.com/) family of games.
 
-Many thanks to Ben Straub for his fantastic [Ironsworn & Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn).
+Many thanks to Ben Straub for his fantastic [Ironsworn and Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn).
 
 ## License
 
@@ -65,7 +69,7 @@ This Foundry VTT module is licensed under a [Creative Commons Attribution 4.0 In
 
 - [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
 - [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
-- [GitHub Repository](https://github.com/jendave/token-note-hover)
+- [GitHub Repository](https://github.com/jendave/token-action-hud-ironsworn)
 
 ## FoundryVTT Modules and Other Resources
 
@@ -77,7 +81,8 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 - [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
 - [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
 - [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
-- [Token Note Hover](https://github.com/jendave/token-note-hover)
+- [Token Note Hover](https://foundryvtt.com/packages/token-note-hover)
+- [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 

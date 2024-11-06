@@ -1,10 +1,5 @@
 # Changelog
 
-## [0.0.2](https://github.com/jendave/token-note-hover/commits/main) (2024-11-05)
-
-* Add labels to Stats, Progress, Vows and Connections.
-* Added HUD entries and labels for Health, Spirit, and Supply
-
-## [0.0.1](https://github.com/jendave/token-note-hover/commits/main) (2024-11-04)
+## [1.0.0](https://github.com/jendave/token-note-hover/commits/main) (2024-11-05)
 
 * Initial release.

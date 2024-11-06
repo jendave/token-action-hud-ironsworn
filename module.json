@@ -1,7 +1,7 @@
 {
   "id": "token-action-hud-ironsworn",
-  "title": "Token Action HUD for Ironsworn/Starforged",
-  "description": "Token Action HUD for Ironsworn/Starforged is a repositionable HUD of actions for a selected token",
+  "title": "Token Action HUD Ironsworn",
+  "description": "Token Action HUD Ironsworn is a repositionable HUD of actions for a selected token for the Ironsworn and Ironsworn: Starforged family of games.",
   "authors": [
     {
       "name": "David Y. Hudson",
