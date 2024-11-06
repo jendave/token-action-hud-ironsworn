@@ -15,14 +15,9 @@
     "minimum": "12",
     "verified": "12"
   },
-  "esmodules": [
-    "./scripts/init.js"
-  ],
-  "scripts": [
-  ],
-  "styles": [
-    "./styles/tah-template-style.css"
-  ],
+  "esmodules": ["./scripts/init.js"],
+  "scripts": [],
+  "styles": ["./styles/tah-template-style.css"],
   "languages": [
     {
       "lang": "en",

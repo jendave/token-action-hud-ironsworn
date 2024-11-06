@@ -15,7 +15,7 @@ The `Token Action HUD Ironsworn` is a repositionable HUD of actions for a select
 
 ### Supported Systems
 
-- [Ironsworn and Ironsworn: Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
+- [Ironsworn & Ironsworn: Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
 
 ## Installation
 
@@ -57,9 +57,9 @@ For questions, feature requests or bug reports, please open an [issue](https://g
 
 ## Acknowledgements
 
-Created for the incredible [Ironsworn and Ironsworn: Starforged](https://tomkinpress.com/) family of games.
+Created for the incredible [Ironsworn & Ironsworn: Starforged](https://tomkinpress.com/) family of games.
 
-Many thanks to Ben Straub for his fantastic [Ironsworn and Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn).
+Many thanks to Ben Straub for his fantastic [Ironsworn & Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn).
 
 ## License
 

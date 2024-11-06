@@ -18,7 +18,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @override
          * @returns {class} The ActionHandler instance
          */
-        getActionHandler () {
+        getActionHandler() {
             return new ActionHandler()
         }
 
@@ -29,7 +29,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @override
          * @returns {object} The available roll handlers
          */
-        getAvailableRollHandlers () {
+        getAvailableRollHandlers() {
             const coreTitle = 'Core Ironsworn'
             const choices = { core: coreTitle }
             return choices
@@ -42,13 +42,13 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {string} rollHandlerId The roll handler ID
          * @returns {class}              The RollHandler instance
          */
-        getRollHandler (rollHandlerId) {
+        getRollHandler(rollHandlerId) {
             let rollHandler
             switch (rollHandlerId) {
-            case 'core':
-            default:
-                rollHandler = new Core()
-                break
+                case 'core':
+                default:
+                    rollHandler = new Core()
+                    break
             }
             return rollHandler
         }
@@ -58,7 +58,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * Called by Token Action HUD Core
          * @returns {object} The default layout and groups
          */
-        async registerDefaults () {
+        async registerDefaults() {
             return DEFAULTS
         }
 
@@ -68,7 +68,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @override
          * @param {function} coreUpdate The Token Action HUD Core update function
          */
-        registerSettings (coreUpdate) {
+        registerSettings(coreUpdate) {
             systemSettings.register(coreUpdate)
         }
 
@@ -78,7 +78,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @override
          * @returns {object} The TAH system styles
          */
-        registerStyles () {
+        registerStyles() {
             return {
                 template: {
                     class: 'tah-style-template-style', // The class to add to first DIV element
