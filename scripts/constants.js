@@ -46,10 +46,10 @@ export const GROUP = {
     commandVehicle: { id: 'commandVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets.Title', type: 'system' },
     ritual: { id: 'ritual', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets.Title', type: 'system' },
     combatTalent: { id: 'combatTalent', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' },
-    misfortune: { id: 'misfortune', name: 'IRONSWORN.IMPACTS.Category.Misfortunes', type: 'system' },
-    lastingEffect: { id: 'lastingEffect', name: 'IRONSWORN.IMPACTS.Category.LastingEffects', type: 'system' },
-    burden: { id: 'burden', name: 'IRONSWORN.IMPACTS.Category.Burdens', type: 'system' },
-    vehicleTrouble: { id: 'vehicleTrouble', name: 'IRONSWORN.IMPACTS.Category.Vehicle', type: 'system' }
+    misfortune: { id: 'misfortune', name: 'IRONSWORN.IMPACT.CATEGORY.Misfortunes', type: 'system' },
+    lastingEffect: { id: 'lastingEffect', name: 'IRONSWORN.IMPACT.CATEGORY.LastingEffects', type: 'system' },
+    burden: { id: 'burden', name: 'IRONSWORN.IMPACT.CATEGORY.Burdens', type: 'system' },
+    vehicleTrouble: { id: 'vehicleTrouble', name: 'IRONSWORN.IMPACT.CATEGORY.Vehicle', type: 'system' }
     // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
 
