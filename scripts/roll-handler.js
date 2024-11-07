@@ -140,8 +140,16 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 * @param {object} actor    The actor
 * @param {string} actionId The action id
 */
-        #handleImpactAction(_event, actor, actionId) {
-            actor.system.debility[actionId] = !actor.system.debility[actionId]
+        async #handleImpactAction(_event, actor, actionId) {
+            const tempValue = !actor.system.debility[actionId]
+            const data = {
+                system: {
+                    debility: {
+                        [actionId]: tempValue
+                    }
+                }
+            }
+            await actor.update(data)
             Hooks.call('tokenActionHudCoreApiReady', actor)
         }
 
