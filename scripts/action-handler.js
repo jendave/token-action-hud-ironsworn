@@ -179,28 +179,45 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         async #buildImpacts() {
             const actionTypeId = 'impact'
-            const groupData = { id: 'vehicleTrouble', type: 'system' }
+            const impactMap = new Map()
 
-            // Get actions
-            const actions = []
-            for (const impact in IMPACTS) {
-                const id = impact
-                const name = IMPACTS[impact].name
-                const category = IMPACTS[impact].category
-                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
-                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
-                const encodedValue = [actionTypeId, id].join(this.delimiter)
-                const info1 = { text: this.actor.system.debility[impact] ? '\u{1F518}' : null }
-                actions.push({
-                    id,
-                    name,
-                    listName,
-                    encodedValue,
-                    info1
-                })
+            for (const [itemId, itemData] of this.items) {
+                const type = itemDataTemp.type
+                const typeMap = inventoryMap.get(type) ?? new Map()
+                typeMap.set(itemId, itemDataTemp)
+                inventoryMap.set(type, typeMap)
             }
-            // TAH Core method to add actions to the action list
-            this.addActions(actions, groupData)
+
+            // let groupData = { id: 'misfortune', type: 'system' }
+
+            for (const [type, typeMap] of inventoryMap) {
+                const groupId = ITEM_TYPE[type]?.groupId
+
+                if (!groupId) continue
+
+                const groupData = { id: groupId, type: 'system' }
+
+                // Get actions
+                const actions = []
+                for (const impact in IMPACTS) {
+                    const id = impact
+                    const name = IMPACTS[impact].name
+                    groupData.id = IMPACTS[impact].category
+                    const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                    const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                    const encodedValue = [actionTypeId, id].join(this.delimiter)
+                    const info1 = { text: this.actor.system.debility[impact] ? '\u{1F518}' : null }
+                    actions.push({
+                        id,
+                        name,
+                        listName,
+                        encodedValue,
+                        info1
+                    })
+                }
+                // TAH Core method to add actions to the action list
+                this.addActions(actions, groupData)
+            }
         }
     }
 })
