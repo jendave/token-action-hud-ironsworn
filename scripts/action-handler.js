@@ -1,6 +1,6 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE, STATS, METERS } from './constants.js'
-import { Utils } from './utils.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS } from './constants.js'
+// import { Utils } from './utils.js'
 
 export let ActionHandler = null
 
@@ -29,8 +29,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
             if (this.actorType === 'character') {
                 this.#buildCharacterActions()
-            } else if (!this.actor) {
-                this.#buildMultipleTokenActions()
             }
         }
 
@@ -42,14 +40,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             this.#buildInventory()
             this.#buildStats()
             this.#buildMeters()
-        }
-
-        /**
-         * Build multiple token actions
-         * @private
-         * @returns {object}
-         */
-        #buildMultipleTokenActions() {
+            this.#buildImpacts()
         }
 
         /**
@@ -154,9 +145,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
 
         /**
- * Build meters
- * @private
- */
+         * Build meters
+         * @private
+         */
         #buildMeters() {
             const actionTypeId = 'meter'
             const groupData = { id: 'meter', type: 'system' }
@@ -170,6 +161,36 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
                 const info1 = { text: this.actor.system[meter].value }
+                actions.push({
+                    id,
+                    name,
+                    listName,
+                    encodedValue,
+                    info1
+                })
+            }
+            // TAH Core method to add actions to the action list
+            this.addActions(actions, groupData)
+        }
+
+        /**
+         * Build impacts
+         * @private
+         */
+        async #buildImpacts() {
+            const actionTypeId = 'impact'
+            const groupData = { id: 'vehicleTrouble', type: 'system' }
+
+            // Get actions
+            const actions = []
+            for (const impact in IMPACTS) {
+                const id = impact
+                const name = IMPACTS[impact].name
+                const category = IMPACTS[impact].category
+                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                const encodedValue = [actionTypeId, id].join(this.delimiter)
+                const info1 = { text: this.actor.system.debility[impact] ? '\u{1F518}' : null }
                 actions.push({
                     id,
                     name,

@@ -22,7 +22,8 @@ export const REQUIRED_CORE_MODULE_VERSION = '2.0'
  */
 export const ACTION_TYPE = {
     stat: 'IRONSWORN.Stats',
-    meter: 'tokenActionHud.ironsworn.meters'
+    meter: 'tokenActionHud.ironsworn.meters',
+    impact: 'IRONSWORN.Impacts'
     // move: 'IRONSWORN.ITEMS.TypeMove',
     // asset: 'IRONSWORN.ITEMS.TypeAsset',
     // utility: 'tokenActionHud.utility'
@@ -44,7 +45,11 @@ export const GROUP = {
     supportVehicle: { id: 'supportVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Support Vehicle Assets.Title', type: 'system' },
     commandVehicle: { id: 'commandVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets.Title', type: 'system' },
     ritual: { id: 'ritual', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets.Title', type: 'system' },
-    combatTalent: { id: 'combatTalent', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' }
+    combatTalent: { id: 'combatTalent', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' },
+    misfortune: { id: 'misfortune', name: 'IRONSWORN.IMPACTS.Category.Misfortunes', type: 'system' },
+    lastingEffect: { id: 'lastingEffect', name: 'IRONSWORN.IMPACTS.Category.LastingEffects', type: 'system' },
+    burden: { id: 'burden', name: 'IRONSWORN.IMPACTS.Category.Burdens', type: 'system' },
+    vehicleTrouble: { id: 'vehicleTrouble', name: 'IRONSWORN.IMPACTS.Category.Vehicle', type: 'system' }
     // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
 
@@ -85,6 +90,25 @@ export const METERS = {
     health: 'Health',
     spirit: 'Spirit',
     supply: 'Supply'
+}
+
+/**
+ * Meters
+ */
+export const IMPACTS = {
+    battered: { name: 'Battered', category: 'vehicleTrouble' },
+    corrupted: { name: 'Corrupted', category: 'lastingEffect' }, // TODO: check
+    cursed: { name: 'Cursed', category: 'vehicleTrouble' },
+    doomed: { name: 'Doomed', category: 'burden' },
+    encumbered: { name: 'Encumbered', category: 'burden' }, // TODO: check
+    indebted: { name: 'Indebted', category: 'burden' },
+    maimed: { name: 'Mained', category: 'lastingEffect' }, // TODO: check
+    permanentlyharmed: { name: 'Permanently Harmed', category: 'lastingEffect' },
+    shaken: { name: 'Shaken', category: 'misfortune' },
+    tormented: { name: 'Tormented', category: 'burden' },
+    traumatized: { name: 'Traumatized', category: 'lastingEffect' },
+    unprepared: { name: 'Unprepared', category: 'misfortune' },
+    wounded: { name: 'Wounded', category: 'misfortune' }
 }
 
 //     momentum: 'Momentum',

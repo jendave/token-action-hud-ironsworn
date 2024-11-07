@@ -61,6 +61,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 groups: [
                     { ...groups.meter, nestId: 'meter_meter' }
                 ]
+            },
+            {
+                nestId: 'impact',
+                id: 'impact',
+                name: coreModule.api.Utils.i18n('IRONSWORN.Impacts'),
+                groups: [
+                    { ...groups.misfortune, nestId: 'impact_misfortune' },
+                    { ...groups.lastingEffect, nestId: 'impact_lastingEffect' },
+                    { ...groups.burden, nestId: 'impact_burden' },
+                    { ...groups.vehicleTrouble, nestId: 'impact_vehicleTrouble' }
+                ]
             }
             // {
             //     nestId: 'utility',

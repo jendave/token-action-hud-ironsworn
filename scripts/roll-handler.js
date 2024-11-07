@@ -80,6 +80,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'meter':
                     this.#handleMeterAction(event, actor, actionId)
                     break
+                case 'impact':
+                    this.#handleImpactAction(event, actor, actionId)
+                    break
                 case 'utility':
                     this.#handleUtilityAction(token, actionId)
                     break
@@ -128,6 +131,18 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 */
         #handleMeterAction(_event, actor, actionId) {
             CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+        }
+
+        /**
+* Handle meter action
+* @private
+* @param {object} event    The event
+* @param {object} actor    The actor
+* @param {string} actionId The action id
+*/
+        #handleImpactAction(_event, actor, actionId) {
+            actor.system.debility[actionId] = !actor.system.debility[actionId]
+            Hooks.call('tokenActionHudCoreApiReady', actor)
         }
 
         /**
