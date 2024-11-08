@@ -196,8 +196,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             this.addActions(actions, groupData)
         }
 
-        //game.settings.get('foundry-ironsworn', 'character-hold'))
-
         /**
          * Build impacts
          * @private

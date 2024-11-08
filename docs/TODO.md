@@ -2,8 +2,8 @@
 
 - ~~Add optional Hold meter~~
 - ~~Display Momentum meter~~
-- Fix il8n
 - Clean up impact code
+- Fix il8n
 - Fix formatter
-- Add vite for testing?
 - Sort all groups and entries
+- Add vite for testing?
