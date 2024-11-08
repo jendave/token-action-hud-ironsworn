@@ -176,6 +176,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const actions = []
             for (const meter in METERS) {
                 const id = meter
+                if (meter == 'hold' && !game.settings.get('foundry-ironsworn', 'character-hold')) {
+                    continue
+                }
                 const name = METERS[meter]
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
@@ -192,6 +195,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             // TAH Core method to add actions to the action list
             this.addActions(actions, groupData)
         }
+
+        //game.settings.get('foundry-ironsworn', 'character-hold'))
 
         /**
          * Build impacts
