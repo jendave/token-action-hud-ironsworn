@@ -97,13 +97,13 @@ export const METERS = {
  */
 export const IMPACTS = {
     battered: { name: 'Battered', category: 'vehicleTrouble' },
-    corrupted: { name: 'Corrupted', category: 'lastingEffect' }, // TODO: check
+    corrupted: { name: 'Corrupted', category: 'lastingEffect' },
     cursed: { name: 'Cursed', category: 'vehicleTrouble' },
     doomed: { name: 'Doomed', category: 'burden' },
-    encumbered: { name: 'Encumbered', category: 'burden' }, // TODO: check
+    encumbered: { name: 'Encumbered', category: 'burden' },
     indebted: { name: 'Indebted', category: 'burden' },
-    maimed: { name: 'Mained', category: 'lastingEffect' }, // TODO: check
-    permanentlyharmed: { name: 'Permanently Harmed', category: 'lastingEffect' },
+    maimed: { name: 'Mained', category: 'lastingEffect' },
+    permanentlyharmed: { name: 'Permanently Harmed' },
     shaken: { name: 'Shaken', category: 'misfortune' },
     tormented: { name: 'Tormented', category: 'burden' },
     traumatized: { name: 'Traumatized', category: 'lastingEffect' },
@@ -111,4 +111,9 @@ export const IMPACTS = {
     wounded: { name: 'Wounded', category: 'misfortune' }
 }
 
-//     momentum: 'Momentum',
+export const IMPACT_CATEGORY = {
+    vehicleTrouble: { groupId: 'vehicleTrouble' },
+    lastingEffect: { groupId: 'lastingEffect' },
+    burden: { groupId: 'burden' },
+    misfortune: { groupId: 'misfortune' }
+}

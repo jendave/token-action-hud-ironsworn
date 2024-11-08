@@ -1,5 +1,5 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS } from './constants.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS, IMPACT_CATEGORY } from './constants.js'
 // import { Utils } from './utils.js'
 
 export let ActionHandler = null
@@ -180,41 +180,53 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         async #buildImpacts() {
             const actionTypeId = 'impact'
             const impactMap = new Map()
+            const impactDataMap = new Map([
+                ['battered', 'vehicleTrouble'],
+                ['corrupted', 'lastingEffect'],
+                ['cursed', 'vehicleTrouble'],
+                ['doomed', 'burden'],
+                ['encumbered', 'misfortune'],
+                ['indebted', 'burden'],
+                ['tormented', 'burden'],
+                ['maimed', 'lastingEffect'],
+                ['traumatized', 'lastingEffect'],
+                ['permanentlyharmed', 'lastingEffect'],
+                ['shaken', 'misfortune'],
+                ['unprepared', 'misfortune'],
+                ['wounded', 'misfortune']
+            ])
 
-            for (const [itemId, itemData] of this.items) {
-                const type = itemDataTemp.type
-                const typeMap = inventoryMap.get(type) ?? new Map()
-                typeMap.set(itemId, itemDataTemp)
-                inventoryMap.set(type, typeMap)
+            for (const [impactId, impactCategory] of impactDataMap) {
+                const categoryMap = impactMap.get(impactCategory) ?? new Map()
+                categoryMap.set(impactId, impactCategory)
+                impactMap.set(impactCategory, categoryMap)
             }
 
             // let groupData = { id: 'misfortune', type: 'system' }
 
-            for (const [type, typeMap] of inventoryMap) {
-                const groupId = ITEM_TYPE[type]?.groupId
+            for (const [category, categoryMap] of impactMap) {
+                const groupId = IMPACT_CATEGORY[category]?.groupId
 
                 if (!groupId) continue
 
                 const groupData = { id: groupId, type: 'system' }
 
                 // Get actions
-                const actions = []
-                for (const impact in IMPACTS) {
-                    const id = impact
-                    const name = IMPACTS[impact].name
-                    groupData.id = IMPACTS[impact].category
+                const actions = [...categoryMap].map(([impactId, impactData]) => {
+                    const id = impactId
+                    const name = IMPACTS[impactId].name
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
-                    const info1 = { text: this.actor.system.debility[impact] ? '\u{1F518}' : null }
-                    actions.push({
+                    const info1 = { text: this.actor.system.debility[impactId] ? '\u{1F518}' : null }
+                    return {
                         id,
                         name,
                         listName,
                         encodedValue,
                         info1
-                    })
-                }
+                    }
+                })
                 // TAH Core method to add actions to the action list
                 this.addActions(actions, groupData)
             }
