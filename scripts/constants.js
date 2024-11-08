@@ -95,7 +95,7 @@ export const METERS = {
 }
 
 /**
- * Meters
+ * Impacts for Starforged
  */
 export const IMPACTS_SF = {
     battered: { name: 'Battered', category: 'vehicleTrouble' },
@@ -111,6 +111,9 @@ export const IMPACTS_SF = {
     wounded: { name: 'Wounded', category: 'misfortune' }
 }
 
+/**
+ * Impacts for Ironsworn
+ */
 export const IMPACTS_IS = {
     corrupted: { name: 'Corrupted', category: 'bane' },
     cursed: { name: 'Cursed', category: 'burden' },
@@ -122,6 +125,9 @@ export const IMPACTS_IS = {
     wounded: { name: 'Wounded', category: 'condition' }
 }
 
+/**
+ * Impact Categories for Starforged
+ */
 export const IMPACT_CATEGORY_SF = {
     vehicleTrouble: { groupId: 'vehicleTrouble' },
     lastingEffect: { groupId: 'lastingEffect' },
@@ -129,6 +135,9 @@ export const IMPACT_CATEGORY_SF = {
     misfortune: { groupId: 'misfortune' }
 }
 
+/**
+ * Impact Categories for Ironsworn
+ */
 export const IMPACT_CATEGORY_IS = {
     bane: { groupId: 'bane' },
     condition: { groupId: 'condition' },

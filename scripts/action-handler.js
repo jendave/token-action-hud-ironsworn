@@ -47,10 +47,18 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             this.#buildImpacts()
         }
 
+        /**
+         * Build starship actions
+         * @private
+         */
         #buildStarshipActions() {
             this.#buildImpacts(true)
         }
 
+        /**
+         * Build shared sheet actions
+         * @private
+         */
         #buildSharedActions() {
             this.#buildInventory()
         }

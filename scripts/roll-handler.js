@@ -101,45 +101,45 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
 
         /**
- * Handle item action
- * @private
- * @param {object} event    The event
- * @param {object} actor    The actor
- * @param {string} actionId The action id
- */
+         * Handle item action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
         #handleAssetAction(event, actor, actionId) {
             actor.items.get(actionId).sheet.render(true)
         }
 
         /**
- * Handle stat action
- * @private
- * @param {object} event    The event
- * @param {object} actor    The actor
- * @param {string} actionId The action id
- */
+         * Handle stat action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
         #handleStatAction(_event, actor, actionId) {
             CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
         }
 
         /**
-* Handle meter action
-* @private
-* @param {object} event    The event
-* @param {object} actor    The actor
-* @param {string} actionId The action id
-*/
+         * Handle meter action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
         #handleMeterAction(_event, actor, actionId) {
             CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
         }
 
         /**
-* Handle meter action
-* @private
-* @param {object} event    The event
-* @param {object} actor    The actor
-* @param {string} actionId The action id
-*/
+         * Handle impact action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
         async #handleImpactAction(_event, actor, actionId) {
             const tempValue = !actor.system.debility[actionId]
             const data = {
