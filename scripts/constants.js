@@ -91,7 +91,8 @@ export const STATS = {
 export const METERS = {
     health: 'Health',
     spirit: 'Spirit',
-    supply: 'Supply'
+    supply: 'Supply',
+    momentum: 'Momentum'
 }
 
 /**

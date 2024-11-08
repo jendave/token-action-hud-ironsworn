@@ -1,7 +1,7 @@
 # TODOs
 
 - Add optional Hold meter
-- Display Momentum meter
+- ~~Display Momentum meter~~
 - Fix il8n
 - Clean up impact code
 - Fix formatter

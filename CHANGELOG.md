@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.2](https://github.com/jendave/token-note-hover/commits/main) (2024-11-08)
+
+* Added Momentum meter display.
+* Resetting the layout may be necessary to ensure the HUD works correctly.
+  * [Troubleshooting and Tips](https://github.com/jendave/token-action-hud-ironsworn?tab=readme-ov-file#troubleshooting-and-tips)
+
 ## [1.0.1](https://github.com/jendave/token-note-hover/commits/main) (2024-11-08)
 
 * Added Impacts.

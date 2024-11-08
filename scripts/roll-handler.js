@@ -130,7 +130,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {string} actionId The action id
          */
         #handleMeterAction(_event, actor, actionId) {
-            CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+            if (actionId !== 'momentum') {
+                CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+            }
         }
 
         /**
