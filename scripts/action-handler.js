@@ -1,5 +1,5 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS, IMPACT_CATEGORY } from './constants.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACT_CATEGORY_SF } from './constants.js'
 // import { Utils } from './utils.js'
 
 export let ActionHandler = null
@@ -180,15 +180,13 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         async #buildImpacts() {
             const actionTypeId = 'impact'
             const impactMap = new Map()
-            const impactDataMap = new Map([
+            const impactDataMapSF = new Map([
                 ['battered', 'vehicleTrouble'],
                 ['corrupted', 'lastingEffect'],
                 ['cursed', 'vehicleTrouble'],
                 ['doomed', 'burden'],
-                ['encumbered', 'misfortune'],
                 ['indebted', 'burden'],
                 ['tormented', 'burden'],
-                ['maimed', 'lastingEffect'],
                 ['traumatized', 'lastingEffect'],
                 ['permanentlyharmed', 'lastingEffect'],
                 ['shaken', 'misfortune'],
@@ -196,7 +194,18 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ['wounded', 'misfortune']
             ])
 
-            for (const [impactId, impactCategory] of impactDataMap) {
+            const impactDataMapIS = new Map([
+                ['corrupted', 'bane'],
+                ['cursed', 'burden'],
+                ['encumbered', 'condition'],
+                ['tormented', 'burden'],
+                ['maimed', 'bane'],
+                ['shaken', 'condition'],
+                ['unprepared', 'condition'],
+                ['wounded', 'condition']
+            ])
+
+            for (const [impactId, impactCategory] of impactDataMapSF) {
                 const categoryMap = impactMap.get(impactCategory) ?? new Map()
                 categoryMap.set(impactId, impactCategory)
                 impactMap.set(impactCategory, categoryMap)
@@ -205,7 +214,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             // let groupData = { id: 'misfortune', type: 'system' }
 
             for (const [category, categoryMap] of impactMap) {
-                const groupId = IMPACT_CATEGORY[category]?.groupId
+                const groupId = IMPACT_CATEGORY_SF[category]?.groupId
 
                 if (!groupId) continue
 
@@ -214,7 +223,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 // Get actions
                 const actions = [...categoryMap].map(([impactId, impactData]) => {
                     const id = impactId
-                    const name = IMPACTS[impactId].name
+                    const name = IMPACTS_SF[impactId].name
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)

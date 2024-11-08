@@ -95,15 +95,14 @@ export const METERS = {
 /**
  * Meters
  */
-export const IMPACTS = {
+export const IMPACTS_SF = {
     battered: { name: 'Battered', category: 'vehicleTrouble' },
     corrupted: { name: 'Corrupted', category: 'lastingEffect' },
     cursed: { name: 'Cursed', category: 'vehicleTrouble' },
     doomed: { name: 'Doomed', category: 'burden' },
-    encumbered: { name: 'Encumbered', category: 'burden' },
     indebted: { name: 'Indebted', category: 'burden' },
     maimed: { name: 'Mained', category: 'lastingEffect' },
-    permanentlyharmed: { name: 'Permanently Harmed' },
+    permanentlyharmed: { name: 'Permanently Harmed', category: 'lastingEffect' },
     shaken: { name: 'Shaken', category: 'misfortune' },
     tormented: { name: 'Tormented', category: 'burden' },
     traumatized: { name: 'Traumatized', category: 'lastingEffect' },
@@ -111,9 +110,26 @@ export const IMPACTS = {
     wounded: { name: 'Wounded', category: 'misfortune' }
 }
 
-export const IMPACT_CATEGORY = {
+export const IMPACTS_IS = {
+    corrupted: { name: 'Corrupted', category: 'bane' },
+    cursed: { name: 'Cursed', category: 'burden' },
+    encumbered: { name: 'Encumbered', category: 'condition' },
+    maimed: { name: 'Mained', category: 'bane' },
+    shaken: { name: 'Shaken', category: 'condition' },
+    tormented: { name: 'Tormented', category: 'burden' },
+    unprepared: { name: 'Unprepared', category: 'condition' },
+    wounded: { name: 'Wounded', category: 'condition' }
+}
+
+export const IMPACT_CATEGORY_SF = {
     vehicleTrouble: { groupId: 'vehicleTrouble' },
     lastingEffect: { groupId: 'lastingEffect' },
     burden: { groupId: 'burden' },
     misfortune: { groupId: 'misfortune' }
+}
+
+export const IMPACT_CATEGORY_IS = {
+    bane: { groupId: 'bane' },
+    condition: { groupId: 'condition' },
+    burden: { groupId: 'burden' }
 }
