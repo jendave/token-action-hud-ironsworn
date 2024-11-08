@@ -49,7 +49,9 @@ export const GROUP = {
     misfortune: { id: 'misfortune', name: 'IRONSWORN.IMPACT.CATEGORY.Misfortunes', type: 'system' },
     lastingEffect: { id: 'lastingEffect', name: 'IRONSWORN.IMPACT.CATEGORY.LastingEffects', type: 'system' },
     burden: { id: 'burden', name: 'IRONSWORN.IMPACT.CATEGORY.Burdens', type: 'system' },
-    vehicleTrouble: { id: 'vehicleTrouble', name: 'IRONSWORN.IMPACT.CATEGORY.Vehicle', type: 'system' }
+    vehicleTrouble: { id: 'vehicleTrouble', name: 'IRONSWORN.IMPACT.CATEGORY.Vehicle', type: 'system' },
+    bane: { id: 'bane', name: 'IRONSWORN.DEBILITY.CATEGORY.Banes', type: 'system' },
+    condition: { id: 'condition', name: 'IRONSWORN.DEBILITY.CATEGORY.Conditions', type: 'system' }
     // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
 
@@ -101,7 +103,6 @@ export const IMPACTS_SF = {
     cursed: { name: 'Cursed', category: 'vehicleTrouble' },
     doomed: { name: 'Doomed', category: 'burden' },
     indebted: { name: 'Indebted', category: 'burden' },
-    maimed: { name: 'Mained', category: 'lastingEffect' },
     permanentlyharmed: { name: 'Permanently Harmed', category: 'lastingEffect' },
     shaken: { name: 'Shaken', category: 'misfortune' },
     tormented: { name: 'Tormented', category: 'burden' },
@@ -114,7 +115,7 @@ export const IMPACTS_IS = {
     corrupted: { name: 'Corrupted', category: 'bane' },
     cursed: { name: 'Cursed', category: 'burden' },
     encumbered: { name: 'Encumbered', category: 'condition' },
-    maimed: { name: 'Mained', category: 'bane' },
+    maimed: { name: 'Maimed', category: 'bane' },
     shaken: { name: 'Shaken', category: 'condition' },
     tormented: { name: 'Tormented', category: 'burden' },
     unprepared: { name: 'Unprepared', category: 'condition' },

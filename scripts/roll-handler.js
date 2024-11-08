@@ -21,7 +21,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 return this.doRenderItem(this.actor, actionId)
             }
 
-            const knownCharacters = ['character']
+            const knownCharacters = ['character', 'starship']
 
             // If single actor is selected
             if (this.actor) {

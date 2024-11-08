@@ -70,7 +70,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     { ...groups.misfortune, nestId: 'impact_misfortune' },
                     { ...groups.lastingEffect, nestId: 'impact_lastingEffect' },
                     { ...groups.burden, nestId: 'impact_burden' },
-                    { ...groups.vehicleTrouble, nestId: 'impact_vehicleTrouble' }
+                    { ...groups.vehicleTrouble, nestId: 'impact_vehicleTrouble' },
+                    { ...groups.bane, nestId: 'impact_bane' },
+                    { ...groups.condition, nestId: 'impact_condition' }
                 ]
             }
             // {

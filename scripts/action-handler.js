@@ -1,5 +1,5 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACT_CATEGORY_SF } from './constants.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACT_CATEGORY_SF, IMPACTS_IS, IMPACT_CATEGORY_IS } from './constants.js'
 // import { Utils } from './utils.js'
 
 export let ActionHandler = null
@@ -29,6 +29,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
             if (this.actorType === 'character') {
                 this.#buildCharacterActions()
+            } else if (this.actorType === 'starship') {
+                this.#buildStarshipActions()
+            } else if (this.actorType === 'shared') {
+                this.#buildSharedActions()
             }
         }
 
@@ -41,6 +45,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             this.#buildStats()
             this.#buildMeters()
             this.#buildImpacts()
+        }
+
+        #buildStarshipActions() {
+            this.#buildImpacts(true)
+        }
+
+        #buildSharedActions() {
+            this.#buildInventory()
         }
 
         /**
@@ -177,7 +189,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * Build impacts
          * @private
          */
-        async #buildImpacts() {
+        async #buildImpacts(isStarship) {
             const actionTypeId = 'impact'
             const impactMap = new Map()
             const impactDataMapSF = new Map([
@@ -205,7 +217,26 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ['wounded', 'condition']
             ])
 
-            for (const [impactId, impactCategory] of impactDataMapSF) {
+            const impactDataMapStarship = new Map([
+                ['battered', 'vehicleTrouble'],
+                ['cursed', 'vehicleTrouble']
+            ])
+
+            let impactDataMap = impactDataMapSF
+            let IMPACT_CATEGORY = IMPACT_CATEGORY_SF
+            let IMPACTS = IMPACTS_SF
+
+            if (isStarship) {
+                impactDataMap = impactDataMapStarship
+            }
+
+            if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
+                impactDataMap = impactDataMapIS
+                IMPACT_CATEGORY = IMPACT_CATEGORY_IS
+                IMPACTS = IMPACTS_IS
+            }
+
+            for (const [impactId, impactCategory] of impactDataMap) {
                 const categoryMap = impactMap.get(impactCategory) ?? new Map()
                 categoryMap.set(impactId, impactCategory)
                 impactMap.set(impactCategory, categoryMap)
@@ -214,7 +245,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             // let groupData = { id: 'misfortune', type: 'system' }
 
             for (const [category, categoryMap] of impactMap) {
-                const groupId = IMPACT_CATEGORY_SF[category]?.groupId
+                const groupId = IMPACT_CATEGORY[category]?.groupId
 
                 if (!groupId) continue
 
@@ -223,7 +254,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 // Get actions
                 const actions = [...categoryMap].map(([impactId, impactData]) => {
                     const id = impactId
-                    const name = IMPACTS_SF[impactId].name
+                    const name = IMPACTS[impactId].name
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
