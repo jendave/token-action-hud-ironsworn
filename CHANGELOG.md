@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.3](https://github.com/jendave/token-note-hover/commits/main) (2024-11-09)
+## [1.0.3](https://github.com/jendave/token-note-hover/commits/main) (2024-11-08)
 
 * Added Hold meter. It only displays when the `Ironsworn & Starforged` `Hold Stat` setting is enabled.
 * [Resetting the layout for all users](https://github.com/jendave/token-action-hud-ironsworn?tab=readme-ov-file#troubleshooting-and-tips) may be necessary to ensure the HUD works correctly.
