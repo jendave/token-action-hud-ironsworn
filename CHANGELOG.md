@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.4](https://github.com/jendave/token-note-hover/commits/main) (2024-11-10)
+
+* Fixed internationalization.
+* Cleaned up Impact code.
+
 ## [1.0.3](https://github.com/jendave/token-note-hover/commits/main) (2024-11-08)
 
 * Added Hold meter. It only displays when the `Ironsworn & Starforged` `Hold Stat` setting is enabled.
