@@ -1,5 +1,5 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACT_CATEGORY_SF, IMPACTS_IS, IMPACT_CATEGORY_IS } from './constants.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP } from './constants.js'
 // import { Utils } from './utils.js'
 
 export let ActionHandler = null
@@ -203,67 +203,32 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         async #buildImpacts(isStarship) {
             const actionTypeId = 'impact'
             const impactMap = new Map()
-            const impactDataMapSF = new Map([
-                ['battered', 'vehicleTrouble'],
-                ['corrupted', 'lastingEffect'],
-                ['cursed', 'vehicleTrouble'],
-                ['doomed', 'burden'],
-                ['indebted', 'burden'],
-                ['tormented', 'burden'],
-                ['traumatized', 'lastingEffect'],
-                ['permanentlyharmed', 'lastingEffect'],
-                ['shaken', 'misfortune'],
-                ['unprepared', 'misfortune'],
-                ['wounded', 'misfortune']
-            ])
-
-            const impactDataMapIS = new Map([
-                ['corrupted', 'bane'],
-                ['cursed', 'burden'],
-                ['encumbered', 'condition'],
-                ['tormented', 'burden'],
-                ['maimed', 'bane'],
-                ['shaken', 'condition'],
-                ['unprepared', 'condition'],
-                ['wounded', 'condition']
-            ])
-
-            const impactDataMapStarship = new Map([
-                ['battered', 'vehicleTrouble'],
-                ['cursed', 'vehicleTrouble']
-            ])
-
-            let impactDataMap = impactDataMapSF
-            let IMPACT_CATEGORY = IMPACT_CATEGORY_SF
-            let IMPACTS = IMPACTS_SF
-
-            if (isStarship) {
-                impactDataMap = impactDataMapStarship
-            }
+            let IMPACTS
 
             if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
-                impactDataMap = impactDataMapIS
-                IMPACT_CATEGORY = IMPACT_CATEGORY_IS
                 IMPACTS = IMPACTS_IS
+            } else if (isStarship) {
+                IMPACTS = IMPACTS_STARSHIP
+            } else {
+                IMPACTS = IMPACTS_SF
             }
 
-            for (const [impactId, impactCategory] of impactDataMap) {
-                const categoryMap = impactMap.get(impactCategory) ?? new Map()
-                categoryMap.set(impactId, impactCategory)
-                impactMap.set(impactCategory, categoryMap)
+            for (const key in IMPACTS) {
+                if (IMPACTS.hasOwnProperty(key)) {
+                    const nestedObject = IMPACTS[key];
+                    const groupIdMap = impactMap.get(nestedObject.groupId) ?? new Map()
+                    groupIdMap.set(key, nestedObject.groupId)
+                    impactMap.set(nestedObject.groupId, groupIdMap)
+                }
             }
 
-            // let groupData = { id: 'misfortune', type: 'system' }
-
-            for (const [category, categoryMap] of impactMap) {
-                const groupId = IMPACT_CATEGORY[category]?.groupId
-
+            for (const [groupId, groupIdMap] of impactMap) {
                 if (!groupId) continue
 
                 const groupData = { id: groupId, type: 'system' }
 
                 // Get actions
-                const actions = [...categoryMap].map(([impactId, impactData]) => {
+                const actions = [...groupIdMap].map(([impactId]) => {
                     const id = impactId
                     const name = IMPACTS[impactId].name
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])

@@ -23,10 +23,8 @@ export const REQUIRED_CORE_MODULE_VERSION = '2.0'
 export const ACTION_TYPE = {
     stat: 'IRONSWORN.Stats',
     meter: 'tokenActionHud.ironsworn.meters',
-    impact: 'IRONSWORN.Impacts'
-    // move: 'IRONSWORN.ITEMS.TypeMove',
-    // asset: 'IRONSWORN.ITEMS.TypeAsset',
-    // utility: 'tokenActionHud.utility'
+    impact: 'IRONSWORN.Impacts',
+    utility: 'tokenActionHud.utility'
 }
 
 /**
@@ -51,8 +49,8 @@ export const GROUP = {
     burden: { id: 'burden', name: 'IRONSWORN.IMPACT.CATEGORY.Burdens', type: 'system' },
     vehicleTrouble: { id: 'vehicleTrouble', name: 'IRONSWORN.IMPACT.CATEGORY.Vehicle', type: 'system' },
     bane: { id: 'bane', name: 'IRONSWORN.DEBILITY.CATEGORY.Banes', type: 'system' },
-    condition: { id: 'condition', name: 'IRONSWORN.DEBILITY.CATEGORY.Conditions', type: 'system' }
-    // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
+    condition: { id: 'condition', name: 'IRONSWORN.DEBILITY.CATEGORY.Conditions', type: 'system' },
+    utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
 
 /**
@@ -100,48 +98,36 @@ export const METERS = {
  * Impacts for Starforged
  */
 export const IMPACTS_SF = {
-    battered: { name: 'Battered', category: 'vehicleTrouble' },
-    corrupted: { name: 'Corrupted', category: 'lastingEffect' },
-    cursed: { name: 'Cursed', category: 'vehicleTrouble' },
-    doomed: { name: 'Doomed', category: 'burden' },
-    indebted: { name: 'Indebted', category: 'burden' },
-    permanentlyharmed: { name: 'Permanently Harmed', category: 'lastingEffect' },
-    shaken: { name: 'Shaken', category: 'misfortune' },
-    tormented: { name: 'Tormented', category: 'burden' },
-    traumatized: { name: 'Traumatized', category: 'lastingEffect' },
-    unprepared: { name: 'Unprepared', category: 'misfortune' },
-    wounded: { name: 'Wounded', category: 'misfortune' }
+    wounded: { name: 'Wounded', groupId: 'misfortune' },
+    shaken: { name: 'Shaken', groupId: 'misfortune' },
+    unprepared: { name: 'Unprepared', groupId: 'misfortune' },
+    permanentlyharmed: { name: 'Permanently Harmed', groupId: 'lastingEffect' },
+    traumatized: { name: 'Traumatized', groupId: 'lastingEffect' },
+    doomed: { name: 'Doomed', groupId: 'burden' },
+    tormented: { name: 'Tormented', groupId: 'burden' },
+    indebted: { name: 'Indebted', groupId: 'burden' },
+    battered: { name: 'Battered', groupId: 'vehicleTrouble' },
+    cursed: { name: 'Cursed', groupId: 'vehicleTrouble' }
 }
 
 /**
  * Impacts for Ironsworn
  */
 export const IMPACTS_IS = {
-    corrupted: { name: 'Corrupted', category: 'bane' },
-    cursed: { name: 'Cursed', category: 'burden' },
-    encumbered: { name: 'Encumbered', category: 'condition' },
-    maimed: { name: 'Maimed', category: 'bane' },
-    shaken: { name: 'Shaken', category: 'condition' },
-    tormented: { name: 'Tormented', category: 'burden' },
-    unprepared: { name: 'Unprepared', category: 'condition' },
-    wounded: { name: 'Wounded', category: 'condition' }
+    wounded: { name: 'Wounded', groupId: 'condition' },
+    unprepared: { name: 'Unprepared', groupId: 'condition' },
+    shaken: { name: 'Shaken', groupId: 'condition' },
+    encumbered: { name: 'Encumbered', groupId: 'condition' },
+    maimed: { name: 'Maimed', groupId: 'bane' },
+    corrupted: { name: 'Corrupted', groupId: 'bane' },
+    cursed: { name: 'Cursed', groupId: 'burden' },
+    tormented: { name: 'Tormented', groupId: 'burden' },
 }
 
 /**
- * Impact Categories for Starforged
+ * Impacts for Starships
  */
-export const IMPACT_CATEGORY_SF = {
-    vehicleTrouble: { groupId: 'vehicleTrouble' },
-    lastingEffect: { groupId: 'lastingEffect' },
-    burden: { groupId: 'burden' },
-    misfortune: { groupId: 'misfortune' }
-}
-
-/**
- * Impact Categories for Ironsworn
- */
-export const IMPACT_CATEGORY_IS = {
-    bane: { groupId: 'bane' },
-    condition: { groupId: 'condition' },
-    burden: { groupId: 'burden' }
+export const IMPACTS_STARSHIP = {
+    battered: { name: 'Battered', groupId: 'vehicleTrouble' },
+    cursed: { name: 'Cursed', groupId: 'vehicleTrouble' }
 }
