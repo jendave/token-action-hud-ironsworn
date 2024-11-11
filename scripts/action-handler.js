@@ -147,7 +147,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const actions = []
             for (const stat in STATS) {
                 const id = stat
-                const name = STATS[stat]
+                const name = coreModule.api.Utils.i18n(STATS[stat]).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(STATS[stat]).slice(1)
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
@@ -179,7 +179,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 if (meter == 'hold' && !game.settings.get('foundry-ironsworn', 'character-hold')) {
                     continue
                 }
-                const name = METERS[meter]
+
+                const name = coreModule.api.Utils.i18n(METERS[meter]).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(METERS[meter]).slice(1)
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
@@ -230,7 +231,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 // Get actions
                 const actions = [...groupIdMap].map(([impactId]) => {
                     const id = impactId
-                    const name = IMPACTS[impactId].name
+                    const name = coreModule.api.Utils.i18n(IMPACTS[impactId].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(IMPACTS[impactId].name).slice(1)
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)

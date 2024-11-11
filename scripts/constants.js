@@ -76,58 +76,58 @@ export const ITEM_TYPE = {
  * Characteristics
  */
 export const STATS = {
-    edge: 'Edge',
-    heart: 'Heart',
-    iron: 'Iron',
-    shadow: 'Shadow',
-    wits: 'Wits'
+    edge: 'IRONSWORN.Edge',
+    heart: 'IRONSWORN.Heart',
+    iron: 'IRONSWORN.Iron',
+    shadow: 'IRONSWORN.Shadow',
+    wits: 'IRONSWORN.Wits'
 }
 
 /**
  * Meters
  */
 export const METERS = {
-    health: 'Health',
-    spirit: 'Spirit',
-    supply: 'Supply',
-    momentum: 'Momentum',
-    hold: 'Hold'
+    health: 'IRONSWORN.Health',
+    spirit: 'IRONSWORN.Spirit',
+    supply: 'IRONSWORN.Supply',
+    momentum: 'IRONSWORN.Momentum',
+    hold: 'IRONSWORN.Hold'
 }
 
 /**
  * Impacts for Starforged
  */
 export const IMPACTS_SF = {
-    wounded: { name: 'Wounded', groupId: 'misfortune' },
-    shaken: { name: 'Shaken', groupId: 'misfortune' },
-    unprepared: { name: 'Unprepared', groupId: 'misfortune' },
-    permanentlyharmed: { name: 'Permanently Harmed', groupId: 'lastingEffect' },
-    traumatized: { name: 'Traumatized', groupId: 'lastingEffect' },
-    doomed: { name: 'Doomed', groupId: 'burden' },
-    tormented: { name: 'Tormented', groupId: 'burden' },
-    indebted: { name: 'Indebted', groupId: 'burden' },
-    battered: { name: 'Battered', groupId: 'vehicleTrouble' },
-    cursed: { name: 'Cursed', groupId: 'vehicleTrouble' }
+    wounded: { name: 'IRONSWORN.IMPACT.Wounded', groupId: 'misfortune' },
+    shaken: { name: 'IRONSWORN.IMPACT.Shaken', groupId: 'misfortune' },
+    unprepared: { name: 'IRONSWORN.IMPACT.Unprepared', groupId: 'misfortune' },
+    permanentlyharmed: { name: 'IRONSWORN.IMPACT.Permanentlyharmed', groupId: 'lastingEffect' },
+    traumatized: { name: 'IRONSWORN.IMPACT.Traumatized', groupId: 'lastingEffect' },
+    doomed: { name: 'IRONSWORN.IMPACT.Doomed', groupId: 'burden' },
+    tormented: { name: 'IRONSWORN.IMPACT.Tormented', groupId: 'burden' },
+    indebted: { name: 'IRONSWORN.IMPACT.Indebted', groupId: 'burden' },
+    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
+    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
 }
 
 /**
  * Impacts for Ironsworn
  */
 export const IMPACTS_IS = {
-    wounded: { name: 'Wounded', groupId: 'condition' },
-    unprepared: { name: 'Unprepared', groupId: 'condition' },
-    shaken: { name: 'Shaken', groupId: 'condition' },
-    encumbered: { name: 'Encumbered', groupId: 'condition' },
-    maimed: { name: 'Maimed', groupId: 'bane' },
-    corrupted: { name: 'Corrupted', groupId: 'bane' },
-    cursed: { name: 'Cursed', groupId: 'burden' },
-    tormented: { name: 'Tormented', groupId: 'burden' },
+    wounded: { name: 'IRONSWORN.Debility.Wounded', groupId: 'condition' },
+    unprepared: { name: 'IRONSWORN.Debility.Unprepared', groupId: 'condition' },
+    shaken: { name: 'IRONSWORN.Debility.Shaken', groupId: 'condition' },
+    encumbered: { name: 'IRONSWORN.Debility.Encumbered', groupId: 'condition' },
+    maimed: { name: 'IRONSWORN.Debility.Maimed', groupId: 'bane' },
+    corrupted: { name: 'IRONSWORN.Debility.Corrupted', groupId: 'bane' },
+    cursed: { name: 'IRONSWORN.Debility.Cursed', groupId: 'burden' },
+    tormented: { name: 'IRONSWORN.Debility.Tormented', groupId: 'burden' },
 }
 
 /**
  * Impacts for Starships
  */
 export const IMPACTS_STARSHIP = {
-    battered: { name: 'Battered', groupId: 'vehicleTrouble' },
-    cursed: { name: 'Cursed', groupId: 'vehicleTrouble' }
+    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
+    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
 }
