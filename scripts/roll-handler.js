@@ -1,3 +1,6 @@
+import { MOVES_SF } from './constants.js'
+// import { nextTick} from 'vue'
+
 export let RollHandler = null
 
 Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
@@ -86,6 +89,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'utility':
                     this.#handleUtilityAction(token, actionId)
                     break
+                case 'move':
+                    this.#handleMoveAction(token, actor, token, actionId)
+                    break
             }
         }
 
@@ -169,6 +175,30 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     }
                     break
             }
+        }
+
+        /**
+         * Handle move action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        async #handleMoveAction(_event, actor, token, actionId) {
+            let MOVES
+            if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
+                MOVES = MOVES_IS
+            } else {
+                MOVES = MOVES_SF
+            }
+
+            // actor.moveSheet ||= new SFCharacterMoveSheet(actor, {
+            //     left: 755
+            // })
+            await    actor.moveSheet?.render(true)
+           // await nextTick()
+            CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)
+           
         }
     }
 })

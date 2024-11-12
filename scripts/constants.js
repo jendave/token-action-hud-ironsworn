@@ -24,7 +24,8 @@ export const ACTION_TYPE = {
     stat: 'IRONSWORN.Stats',
     meter: 'tokenActionHud.ironsworn.meters',
     impact: 'IRONSWORN.Impacts',
-    utility: 'tokenActionHud.utility'
+    utility: 'tokenActionHud.utility',
+    move: 'IRONSWORN.ITEMS.TypeMove'
 }
 
 /**
@@ -51,7 +52,8 @@ export const GROUP = {
     bane: { id: 'bane', name: 'IRONSWORN.DEBILITY.CATEGORY.Banes', type: 'system' },
     condition: { id: 'condition', name: 'IRONSWORN.DEBILITY.CATEGORY.Conditions', type: 'system' },
     utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' },
-    move: { id: 'move', name: 'IRONSWORN.ITEMS.TypeMove', type: 'system' }
+    combatMove: { id: 'combatMove', name: 'IRONSWORN.MOVES.Combat Moves', type: 'system' },
+    questMove: { id: 'questMove', name: 'IRONSWORN.MOVES.Quest Moves', type: 'system' }
 }
 
 /**
@@ -71,7 +73,8 @@ export const ITEM_TYPE = {
     commandVehicle: { groupId: 'commandVehicle' },
     supportVehicle: { groupId: 'supportVehicle' },
     combatTalent: { groupId: 'combatTalent' },
-    move: { groupId: 'move' }
+    combatMove: { groupId: 'combatMove' },
+    questMove: { groupId: 'questMove' }
 }
 
 /**
@@ -132,4 +135,18 @@ export const IMPACTS_IS = {
 export const IMPACTS_STARSHIP = {
     battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
     cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
+}
+
+/**
+ * Moves
+ */
+/**
+ * Impacts for Starforged
+ */
+export const MOVES_SF = {
+    strike: { name: 'Strike', groupId: 'combatMove', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.ae5994ceb3cba098' },
+    clash: { name: 'Clash', groupId: 'combatMove', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.723192c97fec4fe2' },
+    battle: { name: 'Battle', groupId: 'combatMove', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.a903d120af3b1475' },
+    swearIronVow: { name: 'Swear an Iron Vow', groupId: 'questMove', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.9c9ab6a42daa96e0' },
+    reachMilestone: { name: 'Reach a Milestone', groupId: 'questMove', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.0d7f13818c1c19ed' }
 }
