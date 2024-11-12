@@ -1,7 +1,7 @@
 {
   "id": "token-action-hud-ironsworn",
-  "title": "Token Action HUD for Ironsworn/Starforged",
-  "description": "Token Action HUD for Ironsworn/Starforged is a repositionable HUD of actions for a selected token",
+  "title": "Token Action HUD Ironsworn",
+  "description": "Token Action HUD Ironsworn is a repositionable HUD of actions for a selected token for the Ironsworn and Ironsworn: Starforged family of games.",
   "authors": [
     {
       "name": "David Y. Hudson",
@@ -9,21 +9,15 @@
       "url": "https://jendave.itch.io/"
     }
   ],
-  "url": "This is auto replaced",
   "flags": {},
-  "version": "This is auto replaced",
+  "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "12",
     "verified": "12"
   },
-  "esmodules": [
-    "./scripts/init.js"
-  ],
-  "scripts": [
-  ],
-  "styles": [
-    "./styles/tah-template-style.css"
-  ],
+  "esmodules": ["./scripts/init.js"],
+  "scripts": [],
+  "styles": ["./styles/tah-template-style.css"],
   "languages": [
     {
       "lang": "en",
@@ -39,7 +33,7 @@
         "type": "system",
         "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
         "compatibility": {
-          "minimum": "1.24.4",
+          "minimum": "1.24.6",
           "verified": "1.24"
         }
       }
@@ -50,9 +44,9 @@
         "type": "module",
         "compatibility": [
           {
-            "minimum": "2.0",
+            "minimum": "2.0.6",
             "maximum": "2.9",
-            "verified": "2.04"
+            "verified": "2.0.6"
           }
         ]
       }
@@ -63,10 +57,12 @@
     }
   },
   "socket": false,
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "license": "https://raw.githubusercontent.com/jendave/fvtt-token-action-hud-ironsworn/main/LICENSE",
-  "readme": "https://raw.githubusercontent.com/jendave/fvtt-token-action-hud-ironsworn/main/readme.md",
+  "manifest": "#{MANIFEST}#",
+  "url": "#{URL}#",
+  "download": "#{DOWNLOAD}#",
+  "license": "https://raw.githubusercontent.com/jendave/token-action-hud-ironsworn/main/LICENSE",
+  "changelog": "https://raw.githubusercontent.com/jendave/token-action-hud-ironsworn/main/CHANGELOG.md",
+  "readme": "https://raw.githubusercontent.com/jendave/token-action-hud-ironsworn/main/README.md",
   "protected": false,
   "coreTranslation": false,
   "library": false

@@ -55,24 +55,44 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ]
             },
             {
+                nestId: 'meter',
+                id: 'meter',
+                name: coreModule.api.Utils.i18n('tokenActionHud.ironsworn.meters'),
+                groups: [
+                    { ...groups.meter, nestId: 'meter_meter' }
+                ]
+            },
+            {
+                nestId: 'impact',
+                id: 'impact',
+                name: coreModule.api.Utils.i18n('IRONSWORN.Impacts'),
+                groups: [
+                    { ...groups.misfortune, nestId: 'impact_misfortune' },
+                    { ...groups.lastingEffect, nestId: 'impact_lastingEffect' },
+                    { ...groups.burden, nestId: 'impact_burden' },
+                    { ...groups.vehicleTrouble, nestId: 'impact_vehicleTrouble' },
+                    { ...groups.bane, nestId: 'impact_bane' },
+                    { ...groups.condition, nestId: 'impact_condition' }
+                ]
+            },
+            {
+                nestId: 'utility',
+                id: 'utility',
+                name: coreModule.api.Utils.i18n('tokenActionHud.utility'),
+                groups: [
+                    { ...groups.combat, nestId: 'utility_combat' },
+                    { ...groups.token, nestId: 'utility_token' },
+                    { ...groups.rests, nestId: 'utility_rests' },
+                    { ...groups.utility, nestId: 'utility_utility' }
+                ]
+            },
+            {
                 nestId: 'move',
                 id: 'move',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove'),
                 groups: [
                     { ...groups.move, nestId: 'move_move' }
-                ]
             }
-            // {
-            //     nestId: 'utility',
-            //     id: 'utility',
-            //     name: coreModule.api.Utils.i18n('tokenActionHud.utility'),
-            //     groups: [
-            //         { ...groups.combat, nestId: 'utility_combat' },
-            //         { ...groups.token, nestId: 'utility_token' },
-            //         { ...groups.rests, nestId: 'utility_rests' },
-            //         { ...groups.utility, nestId: 'utility_utility' }
-            //     ]
-            // }
         ],
         groups: groupsArray
     }

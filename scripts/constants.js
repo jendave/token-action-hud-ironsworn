@@ -21,10 +21,10 @@ export const REQUIRED_CORE_MODULE_VERSION = '2.0'
  * Action types
  */
 export const ACTION_TYPE = {
-    stat: 'IRONSWORN.Stats'
-    // move: 'IRONSWORN.ITEMS.TypeMove',
-    // asset: 'IRONSWORN.ITEMS.TypeAsset',
-    // utility: 'tokenActionHud.utility'
+    stat: 'IRONSWORN.Stats',
+    meter: 'tokenActionHud.ironsworn.meters',
+    impact: 'IRONSWORN.Impacts',
+    utility: 'tokenActionHud.utility'
 }
 
 /**
@@ -32,6 +32,7 @@ export const ACTION_TYPE = {
  */
 export const GROUP = {
     stat: { id: 'stat', name: 'IRONSWORN.Stats', type: 'system' },
+    meter: { id: 'meter', name: 'tokenActionHud.ironsworn.meters', type: 'system' },
     progress: { id: 'progress', name: 'IRONSWORN.ITEMS.SubtypeProgress', type: 'system' },
     vow: { id: 'vow', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
     connection: { id: 'connection', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
@@ -43,8 +44,14 @@ export const GROUP = {
     commandVehicle: { id: 'commandVehicle', name: 'IRONSWORN.Asset Categories.Starforged.Command Vehicle Assets.Title', type: 'system' },
     ritual: { id: 'ritual', name: 'IRONSWORN.Asset Categories.Classic.Ritual Assets.Title', type: 'system' },
     combatTalent: { id: 'combatTalent', name: 'IRONSWORN.Asset Categories.Classic.Combat Talent Assets.Title', type: 'system' },
+    misfortune: { id: 'misfortune', name: 'IRONSWORN.IMPACT.CATEGORY.Misfortunes', type: 'system' },
+    lastingEffect: { id: 'lastingEffect', name: 'IRONSWORN.IMPACT.CATEGORY.LastingEffects', type: 'system' },
+    burden: { id: 'burden', name: 'IRONSWORN.IMPACT.CATEGORY.Burdens', type: 'system' },
+    vehicleTrouble: { id: 'vehicleTrouble', name: 'IRONSWORN.IMPACT.CATEGORY.Vehicle', type: 'system' },
+    bane: { id: 'bane', name: 'IRONSWORN.DEBILITY.CATEGORY.Banes', type: 'system' },
+    condition: { id: 'condition', name: 'IRONSWORN.DEBILITY.CATEGORY.Conditions', type: 'system' },
+    utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' },
     move: { id: 'move', name: 'IRONSWORN.ITEMS.TypeMove', type: 'system' }
-    // utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' }
 }
 
 /**
@@ -71,9 +78,58 @@ export const ITEM_TYPE = {
  * Characteristics
  */
 export const STATS = {
-    edge: 'Edge',
-    heart: 'Heart',
-    iron: 'Iron',
-    shadow: 'Shadow',
-    wits: 'Wits'
+    edge: 'IRONSWORN.Edge',
+    heart: 'IRONSWORN.Heart',
+    iron: 'IRONSWORN.Iron',
+    shadow: 'IRONSWORN.Shadow',
+    wits: 'IRONSWORN.Wits'
+}
+
+/**
+ * Meters
+ */
+export const METERS = {
+    health: 'IRONSWORN.Health',
+    spirit: 'IRONSWORN.Spirit',
+    supply: 'IRONSWORN.Supply',
+    momentum: 'IRONSWORN.Momentum',
+    hold: 'IRONSWORN.Hold'
+}
+
+/**
+ * Impacts for Starforged
+ */
+export const IMPACTS_SF = {
+    wounded: { name: 'IRONSWORN.IMPACT.Wounded', groupId: 'misfortune' },
+    shaken: { name: 'IRONSWORN.IMPACT.Shaken', groupId: 'misfortune' },
+    unprepared: { name: 'IRONSWORN.IMPACT.Unprepared', groupId: 'misfortune' },
+    permanentlyharmed: { name: 'IRONSWORN.IMPACT.Permanentlyharmed', groupId: 'lastingEffect' },
+    traumatized: { name: 'IRONSWORN.IMPACT.Traumatized', groupId: 'lastingEffect' },
+    doomed: { name: 'IRONSWORN.IMPACT.Doomed', groupId: 'burden' },
+    tormented: { name: 'IRONSWORN.IMPACT.Tormented', groupId: 'burden' },
+    indebted: { name: 'IRONSWORN.IMPACT.Indebted', groupId: 'burden' },
+    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
+    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
+}
+
+/**
+ * Impacts for Ironsworn
+ */
+export const IMPACTS_IS = {
+    wounded: { name: 'IRONSWORN.Debility.Wounded', groupId: 'condition' },
+    unprepared: { name: 'IRONSWORN.Debility.Unprepared', groupId: 'condition' },
+    shaken: { name: 'IRONSWORN.Debility.Shaken', groupId: 'condition' },
+    encumbered: { name: 'IRONSWORN.Debility.Encumbered', groupId: 'condition' },
+    maimed: { name: 'IRONSWORN.Debility.Maimed', groupId: 'bane' },
+    corrupted: { name: 'IRONSWORN.Debility.Corrupted', groupId: 'bane' },
+    cursed: { name: 'IRONSWORN.Debility.Cursed', groupId: 'burden' },
+    tormented: { name: 'IRONSWORN.Debility.Tormented', groupId: 'burden' },
+}
+
+/**
+ * Impacts for Starships
+ */
+export const IMPACTS_STARSHIP = {
+    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
+    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
 }

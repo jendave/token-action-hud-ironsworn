@@ -21,7 +21,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 return this.doRenderItem(this.actor, actionId)
             }
 
-            const knownCharacters = ['character']
+            const knownCharacters = ['character', 'starship']
 
             // If single actor is selected
             if (this.actor) {
@@ -77,6 +77,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'stat':
                     this.#handleStatAction(event, actor, actionId)
                     break
+                case 'meter':
+                    this.#handleMeterAction(event, actor, actionId)
+                    break
+                case 'impact':
+                    this.#handleImpactAction(event, actor, actionId)
+                    break
                 case 'utility':
                     this.#handleUtilityAction(token, actionId)
                     break
@@ -95,25 +101,58 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
 
         /**
- * Handle item action
- * @private
- * @param {object} event    The event
- * @param {object} actor    The actor
- * @param {string} actionId The action id
- */
+         * Handle item action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
         #handleAssetAction(event, actor, actionId) {
             actor.items.get(actionId).sheet.render(true)
         }
 
         /**
- * Handle stat action
- * @private
- * @param {object} event    The event
- * @param {object} actor    The actor
- * @param {string} actionId The action id
- */
+         * Handle stat action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
         #handleStatAction(_event, actor, actionId) {
             CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+        }
+
+        /**
+         * Handle meter action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        #handleMeterAction(_event, actor, actionId) {
+            if (actionId !== 'momentum') {
+                CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+            }
+        }
+
+        /**
+         * Handle impact action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        async #handleImpactAction(_event, actor, actionId) {
+            const tempValue = !actor.system.debility[actionId]
+            const data = {
+                system: {
+                    debility: {
+                        [actionId]: tempValue
+                    }
+                }
+            }
+            await actor.update(data)
+            Hooks.call('tokenActionHudCoreApiReady', actor)
         }
 
         /**

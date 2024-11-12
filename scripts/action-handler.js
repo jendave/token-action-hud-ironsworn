@@ -1,7 +1,6 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE } from './constants.js'
-import { Utils } from './utils.js'
-import { STATS } from './constants.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP } from './constants.js'
+// import { Utils } from './utils.js'
 
 export let ActionHandler = null
 
@@ -30,8 +29,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
             if (this.actorType === 'character') {
                 this.#buildCharacterActions()
-            } else if (!this.actor) {
-                this.#buildMultipleTokenActions()
+            } else if (this.actorType === 'starship') {
+                this.#buildStarshipActions()
+            } else if (this.actorType === 'shared') {
+                this.#buildSharedActions()
             }
         }
 
@@ -42,14 +43,24 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         #buildCharacterActions() {
             this.#buildInventory()
             this.#buildStats()
+            this.#buildMeters()
+            this.#buildImpacts()
         }
 
         /**
-         * Build multiple token actions
+         * Build starship actions
          * @private
-         * @returns {object}
          */
-        #buildMultipleTokenActions() {
+        #buildStarshipActions() {
+            this.#buildImpacts(true)
+        }
+
+        /**
+         * Build shared sheet actions
+         * @private
+         */
+        #buildSharedActions() {
+            this.#buildInventory()
         }
 
         /**
@@ -63,7 +74,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const inventoryMap = new Map()
 
             for (const [itemId, itemData] of this.items) {
-                let itemDataTemp = structuredClone(itemData)
+                const itemDataTemp = structuredClone(itemData)
                 if (itemDataTemp.type === 'progress') {
                     if (itemDataTemp.system.subtype === 'vow') {
                         itemDataTemp.type = 'vow'
@@ -109,12 +120,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
+                    const info1 = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { text: Math.floor(itemData.system.current / 4).toString() } : null
 
                     return {
                         id,
                         name,
                         listName,
-                        encodedValue
+                        encodedValue,
+                        info1
                     }
                 })
                 // TAH Core method to add actions to the action list
@@ -134,19 +147,106 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const actions = []
             for (const stat in STATS) {
                 const id = stat
-                const name = STATS[stat]
+                const name = coreModule.api.Utils.i18n(STATS[stat]).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(STATS[stat]).slice(1)
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
+                const info1 = { text: this.actor.system[stat] }
                 actions.push({
                     id,
                     name,
                     listName,
-                    encodedValue
+                    encodedValue,
+                    info1
                 })
             }
             // TAH Core method to add actions to the action list
             this.addActions(actions, groupData)
+        }
+
+        /**
+         * Build meters
+         * @private
+         */
+        #buildMeters() {
+            const actionTypeId = 'meter'
+            const groupData = { id: 'meter', type: 'system' }
+
+            // Get actions
+            const actions = []
+            for (const meter in METERS) {
+                const id = meter
+                if (meter == 'hold' && !game.settings.get('foundry-ironsworn', 'character-hold')) {
+                    continue
+                }
+
+                const name = coreModule.api.Utils.i18n(METERS[meter]).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(METERS[meter]).slice(1)
+                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                const encodedValue = [actionTypeId, id].join(this.delimiter)
+                const info1 = { text: this.actor.system[meter].value }
+                actions.push({
+                    id,
+                    name,
+                    listName,
+                    encodedValue,
+                    info1
+                })
+            }
+            // TAH Core method to add actions to the action list
+            this.addActions(actions, groupData)
+        }
+
+        /**
+         * Build impacts
+         * @private
+         */
+        async #buildImpacts(isStarship) {
+            const actionTypeId = 'impact'
+            const impactMap = new Map()
+            let IMPACTS
+
+            if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
+                IMPACTS = IMPACTS_IS
+            } else if (isStarship) {
+                IMPACTS = IMPACTS_STARSHIP
+            } else {
+                IMPACTS = IMPACTS_SF
+            }
+
+            for (const key in IMPACTS) {
+                if (IMPACTS.hasOwnProperty(key)) {
+                    const nestedObject = IMPACTS[key];
+                    const groupIdMap = impactMap.get(nestedObject.groupId) ?? new Map()
+                    groupIdMap.set(key, nestedObject.groupId)
+                    impactMap.set(nestedObject.groupId, groupIdMap)
+                }
+            }
+
+            for (const [groupId, groupIdMap] of impactMap) {
+                if (!groupId) continue
+
+                const groupData = { id: groupId, type: 'system' }
+
+                // Get actions
+                const actions = [...groupIdMap].map(([impactId]) => {
+                    const id = impactId
+                    const name = coreModule.api.Utils.i18n(IMPACTS[impactId].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(IMPACTS[impactId].name).slice(1)
+                    const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                    const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                    const encodedValue = [actionTypeId, id].join(this.delimiter)
+                    const info1 = { text: this.actor.system.debility[impactId] ? '\u{1F518}' : null }
+                    return {
+                        id,
+                        name,
+                        listName,
+                        encodedValue,
+                        info1
+                    }
+                })
+                // TAH Core method to add actions to the action list
+                this.addActions(actions, groupData)
+            }
         }
     }
 })
