@@ -255,7 +255,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         async #buildMoves() {
-
             const moveArray = [ MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES ]
             for (const key of moveArray) {
                 const moveMap = new Map()

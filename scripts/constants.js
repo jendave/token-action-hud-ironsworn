@@ -25,10 +25,10 @@ export const ACTION_TYPE = {
     meter: 'tokenActionHud.ironsworn.meters',
     impact: 'IRONSWORN.Impacts',
     utility: 'tokenActionHud.utility',
-    moveClassic: 'IRONSWORN.ITEMS.TypeMove',
-    moveDelve: 'IRONSWORN.ITEMS.TypeMove',
-    moveStarforged: 'IRONSWORN.ITEMS.TypeMove',
-    moveSunderedIsles: 'IRONSWORN.ITEMS.TypeMove'
+    moveClassic: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.classic',
+    moveDelve: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.delve',
+    moveStarforged: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.starforged',
+    moveSunderedIsles: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.sundered_isles'
 }
 
 /**
@@ -55,10 +55,10 @@ export const GROUP = {
     bane: { id: 'bane', name: 'IRONSWORN.DEBILITY.CATEGORY.Banes', type: 'system' },
     condition: { id: 'condition', name: 'IRONSWORN.DEBILITY.CATEGORY.Conditions', type: 'system' },
     utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' },
-    moveClassic: { id: 'moveClassic', name: 'IRONSWORN.RULESETS.classic', type: 'system', ruleset: 'classic' },
-    moveDelve: { id: 'moveDelve', name: 'IRONSWORN.RULESETS.delve', type: 'system', ruleset: 'delve' },
-    moveStarforged: { id: 'moveStarforged', name: 'IRONSWORN.RULESETS.starforged', type: 'system', ruleset: 'starforged' },
-    moveSunderedIsles: { id: 'moveSunderedIsles', name: 'IRONSWORN.RULESETS.sundered_isles', type: 'system', ruleset: 'starforged' },
+    // moveClassic: { id: 'moveClassic', name: 'IRONSWORN.RULESETS.classic', type: 'system', ruleset: 'classic' },
+    // moveDelve: { id: 'moveDelve', name: 'IRONSWORN.RULESETS.delve', type: 'system', ruleset: 'delve' },
+    // moveStarforged: { id: 'moveStarforged', name: 'IRONSWORN.RULESETS.starforged', type: 'system', ruleset: 'starforged' },
+    // moveSunderedIsles: { id: 'moveSunderedIsles', name: 'IRONSWORN.RULESETS.sundered_isles', type: 'system', ruleset: 'sundered_isles' },
     sessionMoveStarforged: { id: 'sessionMoveStarforged', name: 'IRONSWORN.MOVES.Session Moves', type: 'system', ruleset: 'starforged' },
     adventureMoveStarforged: { id: 'adventureMoveStarforged', name: 'IRONSWORN.MOVES.Adventure Moves', type: 'system', ruleset: 'starforged' },
     questMoveStarforged: { id: 'questMoveStarforged', name: 'IRONSWORN.MOVES.Quest Moves', type: 'system', ruleset: 'starforged' },
@@ -170,13 +170,26 @@ export const IMPACTS_STARSHIP = {
  */
 export const MOVES_CLASSIC = {
     faceDanger: { name: 'Face Danger', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.c8bacc17f73d3103', actionTypeId: 'moveClassic' },
+    aidYourAlly: { name: 'Aid Your Ally', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.f762e8f471fe875f', actionTypeId: 'moveClassic' }
 }
 
 /**
  * Moves for Ironsworn Delve
  */
 export const MOVES_DELVE = {
-    delveTheDepths: { name: 'Delve the Depths', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.36c6cbe556fbb639', actionTypeId: 'moveDelve' }
+    checkYourGear: { name: 'Check Your Gear', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.48f642fd361e9c03', actionTypeId: 'moveDelve' },
+    delveTheDepths: { name: 'Delve the Depths', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.36c6cbe556fbb639', actionTypeId: 'moveDelve' },
+    discoverASite: { name: 'Discover a Site', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.e7ad42a1678725b9', actionTypeId: 'moveDelve' },
+    escapeTheDepths: { name: 'Escape the Depths', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.313c82cede0ce9a7', actionTypeId: 'moveDelve' },
+    findAnOpportunity: { name: 'Find an Opportunity', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.4da87fd54eaa1b89', actionTypeId: 'moveDelve' },
+    locateYourObjective: { name: 'Locate Your Objective', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.2cd0d8934c6659fc', actionTypeId: 'moveDelve' },
+    revealADanger: { name: 'Reveal a Danger', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.06f78b87b9532437', actionTypeId: 'moveDelve' },
+    revealADangerAlt: { name: 'Reveal a Danger (alt)', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.c937a79dfda8095d', actionTypeId: 'moveDelve' },
+    learnFromYourFailures: { name: 'Learn From Your Failures', groupId: 'failureMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.d05ecfe8c467bdc5', actionTypeId: 'moveDelve' },
+    markYourFailure: { name: 'Mark Your Failure', groupId: 'failureMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.321c86f98e13f183', actionTypeId: 'moveDelve' },
+    wieldARarity: { name: 'Wield a Rarity', groupId: 'rarityMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.70c5da168f35295c', actionTypeId: 'moveDelve' },
+    advanceAThreat: { name: 'Advance a Threat', groupId: 'threatMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.03754df8933ca564', actionTypeId: 'moveDelve' },
+    takeAHiatus: { name: 'Take a Hiatus', groupId: 'threatMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.0cd7709d0a1545c9', actionTypeId: 'moveDelve' }
 }
 
 /**
@@ -199,5 +212,12 @@ export const MOVES_STARFORGED = {
  * Moves for Sundered Isles
  */
 export const MOVES_SUNDERED_ISLES = {
-    confrontChaos: { name: 'Confront Chaos', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.4265fe492d629800', actionTypeId: 'moveSunderedIsles' }
+    enterTheFray: { name: 'Enter the Fray', groupId: 'combatMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.24dfbbb42bceb9f8', actionTypeId: 'moveSunderedIsles' },
+    confrontChaos: { name: 'Confront Chaos', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.4265fe492d629800', actionTypeId: 'moveSunderedIsles' },
+    makeADiscovery: { name: 'Make a Discovery', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.d5927e1450bfbbca', actionTypeId: 'moveSunderedIsles' },
+    setACourse: { name: 'Set a Course', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.7cb0a8ade5f31444', actionTypeId: 'moveSunderedIsles' },
+    undertakeAnExpedition: { name: 'Undertake an Expedition', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.d80a8e734bed435b', actionTypeId: 'moveSunderedIsles' },
+    repair: { name: 'Repair', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.8a164fecb3029c76', actionTypeId: 'moveSunderedIsles' },
+    resupply: { name: 'Resupply', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.c96bafd5cbda43bc', actionTypeId: 'moveSunderedIsles' },
+    withstandDamage: { name: 'Withstand Damage', groupId: 'sufferMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.a03a648bb3a06d93', actionTypeId: 'moveSunderedIsles' }
 }

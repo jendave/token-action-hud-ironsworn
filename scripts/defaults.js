@@ -91,7 +91,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'moveClassic',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.classic'),
                 groups: [
-                    { ...groups.adventureMoveClassic, nestId: 'move_adventureMoveClassic' }
+                    { ...groups.adventureMoveClassic, nestId: 'move_adventureMoveClassic' },
+                    { ...groups.combatMoveClassic, nestId: 'move_combatMoveClassic' },
+                    { ...groups.fateMoveClassic, nestId: 'move_fateMoveClassic' },
+                    { ...groups.questMoveClassic, nestId: 'move_questMoveClassic' },
+                    { ...groups.relationshipMoveClassic, nestId: 'move_relationshipMoveClassic' },
+                    { ...groups.sufferMoveClassic, nestId: 'move_sufferMoveClassic' }
                 ]
             },
             {
@@ -99,16 +104,29 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'moveDelve',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.delve'),
                 groups: [
-                    { ...groups.delveMoveDelve, nestId: 'move_delveMoveDelve' }
+                    { ...groups.delveMoveDelve, nestId: 'move_delveMoveDelve' },
+                    { ...groups.failureMoveDelve, nestId: 'move_failureMoveDelve' },
+                    { ...groups.threatMoveDelve, nestId: 'move_threatMoveDelve' },
+                    { ...groups.rarityMoveDelve, nestId: 'move_rarityMoveDelve' }
                 ]
             },
             {
-                nestId: 'move',
+                nestId: 'moveStarforged',
                 id: 'move',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.starforged'),
                 groups: [
+                    { ...groups.adventureMoveStarforged, nestId: 'move_adventureMoveStarforged' },
                     { ...groups.combatMoveStarforged, nestId: 'move_combatMoveStarforged' },
-                    { ...groups.questMoveStarforged, nestId: 'move_questMoveStarforged' }
+                    { ...groups.connectionMoveStarforged, nestId: 'move_connectionMoveStarforged' },
+                    { ...groups.explorationMoveStarforged, nestId: 'move_explorationMoveStarforged' },
+                    { ...groups.fateMoveStarforged, nestId: 'move_fateMoveStarforged' },
+                    { ...groups.legacyMoveStarforged, nestId: 'move_legacyMoveStarforged' },
+                    { ...groups.questMoveStarforged, nestId: 'move_questMoveStarforged' },
+                    { ...groups.recoverMoveStarforged, nestId: 'move_recoverMoveStarforged' },
+                    { ...groups.sceneChallengeMoveStarforged, nestId: 'move_sceneChallengeMoveStarforged' },
+                    { ...groups.sessionMoveStarforged, nestId: 'move_sessionMoveStarforged' },
+                    { ...groups.sufferMoveStarforged, nestId: 'move_sufferMoveStarforged' },
+                    { ...groups.thresholdMoveStarforged, nestId: 'move_thresholdMoveStarforged' }
                 ]
             },
             {
@@ -116,7 +134,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'moveSunderedIsles',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.sundered_isles'),
                 groups: [
-                    { ...groups.explorationMoveSunderedIsles, nestId: 'move_explorationMoveSunderedIsles' }
+                    { ...groups.combatMoveSunderedIsles, nestId: 'move_combatMoveSunderedIsles' },
+                    { ...groups.explorationMoveSunderedIsles, nestId: 'move_explorationMoveSunderedIsles' },
+                    { ...groups.recoverMoveSunderedIsles, nestId: 'move_recoverMoveSunderedIsles' },
+                    { ...groups.sufferMoveSunderedIsles, nestId: 'move_sufferMoveSunderedIsles' }
                 ]
             }
         ],
