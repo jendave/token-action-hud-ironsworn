@@ -1,5 +1,4 @@
-import { MOVES_SF } from './constants.js'
-// import { nextTick} from 'vue'
+import { MOVES_STARFORGED } from './constants.js'
 
 export let RollHandler = null
 
@@ -187,18 +186,16 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         async #handleMoveAction(_event, actor, token, actionId) {
             let MOVES
             if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
-                MOVES = MOVES_IS
+                MOVES = MOVES_CLASSIC
             } else {
-                MOVES = MOVES_SF
+                MOVES = MOVES_STARFORGED
             }
 
             // actor.moveSheet ||= new SFCharacterMoveSheet(actor, {
             //     left: 755
             // })
             await    actor.moveSheet?.render(true)
-           // await nextTick()
-            CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)
-           
+            CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)        
         }
     }
 })

@@ -87,13 +87,36 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ]
             },
             {
+                nestId: 'moveClassic',
+                id: 'moveClassic',
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.classic'),
+                groups: [
+                    { ...groups.adventureMoveClassic, nestId: 'move_adventureMoveClassic' }
+                ]
+            },
+            {
+                nestId: 'moveDelve',
+                id: 'moveDelve',
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.delve'),
+                groups: [
+                    { ...groups.delveMoveDelve, nestId: 'move_delveMoveDelve' }
+                ]
+            },
+            {
                 nestId: 'move',
                 id: 'move',
-                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove'),
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove'), //  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.starforged'),
                 groups: [
-                    { ...groups.combatMove, nestId: 'move_combatMove' },
-                    { ...groups.questMove, nestId: 'move_questMove' }
-
+                    { ...groups.combatMoveStarforged, nestId: 'move_combatMoveStarforged' },
+                    { ...groups.questMoveStarforged, nestId: 'move_questMoveStarforged' }
+                ]
+            },
+            {
+                nestId: 'moveSunderedIsles',
+                id: 'moveSunderedIsles',
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.sundered_isles'),
+                groups: [
+                    { ...groups.explorationMoveSunderedIsles, nestId: 'move_explorarationMoveSunderedIsles' }
                 ]
             }
         ],

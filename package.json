@@ -4,9 +4,6 @@
     "dev": "rollup -wcm"
   },
   "private": true,
-	"dependencies": {
-    "vue": "3.4"
-  },
   "devDependencies": {
     "@rollup/plugin-multi-entry": "^6.0.0",
     "eslint": "^8.25.0",

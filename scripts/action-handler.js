@@ -1,5 +1,5 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_SF } from './constants.js'
+import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
 // import { Utils } from './utils.js'
 
 export let ActionHandler = null
@@ -256,49 +256,53 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         async #buildMoves() {
             const actionTypeId = 'move'
-            const moveMap = new Map()
-            const sunderedIsles = false
-            let MOVES
+            // if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
+            //     MOVES = MOVES_IS
+            // } else if (sunderedIsles) {
+            //     MOVES = MOVES_SI
+            // } else {
+            //     MOVES = MOVES_SF
+            // }
+            const MOVES = MOVES_STARFORGED
 
-            if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
-                MOVES = MOVES_IS
-            } else if (sunderedIsles) {
-                MOVES = MOVES_SI
-            } else {
-                MOVES = MOVES_SF
-            }
+            //const moveArray = [ MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES ]
+            // const moveArray = [ MOVES_CLASSIC ]
+         //   for (const key of moveArray) {
+                const moveMap = new Map()
+              //  let MOVES = key
 
-            for (const key in MOVES) {
-                if (MOVES.hasOwnProperty(key)) {
-                    const nestedObject = MOVES[key];
-                    const groupIdMap = moveMap.get(nestedObject.groupId) ?? new Map()
-                    groupIdMap.set(key, nestedObject.groupId)
-                    moveMap.set(nestedObject.groupId, groupIdMap)
-                }
-            }
-
-            for (const [groupId, groupIdMap] of moveMap) {
-                if (!groupId) continue
-
-                const groupData = { id: groupId, type: 'system' }
-
-                // Get actions
-                const actions = [...groupIdMap].map(([moveId]) => {
-                    const id = moveId
-                    const name = MOVES[moveId].name
-                    const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
-                    const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
-                    const encodedValue = [actionTypeId, id].join(this.delimiter)
-                    return {
-                        id,
-                        name,
-                        listName,
-                        encodedValue
+                for (const key in MOVES) {
+                    if (MOVES.hasOwnProperty(key)) {
+                        const nestedObject = MOVES[key];
+                        const groupIdMap = moveMap.get(nestedObject.groupId) ?? new Map()
+                        groupIdMap.set(key, nestedObject.groupId)
+                        moveMap.set(nestedObject.groupId, groupIdMap)
                     }
-                })
-                // TAH Core method to add actions to the action list
-                this.addActions(actions, groupData)
-            }
+                }
+
+                for (const [groupId, groupIdMap] of moveMap) {
+                    if (!groupId) continue
+
+                    const groupData = { id: groupId, type: 'system' }
+
+                    // Get actions
+                    const actions = [...groupIdMap].map(([moveId]) => {
+                        const id = moveId
+                        const name = MOVES[moveId].name
+                        const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                        const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                        const encodedValue = [actionTypeId, id].join(this.delimiter)
+                        return {
+                            id,
+                            name,
+                            listName,
+                            encodedValue
+                        }
+                    })
+                    // TAH Core method to add actions to the action list
+                    this.addActions(actions, groupData)
+                }
+          //  }
         }
     }
 })
