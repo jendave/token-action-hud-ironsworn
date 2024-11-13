@@ -166,10 +166,6 @@ export const IMPACTS_STARSHIP = {
 }
 
 /**
- * Moves
- */
-
-/**
  * Moves for Ironsworn Classic
  */
 export const MOVES_CLASSIC = {

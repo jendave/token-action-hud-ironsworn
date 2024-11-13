@@ -1,4 +1,4 @@
-import { MOVES_STARFORGED } from './constants.js'
+import { MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
 
 export let RollHandler = null
 
@@ -88,8 +88,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'utility':
                     this.#handleUtilityAction(token, actionId)
                     break
-                case 'move':
-                    this.#handleMoveAction(token, actor, token, actionId)
+                case 'moveClassic':
+                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
+                    break
+                case 'moveDelve':
+                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
+                    break
+                case 'moveStarforged':
+                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
+                    break
+                case 'moveSunderedIsles':
+                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
                     break
             }
         }
@@ -183,19 +192,28 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} actor    The actor
          * @param {string} actionId The action id
          */
-        async #handleMoveAction(_event, actor, token, actionId) {
+        async #handleMoveAction(_event, actor, token, actionId, actionTypeId) {
             let MOVES
-            if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
-                MOVES = MOVES_CLASSIC
-            } else {
-                MOVES = MOVES_STARFORGED
+            switch (actionTypeId) {
+                case 'moveClassic':
+                    MOVES = MOVES_CLASSIC
+                    break
+                case 'moveDelve':
+                    MOVES = MOVES_DELVE
+                    break
+                case 'moveStarforged':
+                    MOVES = MOVES_STARFORGED
+                    break
+                case 'moveSunderedIsles':
+                    MOVES = MOVES_SUNDERED_ISLES
+                    break
             }
 
             // actor.moveSheet ||= new SFCharacterMoveSheet(actor, {
             //     left: 755
             // })
-            await    actor.moveSheet?.render(true)
-            CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)        
+            await actor.moveSheet?.render(true)
+            CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)
         }
     }
 })
