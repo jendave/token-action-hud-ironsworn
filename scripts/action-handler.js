@@ -255,21 +255,11 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         async #buildMoves() {
-            const actionTypeId = 'move'
-            // if (this.actor.flags.core?.sheetClass === 'ironsworn.IronswornCharacterSheetV2') {
-            //     MOVES = MOVES_IS
-            // } else if (sunderedIsles) {
-            //     MOVES = MOVES_SI
-            // } else {
-            //     MOVES = MOVES_SF
-            // }
-            const MOVES = MOVES_STARFORGED
 
-            //const moveArray = [ MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES ]
-            // const moveArray = [ MOVES_CLASSIC ]
-         //   for (const key of moveArray) {
+            const moveArray = [ MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES ]
+            for (const key of moveArray) {
                 const moveMap = new Map()
-              //  let MOVES = key
+                let MOVES = key
 
                 for (const key in MOVES) {
                     if (MOVES.hasOwnProperty(key)) {
@@ -289,9 +279,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const actions = [...groupIdMap].map(([moveId]) => {
                         const id = moveId
                         const name = MOVES[moveId].name
-                        const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                        const actionTypeName = MOVES[moveId].actionTypeId
                         const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
-                        const encodedValue = [actionTypeId, id].join(this.delimiter)
+                        const encodedValue = [MOVES[moveId].actionTypeId, id].join(this.delimiter)
                         return {
                             id,
                             name,
@@ -302,7 +292,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     // TAH Core method to add actions to the action list
                     this.addActions(actions, groupData)
                 }
-          //  }
+            }
         }
     }
 })

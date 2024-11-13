@@ -105,7 +105,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             {
                 nestId: 'move',
                 id: 'move',
-                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove'), //  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.starforged'),
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.starforged'),
                 groups: [
                     { ...groups.combatMoveStarforged, nestId: 'move_combatMoveStarforged' },
                     { ...groups.questMoveStarforged, nestId: 'move_questMoveStarforged' }
@@ -116,7 +116,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'moveSunderedIsles',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.sundered_isles'),
                 groups: [
-                    { ...groups.explorationMoveSunderedIsles, nestId: 'move_explorarationMoveSunderedIsles' }
+                    { ...groups.explorationMoveSunderedIsles, nestId: 'move_explorationMoveSunderedIsles' }
                 ]
             }
         ],

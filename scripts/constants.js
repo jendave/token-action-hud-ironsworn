@@ -25,7 +25,10 @@ export const ACTION_TYPE = {
     meter: 'tokenActionHud.ironsworn.meters',
     impact: 'IRONSWORN.Impacts',
     utility: 'tokenActionHud.utility',
-    move: 'IRONSWORN.ITEMS.TypeMove'
+    moveClassic: 'IRONSWORN.ITEMS.TypeMove',
+    moveDelve: 'IRONSWORN.ITEMS.TypeMove',
+    moveStarforged: 'IRONSWORN.ITEMS.TypeMove',
+    moveSunderedIsles: 'IRONSWORN.ITEMS.TypeMove'
 }
 
 /**
@@ -170,35 +173,35 @@ export const IMPACTS_STARSHIP = {
  * Moves for Ironsworn Classic
  */
 export const MOVES_CLASSIC = {
-    faceDanger: { name: 'Face Danger', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.c8bacc17f73d3103' }
+    faceDanger: { name: 'Face Danger', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.c8bacc17f73d3103', actionTypeId: 'moveClassic' },
 }
 
 /**
  * Moves for Ironsworn Delve
  */
 export const MOVES_DELVE = {
-    delveTheDepths: { name: 'Delve the Depths', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.36c6cbe556fbb639' }
+    delveTheDepths: { name: 'Delve the Depths', groupId: 'delveMoveDelve', uuid: 'Compendium.foundry-ironsworn.ironsworndelvemoves.Item.36c6cbe556fbb639', actionTypeId: 'moveDelve' }
 }
 
 /**
  * Moves for Starforged
  */
 export const MOVES_STARFORGED = {
-    enterTheFray: { name: 'Enter the Fray', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.2f2ba4090b22a122' },
-    gainGround: { name: 'Gain Ground', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3f5a834fa3fea5d1' },
-    reactUnderFire: { name: 'React Under Fire', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.d9208f9b7d827aec' },
-    strike: { name: 'Strike', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.ae5994ceb3cba098' },
-    clash: { name: 'Clash', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.723192c97fec4fe2' },
-    takeDecisiveAction: { name: 'Take Decisive Action', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3129f4caa4754caf' },
-    faceDefeat: { name: 'Face Defeat', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.23ebe48d2b1a1d58' },
-    battle: { name: 'Battle', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.a903d120af3b1475' },
-    swearIronVow: { name: 'Swear an Iron Vow', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.9c9ab6a42daa96e0' },
-    reachMilestone: { name: 'Reach a Milestone', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.0d7f13818c1c19ed' }
+    enterTheFray: { name: 'Enter the Fray', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.2f2ba4090b22a122', actionTypeId: 'moveStarforged' },
+    gainGround: { name: 'Gain Ground', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3f5a834fa3fea5d1', actionTypeId: 'moveStarforged' },
+    reactUnderFire: { name: 'React Under Fire', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.d9208f9b7d827aec', actionTypeId: 'moveStarforged' },
+    strike: { name: 'Strike', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.ae5994ceb3cba098', actionTypeId: 'moveStarforged' },
+    clash: { name: 'Clash', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.723192c97fec4fe2', actionTypeId: 'moveStarforged' },
+    takeDecisiveAction: { name: 'Take Decisive Action', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3129f4caa4754caf', actionTypeId: 'moveStarforged' },
+    faceDefeat: { name: 'Face Defeat', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.23ebe48d2b1a1d58', actionTypeId: 'moveStarforged' },
+    battle: { name: 'Battle', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.a903d120af3b1475', actionTypeId: 'moveStarforged' },
+    swearIronVow: { name: 'Swear an Iron Vow', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.9c9ab6a42daa96e0', actionTypeId: 'moveStarforged' },
+    reachMilestone: { name: 'Reach a Milestone', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.0d7f13818c1c19ed', actionTypeId: 'moveStarforged' }
 }
 
 /**
  * Moves for Sundered Isles
  */
 export const MOVES_SUNDERED_ISLES = {
-    confrontChaos: { name: 'Confront Chaos', groupId: 'explorarationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.4265fe492d629800' }
+    confrontChaos: { name: 'Confront Chaos', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.4265fe492d629800', actionTypeId: 'moveSunderedIsles' }
 }
