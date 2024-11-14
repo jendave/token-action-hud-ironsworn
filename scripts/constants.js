@@ -170,7 +170,40 @@ export const IMPACTS_STARSHIP = {
  */
 export const MOVES_CLASSIC = {
     faceDanger: { name: 'Face Danger', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.c8bacc17f73d3103', actionTypeId: 'moveClassic' },
-    aidYourAlly: { name: 'Aid Your Ally', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.f762e8f471fe875f', actionTypeId: 'moveClassic' }
+    gatherInformation: { name: 'Gather Information', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.4244b77103f55bc4', actionTypeId: 'moveClassic' },
+    heal: { name: 'Heal', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.3d315ee54e9ce845', actionTypeId: 'moveClassic' },
+    makeCamp: { name: 'Make Camp', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.30046577bc83f2f0', actionTypeId: 'moveClassic' },
+    reachYourDestination: { name: 'Reach Your Destination', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.727eb47e8f031e81', actionTypeId: 'moveClassic' },
+    resupply: { name: 'Resupply', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.8d90dd472856be27', actionTypeId: 'moveClassic' },
+    secureAnAdvantage: { name: 'Secure an Advantage', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.4dd8468e095810a4', actionTypeId: 'moveClassic' },
+    undertakeAJourney: { name: 'Undertake a Journey', groupId: 'adventureMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.ac19f4c7f3fe31be', actionTypeId: 'moveClassic' },
+    enterTheFray: { name: 'Enter the Fray', groupId: 'combatMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.ed343c963b08f301', actionTypeId: 'moveClassic' },
+    strike: { name: 'Strike', groupId: 'combatMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.5288e935906f6d28', actionTypeId: 'moveClassic' },
+    clash: { name: 'Clash', groupId: 'combatMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.7e008d0f656dc8b3', actionTypeId: 'moveClassic' },
+    battle: { name: 'Battle', groupId: 'combatMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.412156232a6d42bf', actionTypeId: 'moveClassic' },
+    endTheFight: { name: 'End the Fight', groupId: 'combatMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.aac3783710ad7499', actionTypeId: 'moveClassic' },
+    turnTheTide: { name: 'Turn the Tide', groupId: 'combatMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.12e23cfe23534a8f', actionTypeId: 'moveClassic' },
+    askTheOracle: { name: 'Ask the Oracle', groupId: 'fateMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.aba3e44b7e810c0f', actionTypeId: 'moveClassic' },
+    payThePrice: { name: 'Pay the Price', groupId: 'fateMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.c10d64f58dd8c5bf', actionTypeId: 'moveClassic' },
+    advance: { name: 'Advance', groupId: 'questMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.0151a4905d1f99d2', actionTypeId: 'moveClassic' },
+    forsakeYourVow: { name: 'Forsake Your Vow', groupId: 'questMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.f968f5e0a837a83a', actionTypeId: 'moveClassic' },
+    fulfillYourVow: { name: 'Fulfill Your Vow', groupId: 'questMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.725a21e2f02d7e12', actionTypeId: 'moveClassic' },
+    swearIronVow: { name: 'Swear an Iron Vow', groupId: 'questMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.010e27aa4376d4df', actionTypeId: 'moveClassic' },
+    reachMilestone: { name: 'Reach a Milestone', groupId: 'questMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.c3696751a921323b', actionTypeId: 'moveClassic' },
+    aidYourAlly: { name: 'Aid Your Ally', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.f762e8f471fe875f', actionTypeId: 'moveClassic' },
+    compel: { name: 'Compel', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.be95ca063ded2b19', actionTypeId: 'moveClassic' },
+    drawTheCircle: { name: 'Draw the Circle', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.c0967ba47f57393b', actionTypeId: 'moveClassic' },
+    forgeABond: { name: 'Forge a Bond', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.b643d9ea53ff8d98', actionTypeId: 'moveClassic' },
+    sojourn: { name: 'Sojourn', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.25421995c803340e', actionTypeId: 'moveClassic' },
+    testYourBond: { name: 'Test Your Bond', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.421b379cb40b6ab7', actionTypeId: 'moveClassic' },
+    writeYourEpilogue: { name: 'Write Your Epilogue', groupId: 'relationshipMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.7b51b945dad12c7d', actionTypeId: 'moveClassic' },
+    companionEndureHarm: { name: 'Companion Endure Harm', groupId: 'sufferMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.5042c9574d4faf61', actionTypeId: 'moveClassic' },
+    endureHarm: { name: 'Endure Harm', groupId: 'sufferMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.fdb51ee928b4fca2', actionTypeId: 'moveClassic' },
+    endureStress: { name: 'Endure Stress', groupId: 'sufferMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.e09e2fc8bb709320', actionTypeId: 'moveClassic' },
+    faceASetback: { name: 'Face a Setback', groupId: 'sufferMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.79661dee7726dd8c', actionTypeId: 'moveClassic' },
+    faceDeath: { name: 'Face Death', groupId: 'sufferMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.92b85c33a17ab487', actionTypeId: 'moveClassic' },
+    faceDesolation: { name: 'Face Desolation', groupId: 'sufferMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.1f978f9faa43d5c6', actionTypeId: 'moveClassic' },
+    outOfSupply: { name: 'Out of Supply', groupId: 'sufferMoveClassic', uuid: 'Compendium.foundry-ironsworn.ironswornmoves.Item.e599a449ce2cc52b', actionTypeId: 'moveClassic' }
 }
 
 /**
@@ -196,6 +229,12 @@ export const MOVES_DELVE = {
  * Moves for Starforged
  */
 export const MOVES_STARFORGED = {
+    aidYourAlly: { name: 'Aid Your Ally', groupId: 'adventureMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.f4dec946415d8e57', actionTypeId: 'moveStarforged' },
+    checkYourGear: { name: 'Check Your Gear', groupId: 'adventureMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.8d9830fb825057b0', actionTypeId: 'moveStarforged' },
+    compel: { name: 'Compel', groupId: 'adventureMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.9f538fabf8998c5b', actionTypeId: 'moveStarforged' },
+    faceDanger: { name: 'Face Danger', groupId: 'adventureMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.e6ed148eff82c171', actionTypeId: 'moveStarforged' },
+    gatherInformation: { name: 'Gather Information', groupId: 'adventureMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.13b2d777c6fb719d', actionTypeId: 'moveStarforged' },
+    secureAnAdvantage: { name: 'Secure an Advantage', groupId: 'adventureMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.a2d7793b23c17489', actionTypeId: 'moveStarforged' },
     enterTheFray: { name: 'Enter the Fray', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.2f2ba4090b22a122', actionTypeId: 'moveStarforged' },
     gainGround: { name: 'Gain Ground', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3f5a834fa3fea5d1', actionTypeId: 'moveStarforged' },
     reactUnderFire: { name: 'React Under Fire', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.d9208f9b7d827aec', actionTypeId: 'moveStarforged' },
