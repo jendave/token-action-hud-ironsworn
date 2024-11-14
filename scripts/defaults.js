@@ -90,54 +90,58 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 nestId: 'moveClassic',
                 id: 'moveClassic',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.classic'),
+                settings: { collapse: true },
                 groups: [
-                    { ...groups.adventureMoveClassic, nestId: 'moveClassic_adventureMoveClassic' },
-                    { ...groups.combatMoveClassic, nestId: 'moveClassic_combatMoveClassic' },
-                    { ...groups.fateMoveClassic, nestId: 'moveClassic_fateMoveClassic' },
-                    { ...groups.questMoveClassic, nestId: 'moveClassic_questMoveClassic' },
-                    { ...groups.relationshipMoveClassic, nestId: 'moveClassic_relationshipMoveClassic' },
-                    { ...groups.sufferMoveClassic, nestId: 'moveClassic_sufferMoveClassic' }
+                    { ...groups.adventureMoveClassic, nestId: 'moveClassic_adventureMoveClassic', settings: { collapse: true } },
+                    { ...groups.relationshipMoveClassic, nestId: 'moveClassic_relationshipMoveClassic', settings: { collapse: true } },
+                    { ...groups.combatMoveClassic, nestId: 'moveClassic_combatMoveClassic', settings: { collapse: true } },
+                    { ...groups.sufferMoveClassic, nestId: 'moveClassic_sufferMoveClassic', settings: { collapse: true } },
+                    { ...groups.questMoveClassic, nestId: 'moveClassic_questMoveClassic', settings: { collapse: true } },
+                    { ...groups.fateMoveClassic, nestId: 'moveClassic_fateMoveClassic', settings: { collapse: true } }
                 ]
             },
             {
                 nestId: 'moveDelve',
                 id: 'moveDelve',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.delve'),
+                settings: { collapse: true },
                 groups: [
-                    { ...groups.delveMoveDelve, nestId: 'moveDelve_delveMoveDelve' },
-                    { ...groups.failureMoveDelve, nestId: 'moveDelve_failureMoveDelve' },
-                    { ...groups.threatMoveDelve, nestId: 'moveDelve_threatMoveDelve' },
-                    { ...groups.rarityMoveDelve, nestId: 'moveDelve_rarityMoveDelve' }
+                    { ...groups.delveMoveDelve, nestId: 'moveDelve_delveMoveDelve', settings: { collapse: true } },
+                    { ...groups.failureMoveDelve, nestId: 'moveDelve_failureMoveDelve', settings: { collapse: true }  },
+                    { ...groups.threatMoveDelve, nestId: 'moveDelve_threatMoveDelve', settings: { collapse: true }  },
+                    { ...groups.rarityMoveDelve, nestId: 'moveDelve_rarityMoveDelve', settings: { collapse: true }  }
                 ]
             },
             {
                 nestId: 'moveStarforged',
                 id: 'moveStarforged',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.starforged'),
+                settings: { collapse: true },
                 groups: [
-                    { ...groups.adventureMoveStarforged, nestId: 'moveStarforged_adventureMoveStarforged' },
-                    { ...groups.combatMoveStarforged, nestId: 'moveStarforged_combatMoveStarforged' },
-                    { ...groups.connectionMoveStarforged, nestId: 'moveStarforged_connectionMoveStarforged' },
-                    { ...groups.explorationMoveStarforged, nestId: 'moveStarforged_explorationMoveStarforged' },
-                    { ...groups.fateMoveStarforged, nestId: 'moveStarforged_fateMoveStarforged' },
-                    { ...groups.legacyMoveStarforged, nestId: 'moveStarforged_legacyMoveStarforged' },
-                    { ...groups.questMoveStarforged, nestId: 'moveStarforged_questMoveStarforged' },
-                    { ...groups.recoverMoveStarforged, nestId: 'moveStarforged_recoverMoveStarforged' },
-                    { ...groups.sceneChallengeMoveStarforged, nestId: 'moveStarforged_sceneChallengeMoveStarforged' },
-                    { ...groups.sessionMoveStarforged, nestId: 'moveStarforged_sessionMoveStarforged' },
-                    { ...groups.sufferMoveStarforged, nestId: 'moveStarforged_sufferMoveStarforged' },
-                    { ...groups.thresholdMoveStarforged, nestId: 'moveStarforged_thresholdMoveStarforged' }
+                    { ...groups.sessionMoveStarforged, nestId: 'moveStarforged_sessionMoveStarforged', settings: { collapse: true } },
+                    { ...groups.adventureMoveStarforged, nestId: 'moveStarforged_adventureMoveStarforged', settings: { collapse: true } },
+                    { ...groups.questMoveStarforged, nestId: 'moveStarforged_questMoveStarforged', settings: { collapse: true } },
+                    { ...groups.connectionMoveStarforged, nestId: 'moveStarforged_connectionMoveStarforged', settings: { collapse: true } },
+                    { ...groups.explorationMoveStarforged, nestId: 'moveStarforged_explorationMoveStarforged', settings: { collapse: true } },
+                    { ...groups.combatMoveStarforged, nestId: 'moveStarforged_combatMoveStarforged', settings: { collapse: true } },
+                    { ...groups.sufferMoveStarforged, nestId: 'moveStarforged_sufferMoveStarforged', settings: { collapse: true } },
+                    { ...groups.recoverMoveStarforged, nestId: 'moveStarforged_recoverMoveStarforged', settings: { collapse: true } },
+                    { ...groups.thresholdMoveStarforged, nestId: 'moveStarforged_thresholdMoveStarforged', settings: { collapse: true } },
+                    { ...groups.legacyMoveStarforged, nestId: 'moveStarforged_legacyMoveStarforged', settings: { collapse: true } },
+                    { ...groups.fateMoveStarforged, nestId: 'moveStarforged_fateMoveStarforged', settings: { collapse: true } },
+                    { ...groups.sceneChallengeMoveStarforged, nestId: 'moveStarforged_sceneChallengeMoveStarforged', settings: { collapse: true } }
                 ]
             },
             {
                 nestId: 'moveSunderedIsles',
                 id: 'moveSunderedIsles',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.sundered_isles'),
+                settings: { collapse: true },
                 groups: [
-                    { ...groups.combatMoveSunderedIsles, nestId: 'moveSunderedIsles_combatMoveSunderedIsles' },
-                    { ...groups.explorationMoveSunderedIsles, nestId: 'moveSunderedIsles_explorationMoveSunderedIsles' },
-                    { ...groups.recoverMoveSunderedIsles, nestId: 'moveSunderedIsles_recoverMoveSunderedIsles' },
-                    { ...groups.sufferMoveSunderedIsles, nestId: 'moveSunderedIsles_sufferMoveSunderedIsles' }
+                    { ...groups.explorationMoveSunderedIsles, nestId: 'moveSunderedIsles_explorationMoveSunderedIsles', settings: { collapse: true } },
+                    { ...groups.combatMoveSunderedIsles, nestId: 'moveSunderedIsles_combatMoveSunderedIsles', settings: { collapse: true } },
+                    { ...groups.sufferMoveSunderedIsles, nestId: 'moveSunderedIsles_sufferMoveSunderedIsles', settings: { collapse: true } },
+                    { ...groups.recoverMoveSunderedIsles, nestId: 'moveSunderedIsles_recoverMoveSunderedIsles', settings: { collapse: true } }
                 ]
             }
         ],
