@@ -243,6 +243,16 @@ export const MOVES_STARFORGED = {
     takeDecisiveAction: { name: 'Take Decisive Action', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3129f4caa4754caf', actionTypeId: 'moveStarforged' },
     faceDefeat: { name: 'Face Defeat', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.23ebe48d2b1a1d58', actionTypeId: 'moveStarforged' },
     battle: { name: 'Battle', groupId: 'combatMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.a903d120af3b1475', actionTypeId: 'moveStarforged' },
+    developYourRelationship: { name: 'Develop Your Relationship', groupId: 'connectionMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.141aec8b92efd14b', actionTypeId: 'moveStarforged' },
+    forgeABond: { name: 'Forge a Bond', groupId: 'connectionMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.287bb4c2b53ea847', actionTypeId: 'moveStarforged' },
+    makeAConnection: { name: 'Make a Connection', groupId: 'connectionMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.05909d6310d209a6', actionTypeId: 'moveStarforged' },
+    testYourRelationship: { name: 'Test Your Relationship', groupId: 'connectionMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.8704c945023355fb', actionTypeId: 'moveStarforged' },
+    confrontChaos: { name: 'Confront Chaos', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.6848983199a497df', actionTypeId: 'moveStarforged' },
+    exploreAWaypoint: { name: 'Explore a Waypoint', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.367804b98f30d5f4', actionTypeId: 'moveStarforged' },
+    finishAnExpedition: { name: 'Finish an Expedition', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.edac426b7c23f060', actionTypeId: 'moveStarforged' },
+    makeADiscovery: { name: 'Make a Discovery', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.75d5b0762ebab856', actionTypeId: 'moveStarforged' },
+    setACourse: { name: 'Set a Course', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.ed490d43a2533506', actionTypeId: 'moveStarforged' },
+    undertakeAnExpedition: { name: 'Undertake an Expedition', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3ff03b51f620ab26', actionTypeId: 'moveStarforged' },
     swearIronVow: { name: 'Swear an Iron Vow', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.9c9ab6a42daa96e0', actionTypeId: 'moveStarforged' },
     reachMilestone: { name: 'Reach a Milestone', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.0d7f13818c1c19ed', actionTypeId: 'moveStarforged' }
 }
