@@ -255,6 +255,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         async #buildMoves() {
+           // const actionTypeId = 'moveClassic'
             const moveArray = [ MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES ]
             for (const key of moveArray) {
                 const moveMap = new Map()
@@ -266,6 +267,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         const groupIdMap = moveMap.get(nestedObject.groupId) ?? new Map()
                         groupIdMap.set(key, nestedObject.groupId)
                         moveMap.set(nestedObject.groupId, groupIdMap)
+                        // moveMap.set(nestedObject.actionTypeId, groupIdMap)
                     }
                 }
 
@@ -279,7 +281,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         const id = moveId
                         const name = MOVES[moveId].name
                         const actionTypeName = MOVES[moveId].actionTypeId
+                        // const actionTypeName = actionTypeId
                         const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                        // const encodedValue = [actionTypeId, id].join(this.delimiter)
                         const encodedValue = [MOVES[moveId].actionTypeId, id].join(this.delimiter)
                         return {
                             id,
