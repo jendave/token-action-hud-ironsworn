@@ -253,8 +253,20 @@ export const MOVES_STARFORGED = {
     makeADiscovery: { name: 'Make a Discovery', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.75d5b0762ebab856', actionTypeId: 'moveStarforged' },
     setACourse: { name: 'Set a Course', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.ed490d43a2533506', actionTypeId: 'moveStarforged' },
     undertakeAnExpedition: { name: 'Undertake an Expedition', groupId: 'explorationMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3ff03b51f620ab26', actionTypeId: 'moveStarforged' },
+    askTheOracle: { name: 'Ask the Oracle', groupId: 'fateMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.bd6278f18bbd6739', actionTypeId: 'moveStarforged' },
+    payThePrice: { name: 'Pay the Price', groupId: 'fateMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.78baa51694fe37c5', actionTypeId: 'moveStarforged' },
+    advance: { name: 'Advance', groupId: 'legacyMoveClassic', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.d602da2ce0c05f2c', actionTypeId: 'moveStarforged' },
+    continueALegacy: { name: 'Continue a Legacy', groupId: 'legacyMoveClassic', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.603ca607fe8386f8', actionTypeId: 'moveStarforged' },
+    earnExperience: { name: 'Earn Experience', groupId: 'legacyMoveClassic', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.9f95c215a394ebd4', actionTypeId: 'moveStarforged' },
+    forsakeYourVow: { name: 'Forsake Your Vow', groupId: 'questMoveClassic', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.449c1e260c941a40', actionTypeId: 'moveStarforged' },
+    fulfillYourVow: { name: 'Fulfill Your Vow', groupId: 'questMoveClassic', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.985a5415860a99e9', actionTypeId: 'moveStarforged' },
     swearIronVow: { name: 'Swear an Iron Vow', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.9c9ab6a42daa96e0', actionTypeId: 'moveStarforged' },
-    reachMilestone: { name: 'Reach a Milestone', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.0d7f13818c1c19ed', actionTypeId: 'moveStarforged' }
+    reachMilestone: { name: 'Reach a Milestone', groupId: 'questMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.0d7f13818c1c19ed', actionTypeId: 'moveStarforged' },
+    heal: { name: 'Heal', groupId: 'recoverMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.2051538f0c9d5d27', actionTypeId: 'moveStarforged' },
+    hearten: { name: 'Hearten', groupId: 'recoverMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.c2c2f31f564caa06', actionTypeId: 'moveStarforged' },
+    repair: { name: 'Repair', groupId: 'recoverMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.eece9a67d1961f70', actionTypeId: 'moveStarforged' },
+    resupply: { name: 'Resupply', groupId: 'recoverMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.703964b8d02355b8', actionTypeId: 'moveStarforged' },
+    sojourn: { name: 'Sojourn', groupId: 'recoverMoveStarforged', uuid: 'Compendium.foundry-ironsworn.starforgedmoves.Item.3de42d2d3cb78855', actionTypeId: 'moveStarforged' },
 }
 
 /**
