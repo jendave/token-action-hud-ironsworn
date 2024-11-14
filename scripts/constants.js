@@ -291,12 +291,12 @@ export const MOVES_STARFORGED = {
  * Moves for Sundered Isles
  */
 export const MOVES_SUNDERED_ISLES = {
-    enterTheFray: { name: 'Enter the Fray', groupId: 'combatMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.24dfbbb42bceb9f8', actionTypeId: 'moveSunderedIsles' },
-    confrontChaos: { name: 'Confront Chaos', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.4265fe492d629800', actionTypeId: 'moveSunderedIsles' },
-    makeADiscovery: { name: 'Make a Discovery', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.d5927e1450bfbbca', actionTypeId: 'moveSunderedIsles' },
-    setACourse: { name: 'Set a Course', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.7cb0a8ade5f31444', actionTypeId: 'moveSunderedIsles' },
     undertakeAnExpedition: { name: 'Undertake an Expedition', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.d80a8e734bed435b', actionTypeId: 'moveSunderedIsles' },
-    repair: { name: 'Repair', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.8a164fecb3029c76', actionTypeId: 'moveSunderedIsles' },
+    makeADiscovery: { name: 'Make a Discovery', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.d5927e1450bfbbca', actionTypeId: 'moveSunderedIsles' },
+    confrontChaos: { name: 'Confront Chaos', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.4265fe492d629800', actionTypeId: 'moveSunderedIsles' },
+    setACourse: { name: 'Set a Course', groupId: 'explorationMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.7cb0a8ade5f31444', actionTypeId: 'moveSunderedIsles' },
+    enterTheFray: { name: 'Enter the Fray', groupId: 'combatMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.24dfbbb42bceb9f8', actionTypeId: 'moveSunderedIsles' },
+    withstandDamage: { name: 'Withstand Damage', groupId: 'sufferMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.a03a648bb3a06d93', actionTypeId: 'moveSunderedIsles' },
     resupply: { name: 'Resupply', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.c96bafd5cbda43bc', actionTypeId: 'moveSunderedIsles' },
-    withstandDamage: { name: 'Withstand Damage', groupId: 'sufferMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.a03a648bb3a06d93', actionTypeId: 'moveSunderedIsles' }
-}
+    repair: { name: 'Repair', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.8a164fecb3029c76', actionTypeId: 'moveSunderedIsles' }
+    }
