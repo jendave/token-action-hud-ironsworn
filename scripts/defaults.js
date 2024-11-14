@@ -76,17 +76,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ]
             },
             {
-                nestId: 'utility',
-                id: 'utility',
-                name: coreModule.api.Utils.i18n('tokenActionHud.utility'),
-                groups: [
-                    { ...groups.combat, nestId: 'utility_combat' },
-                    { ...groups.token, nestId: 'utility_token' },
-                    { ...groups.rests, nestId: 'utility_rests' },
-                    { ...groups.utility, nestId: 'utility_utility' }
-                ]
-            },
-            {
                 nestId: 'moveClassic',
                 id: 'moveClassic',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.classic'),
@@ -142,6 +131,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     { ...groups.combatMoveSunderedIsles, nestId: 'moveSunderedIsles_combatMoveSunderedIsles', settings: { collapse: true } },
                     { ...groups.sufferMoveSunderedIsles, nestId: 'moveSunderedIsles_sufferMoveSunderedIsles', settings: { collapse: true } },
                     { ...groups.recoverMoveSunderedIsles, nestId: 'moveSunderedIsles_recoverMoveSunderedIsles', settings: { collapse: true } }
+                ]
+            },
+            {
+                nestId: 'utility',
+                id: 'utility',
+                name: coreModule.api.Utils.i18n('tokenActionHud.utility'),
+                groups: [
+                    { ...groups.combat, nestId: 'utility_combat' },
+                    { ...groups.token, nestId: 'utility_token' },
+                    { ...groups.rests, nestId: 'utility_rests' },
+                    { ...groups.utility, nestId: 'utility_utility' }
                 ]
             }
         ],

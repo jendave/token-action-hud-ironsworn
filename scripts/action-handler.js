@@ -1,5 +1,5 @@
 // System Module Imports
-import { ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
+import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
 // import { Utils } from './utils.js'
 
 export let ActionHandler = null
@@ -255,7 +255,24 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         async #buildMoves() {
-            const moveArray = [MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES]
+           const moveArray = []
+
+           if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-classic')) {
+                moveArray.push(MOVES_CLASSIC)
+           }
+
+           if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-delve')) {
+                moveArray.push(MOVES_DELVE)
+              }
+
+            if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-starforged')) {
+                moveArray.push(MOVES_STARFORGED)
+            }
+
+            if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-sundered_isles')) {
+                moveArray.push(MOVES_SUNDERED_ISLES)
+            }
+
             for (const key of moveArray) {
                 const moveMap = new Map()
                 let MOVES = key
@@ -272,7 +289,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 for (const [groupId, groupIdMap] of moveMap) {
                     if (!groupId) continue
 
-                    const groupData = { id: groupId, type: 'system', settings: { collapse: true } }
+                    const groupData = { id: groupId, type: 'system' }
 
                     // Get actions
                     const actions = [...groupIdMap].map(([moveId]) => {
