@@ -1,5 +1,7 @@
 # Changelog
 
+[Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
+
 ## [1.0.5](https://github.com/jendave/token-note-hover/commits/main) (2024-11-15)
 
 * Added Moves to HUD. Moves for each ruleset will appear when the ruleset is enabled in the Ironsworn & Starforged Configuration dialog.
