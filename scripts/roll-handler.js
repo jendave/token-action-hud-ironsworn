@@ -89,16 +89,16 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     this.#handleUtilityAction(token, actionId)
                     break
                 case 'moveClassic':
-                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
+                    this.#handleMoveAction(event, actor, actionId, actionTypeId)
                     break
                 case 'moveDelve':
-                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
+                    this.#handleMoveAction(event, actor, actionId, actionTypeId)
                     break
                 case 'moveStarforged':
-                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
+                    this.#handleMoveAction(event, actor, actionId, actionTypeId)
                     break
                 case 'moveSunderedIsles':
-                    this.#handleMoveAction(token, actor, token, actionId, actionTypeId)
+                    this.#handleMoveAction(event, actor, actionId, actionTypeId)
                     break
             }
         }
@@ -192,7 +192,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} actor    The actor
          * @param {string} actionId The action id
          */
-        async #handleMoveAction(_event, actor, token, actionId, actionTypeId) {
+        async #handleMoveAction(_event, actor, actionId, actionTypeId) {
             let MOVES
             switch (actionTypeId) {
                 case 'moveClassic':
@@ -212,7 +212,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             actor.moveSheet ||= new CONFIG.IRONSWORN.applications.SFCharacterMoveSheet(actor, {
                 left: 200
             })
-            
+
             await actor.moveSheet?.render(true)
             await resolveAfterMilliseconds()
             await CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)
@@ -223,7 +223,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve('resolved');
-            }, 2000);
+            }, 1500);
         });
     }
 })

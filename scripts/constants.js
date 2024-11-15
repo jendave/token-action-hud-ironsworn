@@ -9,11 +9,6 @@ export const MODULE_IRONSWORN = {
     ID: 'foundry-ironsworn'
 }
 
-// const displayMoves = game.settings.get(CONSTANTS.MODULE_IRONSWORN.ID, 'ruleset-classic');
-// const displayMoves = game.settings.get(CONSTANTS.MODULE_IRONSWORN.ID, 'ruleset-starforged');
-// const displayMoves = game.settings.get(CONSTANTS.MODULE_IRONSWORN.ID, 'ruleset-delve');
-// const displayMoves = game.settings.get(CONSTANTS.MODULE_IRONSWORN.ID, 'ruleset-sundered_isles');
-
 /**
  * Core module
  */
@@ -64,10 +59,6 @@ export const GROUP = {
     bane: { id: 'bane', name: 'IRONSWORN.DEBILITY.CATEGORY.Banes', type: 'system' },
     condition: { id: 'condition', name: 'IRONSWORN.DEBILITY.CATEGORY.Conditions', type: 'system' },
     utility: { id: 'utility', name: 'tokenActionHud.utility', type: 'system' },
-    // moveClassic: { id: 'moveClassic', name: 'IRONSWORN.RULESETS.classic', type: 'system', ruleset: 'classic' },
-    // moveDelve: { id: 'moveDelve', name: 'IRONSWORN.RULESETS.delve', type: 'system', ruleset: 'delve' },
-    // moveStarforged: { id: 'moveStarforged', name: 'IRONSWORN.RULESETS.starforged', type: 'system', ruleset: 'starforged' },
-    // moveSunderedIsles: { id: 'moveSunderedIsles', name: 'IRONSWORN.RULESETS.sundered_isles', type: 'system', ruleset: 'sundered_isles' },
     sessionMoveStarforged: { id: 'sessionMoveStarforged', name: 'IRONSWORN.MOVES.Session Moves', type: 'system', ruleset: 'starforged' },
     adventureMoveStarforged: { id: 'adventureMoveStarforged', name: 'IRONSWORN.MOVES.Adventure Moves', type: 'system', ruleset: 'starforged' },
     questMoveStarforged: { id: 'questMoveStarforged', name: 'IRONSWORN.MOVES.Quest Moves', type: 'system', ruleset: 'starforged' },
@@ -93,7 +84,7 @@ export const GROUP = {
     delveMoveDelve: { id: 'delveMoveDelve', name: 'IRONSWORN.MOVES.Delve Moves', type: 'system', ruleset: 'delve' },
     failureMoveDelve: { id: 'failureMoveDelve', name: 'IRONSWORN.MOVES.Failure Moves', type: 'system', ruleset: 'delve' },
     threatMoveDelve: { id: 'threatMoveDelve', name: 'IRONSWORN.MOVES.Threat Moves', type: 'system', ruleset: 'delve' },
-    rarityMoveDelve: { id: 'rarityMoveDelve', name: 'IRONSWORN.MOVES.Rarity Moves', type: 'system', ruleset: 'delve' },
+    rarityMoveDelve: { id: 'rarityMoveDelve', name: 'IRONSWORN.MOVES.Rarity Moves', type: 'system', ruleset: 'delve' }
 }
 
 /**
@@ -308,4 +299,4 @@ export const MOVES_SUNDERED_ISLES = {
     withstandDamage: { name: 'Withstand Damage', groupId: 'sufferMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.a03a648bb3a06d93', actionTypeId: 'moveSunderedIsles' },
     resupply: { name: 'Resupply', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.c96bafd5cbda43bc', actionTypeId: 'moveSunderedIsles' },
     repair: { name: 'Repair', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.8a164fecb3029c76', actionTypeId: 'moveSunderedIsles' }
-    }
+}

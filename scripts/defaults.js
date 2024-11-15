@@ -78,7 +78,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             {
                 nestId: 'moveClassic',
                 id: 'moveClassic',
-                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.classic'),
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.classic'),
                 settings: { collapse: true },
                 groups: [
                     { ...groups.adventureMoveClassic, nestId: 'moveClassic_adventureMoveClassic', settings: { collapse: true } },
@@ -92,13 +92,13 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             {
                 nestId: 'moveDelve',
                 id: 'moveDelve',
-                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.delve'),
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.delve'),
                 settings: { collapse: true },
                 groups: [
                     { ...groups.delveMoveDelve, nestId: 'moveDelve_delveMoveDelve', settings: { collapse: true } },
-                    { ...groups.failureMoveDelve, nestId: 'moveDelve_failureMoveDelve', settings: { collapse: true }  },
-                    { ...groups.threatMoveDelve, nestId: 'moveDelve_threatMoveDelve', settings: { collapse: true }  },
-                    { ...groups.rarityMoveDelve, nestId: 'moveDelve_rarityMoveDelve', settings: { collapse: true }  }
+                    { ...groups.failureMoveDelve, nestId: 'moveDelve_failureMoveDelve', settings: { collapse: true } },
+                    { ...groups.threatMoveDelve, nestId: 'moveDelve_threatMoveDelve', settings: { collapse: true } },
+                    { ...groups.rarityMoveDelve, nestId: 'moveDelve_rarityMoveDelve', settings: { collapse: true } }
                 ]
             },
             {
@@ -124,7 +124,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             {
                 nestId: 'moveSunderedIsles',
                 id: 'moveSunderedIsles',
-                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove')  + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.sundered_isles'),
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.sundered_isles'),
                 settings: { collapse: true },
                 groups: [
                     { ...groups.explorationMoveSunderedIsles, nestId: 'moveSunderedIsles_explorationMoveSunderedIsles', settings: { collapse: true } },

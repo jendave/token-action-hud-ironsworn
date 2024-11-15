@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.5](https://github.com/jendave/token-note-hover/commits/main) (2024-11-16)
+
+* Added Moves to HUD. Moves for each ruleset will appear when the ruleset is enabled in the Ironsworn & Starforged Configuration dialog.
+* When a Move is selected from the HUD, the auto-scrolling in the Move Sheet does not always work. Clicking on the HUD item twice should work.
+
 ## [1.0.4](https://github.com/jendave/token-note-hover/commits/main) (2024-11-10)
 
 * Fixed internationalization.

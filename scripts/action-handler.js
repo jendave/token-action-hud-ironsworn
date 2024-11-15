@@ -1,6 +1,5 @@
 // System Module Imports
 import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
-// import { Utils } from './utils.js'
 
 export let ActionHandler = null
 
@@ -251,7 +250,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
 
         /**
-         * Build moves
+         * Build Moves
          * @private
          */
         async #buildMoves() {
