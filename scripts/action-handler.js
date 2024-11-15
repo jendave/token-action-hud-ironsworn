@@ -255,15 +255,15 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         async #buildMoves() {
-           const moveArray = []
+            const moveArray = []
 
-           if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-classic')) {
+            if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-classic')) {
                 moveArray.push(MOVES_CLASSIC)
-           }
+            }
 
-           if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-delve')) {
+            if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-delve')) {
                 moveArray.push(MOVES_DELVE)
-              }
+            }
 
             if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-starforged')) {
                 moveArray.push(MOVES_STARFORGED)

@@ -209,11 +209,21 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     break
             }
 
-            // actor.moveSheet ||= new SFCharacterMoveSheet(actor, {
-            //     left: 755
-            // })
+            actor.moveSheet ||= new CONFIG.IRONSWORN.applications.SFCharacterMoveSheet(actor, {
+                left: 200
+            })
+            
             await actor.moveSheet?.render(true)
-            CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)
+            await resolveAfterMilliseconds()
+            await CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)
         }
+    }
+
+    function resolveAfterMilliseconds() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve('resolved');
+            }, 2000);
+        });
     }
 })
