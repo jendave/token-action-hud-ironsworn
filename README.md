@@ -55,6 +55,7 @@ For questions, feature requests or bug reports, please open an [issue](https://g
 - If the HUD layout appears incomplete or is inconsistent among users:
   - In `Configure Settings`, select `Token Action HUD Core`, select `Layout`, click on `Reset All Layouts` and click on `Yes`.
   - This will reset the layout for all users.
+- When a Move is selected from the HUD, the auto-scrolling in the Move Sheet does not always work. Clicking on the HUD item twice should work.
 
 ## Acknowledgements
 
