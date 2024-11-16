@@ -1,7 +1,29 @@
 {
   "tokenActionHud": {
     "ironsworn": {
-      "meters": "Meters"
+      "meters": "Meters",
+      "momentum": {
+        "reset": "Momentum Reset",
+        "max": "Momentum Max",
+        "increase": "Momentum +1",
+        "decrease": "Momentum -1"
+      },
+      "health": {
+        "increase": "Health +1",
+        "decrease": "Health -1"
+      },
+      "spirit": {
+        "increase": "Spirit +1",
+        "decrease": "Spirit -1"
+      },
+      "supply": {
+        "increase": "Supply +1",
+        "decrease": "Supply -1"
+      },
+      "hold": {
+        "increase": "Hold +1",
+        "decrease": "Hold -1"
+      }
     }
   }
 }

@@ -143,9 +143,210 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} actor    The actor
          * @param {string} actionId The action id
          */
-        #handleMeterAction(_event, actor, actionId) {
-            if (actionId !== 'momentum') {
-                CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+        async #handleMeterAction(_event, actor, actionId) {
+            // if (actionId === 'momentumReset') {
+            //     actor.system.burnMomentum()
+            //     Hooks.call('tokenActionHudCoreApiReady', actor)
+            // } else if (actionId === 'momentumIncrease') { 
+            //     let tempValue = actor.system.momentum.value + 1
+            //     const data = {
+            //         system: {
+            //             momentum: {
+            //                 value: tempValue
+            //             }
+            //         }
+            //     }
+            //     await actor.update(data)
+            //     Hooks.call('tokenActionHudCoreApiReady', actor)
+            // } else if (actionId === 'momentumDecrease') {
+            //     let tempValue = actor.system.momentum.value - 1
+            //     const data = {
+            //         system: {
+            //             momentum: {
+            //                 value: tempValue
+            //             }
+            //         }
+            //     }
+            //     await actor.update(data)
+            //     Hooks.call('tokenActionHudCoreApiReady', actor)
+            // } else if (actionId !== 'momentum') {
+            //     CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+            // }
+            let tempValue
+            let data
+
+            switch (actionId) {
+                case 'momentum':
+                    // NOP
+                    break
+                case 'momentumReset':
+                    actor.system.burnMomentum()
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'momentumIncrease':
+                    tempValue = Math.clamped(
+                        actor.system.momentum.value + 1,
+                        actor.system.momentum.min,
+                        actor.system.momentum.max,
+                    )
+
+                    data = {
+                        system: {
+                            momentum: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'momentumDecrease':
+                    tempValue = Math.clamped(
+                        actor.system.momentum.value - 1,
+                        actor.system.momentum.min,
+                        actor.system.momentum.max,
+                    )
+                    data = {
+                        system: {
+                            momentum: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'healthIncrease':
+                    tempValue = Math.clamped(
+                        actor.system.health.value + 1,
+                        actor.system.health.min,
+                        actor.system.health.max,
+                    )
+                    data = {
+                        system: {
+                            health: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'healthDecrease':
+                    tempValue = Math.clamped(
+                        actor.system.health.value - 1,
+                        actor.system.health.min,
+                        actor.system.health.max,
+                    )
+                    data = {
+                        system: {
+                            health: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'spiritIncrease':
+                    tempValue = Math.clamped(
+                        actor.system.spirit.value + 1,
+                        actor.system.spirit.min,
+                        actor.system.spirit.max,
+                    )
+                    data = {
+                        system: {
+                            spirit: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'spiritDecrease':
+                    tempValue = Math.clamped(
+                        actor.system.spirit.value - 1,
+                        actor.system.spirit.min,
+                        actor.system.spirit.max,
+                    )
+                    data = {
+                        system: {
+                            spirit: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'supplyIncrease':
+                    tempValue = Math.clamped(
+                        actor.system.supply.value + 1,
+                        actor.system.supply.min,
+                        actor.system.supply.max,
+                    )
+                    data = {
+                        system: {
+                            supply: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'supplyDecrease':
+                    tempValue = Math.clamped(
+                        actor.system.supply.value - 1,
+                        actor.system.supply.min,
+                        actor.system.supply.max,
+                    )
+                    data = {
+                        system: {
+                            supply: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'holdIncrease':
+                    tempValue = Math.clamped(
+                        actor.system.hold.value + 1,
+                        actor.system.hold.min,
+                        actor.system.hold.max,
+                    )
+                    data = {
+                        system: {
+                            hold: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'holdDecrease':
+                    tempValue = Math.clamped(
+                        actor.system.hold.value - 1,
+                        actor.system.hold.min,
+                        actor.system.hold.max,
+                    )
+                    data = {
+                        system: {
+                            hold: {
+                                value: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                default:
+                    CONFIG.IRONSWORN.applications.IronswornPrerollDialog.showForStat(actionId, actor)
+                    break
             }
         }
 

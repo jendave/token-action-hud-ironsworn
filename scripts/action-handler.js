@@ -184,7 +184,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
-                const info1 = { text: this.actor.system[meter].value }
+                let info1 = ''
+                if (meter === 'momentumMax') {
+                    info1 = { text: this.actor.system.momentumMax }
+                } else if (meter === 'momentumReset') {
+                    info1 = { text: this.actor.system.momentumReset }
+                } else {
+                    info1 = { text: this.actor.system[meter]?.value === 0 ? '0' : this.actor.system[meter]?.value }
+                }
                 actions.push({
                     id,
                     name,

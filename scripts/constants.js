@@ -122,10 +122,22 @@ export const STATS = {
  */
 export const METERS = {
     health: 'IRONSWORN.Health',
+    healthIncrease: 'tokenActionHud.ironsworn.health.increase',
+    healthDecrease: 'tokenActionHud.ironsworn.health.decrease',
     spirit: 'IRONSWORN.Spirit',
+    spiritIncrease: 'tokenActionHud.ironsworn.spirit.increase',
+    spiritDecrease: 'tokenActionHud.ironsworn.spirit.decrease',
     supply: 'IRONSWORN.Supply',
+    supplyIncrease: 'tokenActionHud.ironsworn.supply.increase',
+    supplyDecrease: 'tokenActionHud.ironsworn.supply.decrease',
     momentum: 'IRONSWORN.Momentum',
-    hold: 'IRONSWORN.Hold'
+    momentumMax: 'tokenActionHud.ironsworn.momentum.max',
+    momentumReset: 'tokenActionHud.ironsworn.momentum.reset',
+    momentumIncrease: 'tokenActionHud.ironsworn.momentum.increase',
+    momentumDecrease: 'tokenActionHud.ironsworn.momentum.decrease',
+    hold: 'IRONSWORN.Hold',
+    holdIncrease: 'tokenActionHud.ironsworn.hold.increase',
+    holdDecrease: 'tokenActionHud.ironsworn.hold.decrease'
 }
 
 /**
