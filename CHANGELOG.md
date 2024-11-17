@@ -2,7 +2,7 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
-## [1.0.7](https://github.com/jendave/token-note-hover/commits/main) (2024-11-16)
+## [1.0.7](https://github.com/jendave/token-note-hover/commits/main) (2024-11-17)
 
 * Bugfix for Meters.
 * NPC/Foe now show Progress button.

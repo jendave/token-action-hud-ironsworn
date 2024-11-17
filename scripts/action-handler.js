@@ -241,9 +241,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
                     let info1 = ''
                     if (id === 'momentumMax') {
-                        info1 = { text: this.actor.system.momentumMax }
+                        info1 = { text: this.actor.system?.momentumMax }
                     } else if (id === 'momentumReset') {
-                        info1 = { text: this.actor.system.momentumReset }
+                        info1 = { text: this.actor.system?.momentumReset }
                     } else {
                         info1 = { text: this.actor.system[id]?.value === 0 ? '0' : this.actor.system[id]?.value }
                     }
