@@ -80,6 +80,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ]
             },
             {
+                nestId: 'legacy',
+                id: 'legacy',
+                name: coreModule.api.Utils.i18n('IRONSWORN.Legacies'),
+                groups: [
+                    { ...groups.legacy, nestId: 'legacy_legacy' }
+                ]
+            },
+            {
                 nestId: 'moveClassic',
                 id: 'moveClassic',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.classic'),

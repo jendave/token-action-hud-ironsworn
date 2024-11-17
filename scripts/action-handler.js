@@ -1,5 +1,5 @@
 // System Module Imports
-import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
+import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
 
 export let ActionHandler = null
 
@@ -45,6 +45,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             this.#buildMeters()
             this.#buildImpacts()
             this.#buildMoves()
+            this.#buildLegacies()
         }
 
         /**
@@ -152,6 +153,35 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
                 const info1 = { text: this.actor.system[stat] }
+                actions.push({
+                    id,
+                    name,
+                    listName,
+                    encodedValue,
+                    info1
+                })
+            }
+            // TAH Core method to add actions to the action list
+            this.addActions(actions, groupData)
+        }
+
+        /**
+         * Build legacies
+         * @private
+         */
+        #buildLegacies() {
+            const actionTypeId = 'legacy'
+            const groupData = { id: 'legacy', type: 'system' }
+
+            // Get actions
+            const actions = []
+            for (const legacy in LEGACIES) {
+                const id = legacy
+                const name = coreModule.api.Utils.i18n(LEGACIES[legacy]).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(LEGACIES[legacy]).slice(1)
+                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                const encodedValue = [actionTypeId, id].join(this.delimiter)
+                const info1 = { text: Math.floor(this.actor.system.legacies[legacy] / 4).toString() }
                 actions.push({
                     id,
                     name,

@@ -3,8 +3,8 @@
     "ironsworn": {
       "meters": "Meters",
       "momentum": {
-        "reset": "Momentum Reset",
-        "max": "Momentum Max",
+        "reset": "Reset",
+        "max": "Max",
         "increase": "Momentum +1",
         "decrease": "Momentum -1"
       },

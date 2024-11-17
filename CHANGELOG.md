@@ -2,6 +2,13 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.0.6](https://github.com/jendave/token-note-hover/commits/main) (2024-11-16)
+
+* Added ability to increase and decrease meters from the HUD.
+* Added Momentum Reset button.
+* Added HUD for Legacy tracks.
+* Fixed issue with Legacy Moves not appearing.
+
 ## [1.0.5](https://github.com/jendave/token-note-hover/commits/main) (2024-11-15)
 
 * Added Moves to HUD. Moves for each ruleset will appear when the ruleset is enabled in the Ironsworn & Starforged Configuration dialog.

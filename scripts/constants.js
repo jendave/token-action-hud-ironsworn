@@ -26,6 +26,7 @@ export const REQUIRED_CORE_MODULE_VERSION = '2.0'
  */
 export const ACTION_TYPE = {
     stat: 'IRONSWORN.Stats',
+    legacy: 'IRONSWORN.Legacies',
     meter: 'tokenActionHud.ironsworn.meters',
     impact: 'IRONSWORN.Impacts',
     utility: 'tokenActionHud.utility',
@@ -40,7 +41,7 @@ export const ACTION_TYPE = {
  */
 export const GROUP = {
     stat: { id: 'stat', name: 'IRONSWORN.Stats', type: 'system' },
-    // meter: { id: 'meter', name: 'tokenActionHud.ironsworn.meters', type: 'system' },
+    legacy: { id: 'legacy', name: 'IRONSWORN.Legacies', type: 'system' },
     momentum: { id: 'momentum', name: 'IRONSWORN.Momentum', type: 'system' },
     health: { id: 'health', name: 'IRONSWORN.Health', type: 'system' },
     spirit: { id: 'spirit', name: 'IRONSWORN.Spirit', type: 'system' },
@@ -73,7 +74,7 @@ export const GROUP = {
     sufferMoveStarforged: { id: 'sufferMoveStarforged', name: 'IRONSWORN.MOVES.Suffer Moves', type: 'system' },
     recoverMoveStarforged: { id: 'recoverMoveStarforged', name: 'IRONSWORN.MOVES.Recover Moves', type: 'system' },
     thresholdMoveStarforged: { id: 'thresholdMoveStarforged', name: 'IRONSWORN.MOVES.Threshold Moves', type: 'system' },
-    legacyMoveStarforged: { id: 'LegacyMoveStarforged', name: 'IRONSWORN.MOVES.Legacy Moves', type: 'system' },
+    legacyMoveStarforged: { id: 'legacyMoveStarforged', name: 'IRONSWORN.MOVES.Legacy Moves', type: 'system' },
     fateMoveStarforged: { id: 'fateMoveStarforged', name: 'IRONSWORN.MOVES.Fate Moves', type: 'system' },
     sceneChallengeMoveStarforged: { id: 'sceneChallengeMoveStarforged', name: 'IRONSWORN.MOVES.Scene Challenge Moves', type: 'system' },
     explorationMoveSunderedIsles: { id: 'explorationMoveSunderedIsles', name: 'IRONSWORN.MOVES.Exploration Moves', type: 'system' },
@@ -112,7 +113,7 @@ export const ITEM_TYPE = {
 }
 
 /**
- * Characteristics
+ * Stats
  */
 export const STATS = {
     edge: 'IRONSWORN.Edge',
@@ -120,6 +121,15 @@ export const STATS = {
     iron: 'IRONSWORN.Iron',
     shadow: 'IRONSWORN.Shadow',
     wits: 'IRONSWORN.Wits'
+}
+
+/**
+ * Legacies
+ */
+export const LEGACIES = {
+    quests: 'IRONSWORN.LEGACY.Quests',
+    bonds: 'IRONSWORN.LEGACY.Bonds',
+    discoveries: 'IRONSWORN.LEGACY.Discoveries'
 }
 
 /**

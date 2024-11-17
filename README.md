@@ -7,11 +7,13 @@
 
 The `Token Action HUD Ironsworn` is a repositionable HUD of actions for a selected token for the Ironsworn and Ironsworn: Starforged family of games.
 
-## Features
+## HUD Features
 
-- Open moves, assets, progress tracks, and connections from the HUD.
-- Make stat and meter rolls directly from the HUD instead of opening your character sheet.
-- Toggle impacts from the HUD.
+- Open moves, assets, progress tracks, and connections.
+- Make stat and meter rolls directly from the HUD.
+- Increase and decrease meters.
+- Toggle impacts.
+- View Legacy tracks.
 - Move the HUD and choose to expand the menus up or down.
 
 ### Supported Systems
