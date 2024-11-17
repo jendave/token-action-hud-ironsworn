@@ -40,7 +40,12 @@ export const ACTION_TYPE = {
  */
 export const GROUP = {
     stat: { id: 'stat', name: 'IRONSWORN.Stats', type: 'system' },
-    meter: { id: 'meter', name: 'tokenActionHud.ironsworn.meters', type: 'system' },
+    // meter: { id: 'meter', name: 'tokenActionHud.ironsworn.meters', type: 'system' },
+    momentum: { id: 'momentum', name: 'IRONSWORN.Momentum', type: 'system' },
+    health: { id: 'health', name: 'IRONSWORN.Health', type: 'system' },
+    spirit: { id: 'spirit', name: 'IRONSWORN.Spirit', type: 'system' },
+    supply: { id: 'supply', name: 'IRONSWORN.Supply', type: 'system' },
+    hold: { id: 'hold', name: 'IRONSWORN.Hold', type: 'system' },
     progress: { id: 'progress', name: 'IRONSWORN.ITEMS.SubtypeProgress', type: 'system' },
     vow: { id: 'vow', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
     connection: { id: 'connection', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
@@ -121,23 +126,23 @@ export const STATS = {
  * Meters
  */
 export const METERS = {
-    health: 'IRONSWORN.Health',
-    healthIncrease: 'tokenActionHud.ironsworn.health.increase',
-    healthDecrease: 'tokenActionHud.ironsworn.health.decrease',
-    spirit: 'IRONSWORN.Spirit',
-    spiritIncrease: 'tokenActionHud.ironsworn.spirit.increase',
-    spiritDecrease: 'tokenActionHud.ironsworn.spirit.decrease',
-    supply: 'IRONSWORN.Supply',
-    supplyIncrease: 'tokenActionHud.ironsworn.supply.increase',
-    supplyDecrease: 'tokenActionHud.ironsworn.supply.decrease',
-    momentum: 'IRONSWORN.Momentum',
-    momentumMax: 'tokenActionHud.ironsworn.momentum.max',
-    momentumReset: 'tokenActionHud.ironsworn.momentum.reset',
-    momentumIncrease: 'tokenActionHud.ironsworn.momentum.increase',
-    momentumDecrease: 'tokenActionHud.ironsworn.momentum.decrease',
-    hold: 'IRONSWORN.Hold',
-    holdIncrease: 'tokenActionHud.ironsworn.hold.increase',
-    holdDecrease: 'tokenActionHud.ironsworn.hold.decrease'
+    health: { name: 'IRONSWORN.Health', groupId: 'health' },
+    healthIncrease: { name: 'tokenActionHud.ironsworn.health.increase', groupId: 'health' },
+    healthDecrease: { name: 'tokenActionHud.ironsworn.health.decrease', groupId: 'health' },
+    spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit' },
+    spiritIncrease: { name: 'tokenActionHud.ironsworn.spirit.increase', groupId: 'spirit' },
+    spiritDecrease: { name: 'tokenActionHud.ironsworn.spirit.decrease', groupId: 'spirit' },
+    supply: { name: 'IRONSWORN.Supply', groupId: 'supply' },
+    supplyIncrease: { name: 'tokenActionHud.ironsworn.supply.increase', groupId: 'supply' },
+    supplyDecrease: { name: 'tokenActionHud.ironsworn.supply.decrease', groupId: 'supply' },
+    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum' },
+    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' },
+    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum' },
+    momentumIncrease: { name: 'tokenActionHud.ironsworn.momentum.increase', groupId: 'momentum' },
+    momentumDecrease: { name: 'tokenActionHud.ironsworn.momentum.decrease', groupId: 'momentum' },
+    hold: { name: 'IRONSWORN.Hold', groupId: 'hold' },
+    holdIncrease: { name: 'tokenActionHud.ironsworn.hold.increase', groupId: 'hold' },
+    holdDecrease: { name: 'tokenActionHud.ironsworn.hold.decrease', groupId: 'hold' }
 }
 
 /**

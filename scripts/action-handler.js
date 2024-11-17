@@ -170,38 +170,51 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #buildMeters() {
             const actionTypeId = 'meter'
-            const groupData = { id: 'meter', type: 'system' }
+            const meterMap = new Map()
+
+            for (const key in METERS) {
+                if (METERS.hasOwnProperty(key)) {
+                    const nestedObject = METERS[key];
+                    const groupIdMap = meterMap.get(nestedObject.groupId) ?? new Map()
+                    groupIdMap.set(key, nestedObject.groupId)
+                    meterMap.set(nestedObject.groupId, groupIdMap)
+                }
+            }
 
             // Get actions
-            const actions = []
-            for (const meter in METERS) {
-                const id = meter
-                if (meter == 'hold' && !game.settings.get('foundry-ironsworn', 'character-hold')) {
-                    continue
-                }
+            for (const [groupId, groupIdMap] of meterMap) {
+                if (!groupId) continue
 
-                const name = coreModule.api.Utils.i18n(METERS[meter]).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(METERS[meter]).slice(1)
-                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
-                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
-                const encodedValue = [actionTypeId, id].join(this.delimiter)
-                let info1 = ''
-                if (meter === 'momentumMax') {
-                    info1 = { text: this.actor.system.momentumMax }
-                } else if (meter === 'momentumReset') {
-                    info1 = { text: this.actor.system.momentumReset }
-                } else {
-                    info1 = { text: this.actor.system[meter]?.value === 0 ? '0' : this.actor.system[meter]?.value }
-                }
-                actions.push({
-                    id,
-                    name,
-                    listName,
-                    encodedValue,
-                    info1
+                const groupData = { id: groupId, type: 'system' }
+
+                const actions = [...groupIdMap].map(([meterId]) => {
+                    const id = meterId
+                    if (id == 'hold' && !game.settings.get('foundry-ironsworn', 'character-hold')) {
+                        return
+                    }
+                    const name = coreModule.api.Utils.i18n(METERS[meterId].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(METERS[meterId].name).slice(1)
+                    const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                    const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                    const encodedValue = [actionTypeId, id].join(this.delimiter)
+                    let info1 = ''
+                    if (meterId === 'momentumMax') {
+                        info1 = { text: this.actor.system.momentumMax }
+                    } else if (meterId === 'momentumReset') {
+                        info1 = { text: this.actor.system.momentumReset }
+                    } else {
+                        info1 = { text: this.actor.system[meterId]?.value === 0 ? '0' : this.actor.system[meterId]?.value }
+                    }
+                    return {
+                        id,
+                        name,
+                        listName,
+                        encodedValue,
+                        info1
+                    }
                 })
+                // TAH Core method to add actions to the action list
+                this.addActions(actions, groupData)
             }
-            // TAH Core method to add actions to the action list
-            this.addActions(actions, groupData)
         }
 
         /**
