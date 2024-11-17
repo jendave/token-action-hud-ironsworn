@@ -15,23 +15,28 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {array} groupIds
          */a
         async buildSystemActions(groupIds) {
-            // Set actor and token variables
             this.actors = (!this.actor) ? this._getActors() : [this.actor]
             this.actorType = this.actor?.type
+            if (this.actorType === 'character' || this.actorType === 'starship' || this.actorType === 'shared' || this.actorType === 'foe') {
+                // Set items variable
+                if (this.actor) {
+                    let items = this.actor.items
+                    items = coreModule.api.Utils.sortItemsByName(items)
+                    this.items = items
+                }
 
-            // Set items variable
-            if (this.actor) {
-                let items = this.actor.items
-                items = coreModule.api.Utils.sortItemsByName(items)
-                this.items = items
-            }
-
-            if (this.actorType === 'character') {
-                this.#buildCharacterActions()
-            } else if (this.actorType === 'starship') {
-                this.#buildStarshipActions()
-            } else if (this.actorType === 'shared') {
-                this.#buildSharedActions()
+                if (this.actorType === 'character') {
+                    this.#buildCharacterActions()
+                } else if (this.actorType === 'starship') {
+                    this.#buildStarshipActions()
+                } else if (this.actorType === 'shared') {
+                    this.#buildSharedActions()
+                } else if (this.actorType === 'foe') {
+                    this.#buildNPCActions()
+                }
+            } else {
+                this.actors = null
+                this.actorType = null
             }
         }
 
@@ -61,6 +66,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         #buildSharedActions() {
+            this.#buildInventory()
+        }
+
+        /**
+         * Build shared sheet actions
+         * @private
+         */
+        #buildNPCActions() {
             this.#buildInventory()
         }
 
@@ -222,17 +235,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     if (id == 'hold' && !game.settings.get('foundry-ironsworn', 'character-hold')) {
                         return
                     }
-                    const name = coreModule.api.Utils.i18n(METERS[meterId].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(METERS[meterId].name).slice(1)
+                    const name = coreModule.api.Utils.i18n(METERS[id].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(METERS[id].name).slice(1)
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
                     let info1 = ''
-                    if (meterId === 'momentumMax') {
+                    if (id === 'momentumMax') {
                         info1 = { text: this.actor.system.momentumMax }
-                    } else if (meterId === 'momentumReset') {
+                    } else if (id === 'momentumReset') {
                         info1 = { text: this.actor.system.momentumReset }
                     } else {
-                        info1 = { text: this.actor.system[meterId]?.value === 0 ? '0' : this.actor.system[meterId]?.value }
+                        info1 = { text: this.actor.system[id]?.value === 0 ? '0' : this.actor.system[id]?.value }
                     }
                     return {
                         id,

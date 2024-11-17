@@ -2,6 +2,11 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.0.7](https://github.com/jendave/token-note-hover/commits/main) (2024-11-16)
+
+* Bugfix for Meters.
+* NPC/Foe now show Progress button.
+
 ## [1.0.6](https://github.com/jendave/token-note-hover/commits/main) (2024-11-16)
 
 * Added ability to increase and decrease meters from the HUD.
