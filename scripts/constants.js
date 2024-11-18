@@ -135,7 +135,27 @@ export const LEGACIES = {
 /**
  * Meters
  */
-export const METERS = {
+export const METERS_IS = {
+    health: { name: 'IRONSWORN.Health', groupId: 'health' },
+    healthIncrease: { name: 'tokenActionHud.ironsworn.health.increase', groupId: 'health' },
+    healthDecrease: { name: 'tokenActionHud.ironsworn.health.decrease', groupId: 'health' },
+    spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit' },
+    spiritIncrease: { name: 'tokenActionHud.ironsworn.spirit.increase', groupId: 'spirit' },
+    spiritDecrease: { name: 'tokenActionHud.ironsworn.spirit.decrease', groupId: 'spirit' },
+    supply: { name: 'IRONSWORN.Supply', groupId: 'supply' },
+    supplyIncrease: { name: 'tokenActionHud.ironsworn.supply.increase', groupId: 'supply' },
+    supplyDecrease: { name: 'tokenActionHud.ironsworn.supply.decrease', groupId: 'supply' },
+    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum' },
+    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' },
+    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum' },
+    momentumIncrease: { name: 'tokenActionHud.ironsworn.momentum.increase', groupId: 'momentum' },
+    momentumDecrease: { name: 'tokenActionHud.ironsworn.momentum.decrease', groupId: 'momentum' }
+}
+
+/**
+ * Meters
+ */
+export const METERS_SUNDERED_ISLES = {
     health: { name: 'IRONSWORN.Health', groupId: 'health' },
     healthIncrease: { name: 'tokenActionHud.ironsworn.health.increase', groupId: 'health' },
     healthDecrease: { name: 'tokenActionHud.ironsworn.health.decrease', groupId: 'health' },

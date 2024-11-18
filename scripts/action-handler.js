@@ -1,5 +1,5 @@
 // System Module Imports
-import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
+import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS_IS, METERS_SUNDERED_ISLES, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
 
 export let ActionHandler = null
 
@@ -215,6 +215,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             const actionTypeId = 'meter'
             const meterMap = new Map()
 
+            let METERS
+
+            if (game.settings.get('foundry-ironsworn', 'character-hold')) {
+                METERS = METERS_SUNDERED_ISLES
+            } else {
+                METERS = METERS_IS
+            }
+
             for (const key in METERS) {
                 if (METERS.hasOwnProperty(key)) {
                     const nestedObject = METERS[key];
@@ -232,20 +240,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
                 const actions = [...groupIdMap].map(([meterId]) => {
                     const id = meterId
-                    if (id == 'hold' && !game.settings.get('foundry-ironsworn', 'character-hold')) {
-                        return
-                    }
                     const name = coreModule.api.Utils.i18n(METERS[id].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(METERS[id].name).slice(1)
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
                     let info1 = ''
                     if (id === 'momentumMax') {
-                        info1 = { text: this.actor.system?.momentumMax }
+                        info1 = { text: this.actor.system?.momentumMax ? this.actor.system?.momentumMax : '' }
                     } else if (id === 'momentumReset') {
-                        info1 = { text: this.actor.system?.momentumReset }
+                        info1 = { text: this.actor.system?.momentumReset ? this.actor.system?.momentumReset : '' }
                     } else {
-                        info1 = { text: this.actor.system[id]?.value === 0 ? '0' : this.actor.system[id]?.value }
+                        info1 = { text: this.actor.system[id]?.value === 0 ? '0' : this.actor.system[id]?.value ? this.actor.system[id]?.value : '' }
                     }
                     return {
                         id,
@@ -255,6 +260,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         info1
                     }
                 })
+
                 // TAH Core method to add actions to the action list
                 this.addActions(actions, groupData)
             }

@@ -4,7 +4,7 @@
 
 ## [1.0.7](https://github.com/jendave/token-note-hover/commits/main) (2024-11-17)
 
-* Bugfix for Meters.
+* Bugfix for Meters. (Thanks @graygeist)
 * NPC/Foe now show Progress button.
 
 ## [1.0.6](https://github.com/jendave/token-note-hover/commits/main) (2024-11-16)
