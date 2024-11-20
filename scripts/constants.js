@@ -41,7 +41,10 @@ export const ACTION_TYPE = {
  */
 export const GROUP = {
     stat: { id: 'stat', name: 'IRONSWORN.Stats', type: 'system' },
-    legacy: { id: 'legacy', name: 'IRONSWORN.Legacies', type: 'system' },
+    // legacy: { id: 'legacy', name: 'IRONSWORN.Legacies', type: 'system' },
+    quest: { id: 'quest', name: 'IRONSWORN.LEGACY.Quests', type: 'system' },
+    bond: { id: 'bond', name: 'IRONSWORN.LEGACY.Bonds', type: 'system' },
+    discovery: { id: 'discovery', name: 'IRONSWORN.LEGACY.Discoveries', type: 'system' },
     momentum: { id: 'momentum', name: 'IRONSWORN.Momentum', type: 'system' },
     health: { id: 'health', name: 'IRONSWORN.Health', type: 'system' },
     spirit: { id: 'spirit', name: 'IRONSWORN.Spirit', type: 'system' },
@@ -127,52 +130,55 @@ export const STATS = {
  * Legacies
  */
 export const LEGACIES = {
-    quests: 'IRONSWORN.LEGACY.Quests',
-    bonds: 'IRONSWORN.LEGACY.Bonds',
-    discoveries: 'IRONSWORN.LEGACY.Discoveries'
+    quests: { name: 'IRONSWORN.LEGACY.Quests', groupId: 'quest' },
+    questsIncrease: { name: 'tokenActionHud.ironsworn.markProgress', groupId: 'quest' },
+    bonds: { name: 'IRONSWORN.LEGACY.Bonds', groupId: 'bond' },
+    bondsIncrease: { name: 'IRONSWORN.MarkProgress', groupId: 'bond' },
+    discoveries: { name: 'IRONSWORN.LEGACY.Discoveries', groupId: 'discovery' },
+    discoveriesIncrease: { name: 'IRONSWORN.MarkProgress', groupId: 'discovery' }
 }
 
 /**
  * Meters
  */
 export const METERS_IS = {
+    healthDecrease: { name: '\u23F4', groupId: 'health' },
     health: { name: 'IRONSWORN.Health', groupId: 'health' },
-    healthIncrease: { name: 'tokenActionHud.ironsworn.health.increase', groupId: 'health' },
-    healthDecrease: { name: 'tokenActionHud.ironsworn.health.decrease', groupId: 'health' },
+    healthIncrease: { name: '\u23F5', groupId: 'health' },
+    spiritDecrease: { name: '\u23F4', groupId: 'spirit' },
     spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit' },
-    spiritIncrease: { name: 'tokenActionHud.ironsworn.spirit.increase', groupId: 'spirit' },
-    spiritDecrease: { name: 'tokenActionHud.ironsworn.spirit.decrease', groupId: 'spirit' },
+    spiritIncrease: { name: '\u23F5', groupId: 'spirit' },
+    supplyDecrease: { name: '\u23F4', groupId: 'supply' },
     supply: { name: 'IRONSWORN.Supply', groupId: 'supply' },
-    supplyIncrease: { name: 'tokenActionHud.ironsworn.supply.increase', groupId: 'supply' },
-    supplyDecrease: { name: 'tokenActionHud.ironsworn.supply.decrease', groupId: 'supply' },
+    supplyIncrease: { name: '\u23F5', groupId: 'supply' },
+    momentumDecrease: { name: '\u23F4', groupId: 'momentum' },
     momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum' },
-    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' },
+    momentumIncrease: { name: '\u23F5', groupId: 'momentum' },
     momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum' },
-    momentumIncrease: { name: 'tokenActionHud.ironsworn.momentum.increase', groupId: 'momentum' },
-    momentumDecrease: { name: 'tokenActionHud.ironsworn.momentum.decrease', groupId: 'momentum' }
+    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' }
 }
 
 /**
  * Meters
  */
 export const METERS_SUNDERED_ISLES = {
+    healthDecrease: { name: '\u23F4', groupId: 'health' },
     health: { name: 'IRONSWORN.Health', groupId: 'health' },
-    healthIncrease: { name: 'tokenActionHud.ironsworn.health.increase', groupId: 'health' },
-    healthDecrease: { name: 'tokenActionHud.ironsworn.health.decrease', groupId: 'health' },
+    healthIncrease: { name: '\u23F5', groupId: 'health' },
+    spiritDecrease: { name: '\u23F4', groupId: 'spirit' },
     spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit' },
-    spiritIncrease: { name: 'tokenActionHud.ironsworn.spirit.increase', groupId: 'spirit' },
-    spiritDecrease: { name: 'tokenActionHud.ironsworn.spirit.decrease', groupId: 'spirit' },
+    spiritIncrease: { name: '\u23F5', groupId: 'spirit' },
+    supplyDecrease: { name: '\u23F4', groupId: 'supply' },
     supply: { name: 'IRONSWORN.Supply', groupId: 'supply' },
-    supplyIncrease: { name: 'tokenActionHud.ironsworn.supply.increase', groupId: 'supply' },
-    supplyDecrease: { name: 'tokenActionHud.ironsworn.supply.decrease', groupId: 'supply' },
-    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum' },
-    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' },
-    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum' },
-    momentumIncrease: { name: 'tokenActionHud.ironsworn.momentum.increase', groupId: 'momentum' },
-    momentumDecrease: { name: 'tokenActionHud.ironsworn.momentum.decrease', groupId: 'momentum' },
+    supplyIncrease: { name: '\u23F5', groupId: 'supply' },
+    holdDecrease: { name: '\u23F4', groupId: 'hold' },
     hold: { name: 'IRONSWORN.Hold', groupId: 'hold' },
-    holdIncrease: { name: 'tokenActionHud.ironsworn.hold.increase', groupId: 'hold' },
-    holdDecrease: { name: 'tokenActionHud.ironsworn.hold.decrease', groupId: 'hold' }
+    holdIncrease: { name: '\u23F5', groupId: 'hold' },
+    momentumDecrease: { name: '\u23F4', groupId: 'momentum' },
+    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum' },
+    momentumIncrease: { name: '\u23F5', groupId: 'momentum' },
+    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum' },
+    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' }
 }
 
 /**

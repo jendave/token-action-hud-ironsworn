@@ -2,9 +2,11 @@
   "tokenActionHud": {
     "ironsworn": {
       "meters": "Meters",
+      "increase": "Increase",
+      "decrease": "Decrease",
       "momentum": {
-        "reset": "Reset",
-        "max": "Max",
+        "reset": "Momentum Reset",
+        "max": "Momentum Max",
         "increase": "Momentum +1",
         "decrease": "Momentum -1"
       },

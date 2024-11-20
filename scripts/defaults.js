@@ -43,7 +43,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'connection',
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubtypeConnection'),
                 groups: [
-                    { ...groups.connection, nestId: 'connection_connection' }
+                    { ...groups.connection, nestId: 'connection_connection', settings: { showTitle: false } }
                 ]
             },
             {
@@ -51,7 +51,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'stat',
                 name: coreModule.api.Utils.i18n('IRONSWORN.Stats'),
                 groups: [
-                    { ...groups.stat, nestId: 'stat_stat' }
+                    { ...groups.stat, nestId: 'stat_stat', settings: { showTitle: false } }
                 ]
             },
             {
@@ -59,11 +59,11 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'meter',
                 name: coreModule.api.Utils.i18n('tokenActionHud.ironsworn.meters'),
                 groups: [
-                    { ...groups.momentum, nestId: 'meter_momentum' },
-                    { ...groups.health, nestId: 'meter_health' },
-                    { ...groups.spirit, nestId: 'meter_spirit' },
-                    { ...groups.supply, nestId: 'meter_supply' },
-                    { ...groups.hold, nestId: 'meter_hold' }
+                    { ...groups.health, nestId: 'meter_health', settings: { showTitle: false } },
+                    { ...groups.spirit, nestId: 'meter_spirit', settings: { showTitle: false } },
+                    { ...groups.supply, nestId: 'meter_supply', settings: { showTitle: false } },
+                    { ...groups.hold, nestId: 'meter_hold', settings: { showTitle: false } },
+                    { ...groups.momentum, nestId: 'meter_momentum', settings: { showTitle: false } }
                 ]
             },
             {
@@ -84,7 +84,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 id: 'legacy',
                 name: coreModule.api.Utils.i18n('IRONSWORN.Legacies'),
                 groups: [
-                    { ...groups.legacy, nestId: 'legacy_legacy' }
+                    { ...groups.quest, nestId: 'legacy_quest', settings: { showTitle: false } },
+                    { ...groups.bond, nestId: 'legacy_bond', settings: { showTitle: false } },
+                    { ...groups.discovery, nestId: 'legacy_discovery', settings: { showTitle: false } }
                 ]
             },
             {

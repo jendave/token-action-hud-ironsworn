@@ -85,6 +85,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'impact':
                     this.#handleImpactAction(event, actor, actionId)
                     break
+                case 'legacy':
+                    this.#handleLegacyAction(event, actor, actionId)
+                    break
                 case 'utility':
                     this.#handleUtilityAction(token, actionId)
                     break
@@ -104,7 +107,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
 
         /**
-         * Handle item action
+         * Handle Progress action
          * @private
          * @param {object} event    The event
          * @param {object} actor    The actor
@@ -112,10 +115,79 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #handleProgressAction(event, actor, actionId) {
             actor.items.get(actionId).sheet.render(true)
+            // actor.items.get(actionId).system.fulfill()
+            // actor.items.get(actionId).system.markProgress()
         }
 
         /**
-         * Handle item action
+         * Handle Legacy action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        async #handleLegacyAction(event, actor, actionId) {
+            let tempValue
+            let data
+
+            switch (actionId) {
+                case 'questsIncrease':
+                    tempValue = Math.clamp(
+                        actor.system.legacies.quests + 1,
+                        0,
+                        40,
+                    )
+
+                    data = {
+                        system: {
+                            legacies: {
+                                quests: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'bondsIncrease':
+                    tempValue = Math.clamp(
+                        actor.system.legacies.bonds + 1,
+                        0,
+                        40,
+                    )
+                    data = {
+                        system: {
+                            legacies: {
+                                bonds: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                case 'discoveriesIncrease':
+                    tempValue = Math.clamp(
+                        actor.system.legacies.discoveries + 1,
+                        0,
+                        40,
+                    )
+                    data = {
+                        system: {
+                            legacies: {
+                                discoveries: tempValue
+                            }
+                        }
+                    }
+                    await actor.update(data)
+                    Hooks.call('tokenActionHudCoreApiReady', actor)
+                    break
+                default:
+                    // NOP
+                    break
+            }
+        }
+
+        /**
+         * Handle Asset action
          * @private
          * @param {object} event    The event
          * @param {object} actor    The actor

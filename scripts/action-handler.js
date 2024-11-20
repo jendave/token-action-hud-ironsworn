@@ -135,7 +135,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
                     const info1 = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { text: Math.floor(itemData.system.current / 4).toString() } : null
-
+                    // '\u23ED' fulfill vow
                     return {
                         id,
                         name,
@@ -184,27 +184,52 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #buildLegacies() {
             const actionTypeId = 'legacy'
-            const groupData = { id: 'legacy', type: 'system' }
+            const legacyMap = new Map()
+            // const groupData = { id: 'legacy', type: 'system' }
 
-            // Get actions
-            const actions = []
-            for (const legacy in LEGACIES) {
-                const id = legacy
-                const name = coreModule.api.Utils.i18n(LEGACIES[legacy]).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(LEGACIES[legacy]).slice(1)
-                const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
-                const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
-                const encodedValue = [actionTypeId, id].join(this.delimiter)
-                const info1 = { text: Math.floor(this.actor.system.legacies[legacy] / 4).toString() }
-                actions.push({
-                    id,
-                    name,
-                    listName,
-                    encodedValue,
-                    info1
-                })
+            for (const key in LEGACIES) {
+                if (LEGACIES.hasOwnProperty(key)) {
+                    const nestedObject = LEGACIES[key];
+                    const groupIdMap = legacyMap.get(nestedObject.groupId) ?? new Map()
+                    groupIdMap.set(key, nestedObject.groupId)
+                    legacyMap.set(nestedObject.groupId, groupIdMap)
+                }
             }
-            // TAH Core method to add actions to the action list
-            this.addActions(actions, groupData)
+
+            for (const [groupId, groupIdMap] of legacyMap) {
+                if (!groupId) continue
+
+                const groupData = { id: groupId, type: 'system' }
+                // Get actions
+                const actions = [...groupIdMap].map(([legacyId]) => {
+                    let name = ''
+                    let info1 = ''
+                    let tooltip = ''
+                    const id = legacyId
+                    const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
+                    const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
+                    const encodedValue = [actionTypeId, id].join(this.delimiter)
+                    if (id === 'questsIncrease' || id === 'bondsIncrease' || id === 'discoveriesIncrease') {
+                        name = '\u23F5' 
+                        info1 = ''
+                        tooltip = { content: coreModule.api.Utils.i18n('IRONSWORN.MarkProgress') }
+                    }
+                    else {
+                        name = coreModule.api.Utils.i18n(LEGACIES[id].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(LEGACIES[id].name).slice(1)
+                        info1 = { text: Math.floor(this.actor.system?.legacies[id] / 4).toString() + ',\u00A0' + Math.floor(this.actor.system?.legacies[id] % 4).toString() }
+                    }
+                    return {
+                        id,
+                        name,
+                        listName,
+                        encodedValue,
+                        info1,
+                        tooltip
+                    }
+                })
+                // TAH Core method to add actions to the action list
+                this.addActions(actions, groupData)
+            }
         }
 
         /**
@@ -245,6 +270,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
                     let info1 = ''
+                    let tooltip = ''
+                    if (METERS[id].name === '\u23F4') {
+                        tooltip = { content: coreModule.api.Utils.i18n('tokenActionHud.ironsworn.decrease') }
+                    } else if (METERS[id].name === '\u23F5') {
+                        tooltip = { content: coreModule.api.Utils.i18n('tokenActionHud.ironsworn.increase') }
+                    }
                     if (id === 'momentumMax') {
                         info1 = { text: this.actor.system?.momentumMax ? this.actor.system?.momentumMax : '' }
                     } else if (id === 'momentumReset') {
@@ -257,7 +288,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         name,
                         listName,
                         encodedValue,
-                        info1
+                        info1,
+                        tooltip
                     }
                 })
 
