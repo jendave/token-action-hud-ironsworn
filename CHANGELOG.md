@@ -11,7 +11,7 @@
 * Added tooltips to the progress, vow and legacy tracks.
 * Cleaned up Meter increase and decrease buttons.
 * Fixed labels for Ironsworn debilities.
-* Ironsworn character no longer have an incorrect `Legacies` button.
+* Ironsworn characters no longer have an incorrect `Legacies` button.
 * Added BondSets to Ironsworn characters
 
 ## [1.0.7](https://github.com/jendave/token-note-hover/commits/main) (2024-11-17)
