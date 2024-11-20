@@ -2,7 +2,7 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
-## [1.0.8](https://github.com/jendave/token-note-hover/commits/main) (2024-11-19)
+## [1.0.8](https://github.com/jendave/token-note-hover/commits/main) (2024-11-20)
 
 * Resetting the layout is necessary to ensure the HUD works correctly.
   * [Troubleshooting and Tips](https://github.com/jendave/token-action-hud-ironsworn?tab=readme-ov-file#troubleshooting-and-tips)
