@@ -50,7 +50,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             this.#buildMeters()
             this.#buildImpacts()
             this.#buildMoves()
-            this.#buildLegacies()
+            if (this.actor.flags.core?.sheetClass !== 'ironsworn.IronswornCharacterSheetV2') {
+                this.#buildLegacies()
+            }
         }
 
         /**
@@ -70,7 +72,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
         }
 
         /**
-         * Build shared sheet actions
+         * Build NPC/foe actions
          * @private
          */
         #buildNPCActions() {
@@ -89,6 +91,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
             for (const [itemId, itemData] of this.items) {
                 const itemDataTemp = structuredClone(itemData)
+                if (itemDataTemp.type === 'bondset' && this.actor.flags.core?.sheetClass !== 'ironsworn.IronswornCharacterSheetV2') {
+                    continue
+                }
                 if (itemDataTemp.type === 'progress') {
                     if (itemDataTemp.system.subtype === 'vow') {
                         itemDataTemp.type = 'vow'
@@ -130,18 +135,21 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 // Get actions
                 const actions = [...typeMap].map(([itemId, itemData]) => {
                     const id = itemId
-                    const name = itemData.name
+                    const name = itemData.type === 'bondset' ? coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeBond') : itemData.name
                     const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
-                    const info1 = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { text: Math.floor(itemData.system.current / 4).toString() + ',\u00A0' + Math.floor(itemData.system.current % 4).toString() } : null
+                    const info1 = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { text: Math.floor(itemData.system.current / 4).toString() + ',\u00A0' + Math.floor(itemData.system.current % 4).toString() } : itemData.type === 'bondset' ? { text: Math.floor(itemData.system.bonds.length / 4).toString() + ',\u00A0' + Math.floor(itemData.system.bonds.length % 4).toString() } : ''
+                    const tooltip = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { content: Math.floor(itemData.system.current / 4).toString() + '\u00A0boxes,\u00A0' + Math.floor(itemData.system.current % 4).toString() + '\u00A0ticks' } : itemData.type === 'bondset' ? { content: Math.floor(itemData.system.bonds.length / 4).toString() + '\u00A0boxes,\u00A0' + Math.floor(itemData.system.bonds.length % 4).toString() + '\u00A0ticks' } : ''
+
                     // '\u23ED' fulfill vow
                     return {
                         id,
                         name,
                         listName,
                         encodedValue,
-                        info1
+                        info1,
+                        tooltip
                     }
                 })
                 // TAH Core method to add actions to the action list
@@ -210,13 +218,15 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
                     if (id === 'questsIncrease' || id === 'bondsIncrease' || id === 'discoveriesIncrease') {
-                        name = '\u23F5' 
+                        name = '\u23F5'
                         info1 = ''
                         tooltip = { content: coreModule.api.Utils.i18n('IRONSWORN.MarkProgress') }
                     }
                     else {
                         name = coreModule.api.Utils.i18n(LEGACIES[id].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(LEGACIES[id].name).slice(1)
                         info1 = { text: Math.floor(this.actor.system?.legacies[id] / 4).toString() + ',\u00A0' + Math.floor(this.actor.system?.legacies[id] % 4).toString() }
+                        tooltip = { content: Math.floor(this.actor.system?.legacies[id] / 4).toString() + '\u00A0boxes,\u00A0' + Math.floor(this.actor.system?.legacies[id] % 4).toString() + '\u00A0ticks' }
+
                     }
                     return {
                         id,

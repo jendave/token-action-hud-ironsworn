@@ -41,7 +41,6 @@ export const ACTION_TYPE = {
  */
 export const GROUP = {
     stat: { id: 'stat', name: 'IRONSWORN.Stats', type: 'system' },
-    // legacy: { id: 'legacy', name: 'IRONSWORN.Legacies', type: 'system' },
     quest: { id: 'quest', name: 'IRONSWORN.LEGACY.Quests', type: 'system' },
     bond: { id: 'bond', name: 'IRONSWORN.LEGACY.Bonds', type: 'system' },
     discovery: { id: 'discovery', name: 'IRONSWORN.LEGACY.Discoveries', type: 'system' },
@@ -52,6 +51,7 @@ export const GROUP = {
     hold: { id: 'hold', name: 'IRONSWORN.Hold', type: 'system' },
     progress: { id: 'progress', name: 'IRONSWORN.ITEMS.SubtypeProgress', type: 'system' },
     vow: { id: 'vow', name: 'IRONSWORN.ITEMS.SubtypeVow', type: 'system' },
+    bondset: { id: 'bondset', name: 'IRONSWORN.ITEMS.TypeBond', type: 'system' },
     connection: { id: 'connection', name: 'IRONSWORN.ITEMS.SubtypeConnection', type: 'system' },
     path: { id: 'path', name: 'IRONSWORN.Asset Categories.Starforged.Path Assets.Title', type: 'system' },
     companion: { id: 'companion', name: 'IRONSWORN.Asset Categories.Starforged.Companion Assets.Title', type: 'system' },
@@ -200,14 +200,14 @@ export const IMPACTS_SF = {
  * Impacts for Ironsworn
  */
 export const IMPACTS_IS = {
-    wounded: { name: 'IRONSWORN.Debility.Wounded', groupId: 'condition' },
-    unprepared: { name: 'IRONSWORN.Debility.Unprepared', groupId: 'condition' },
-    shaken: { name: 'IRONSWORN.Debility.Shaken', groupId: 'condition' },
-    encumbered: { name: 'IRONSWORN.Debility.Encumbered', groupId: 'condition' },
-    maimed: { name: 'IRONSWORN.Debility.Maimed', groupId: 'bane' },
-    corrupted: { name: 'IRONSWORN.Debility.Corrupted', groupId: 'bane' },
-    cursed: { name: 'IRONSWORN.Debility.Cursed', groupId: 'burden' },
-    tormented: { name: 'IRONSWORN.Debility.Tormented', groupId: 'burden' },
+    wounded: { name: 'IRONSWORN.DEBILITY.Wounded', groupId: 'condition' },
+    unprepared: { name: 'IRONSWORN.DEBILITY.Unprepared', groupId: 'condition' },
+    shaken: { name: 'IRONSWORN.DEBILITY.Shaken', groupId: 'condition' },
+    encumbered: { name: 'IRONSWORN.DEBILITY.Encumbered', groupId: 'condition' },
+    maimed: { name: 'IRONSWORN.DEBILITY.Maimed', groupId: 'bane' },
+    corrupted: { name: 'IRONSWORN.DEBILITY.Corrupted', groupId: 'bane' },
+    cursed: { name: 'IRONSWORN.DEBILITY.Cursed', groupId: 'burden' },
+    tormented: { name: 'IRONSWORN.DEBILITY.Tormented', groupId: 'burden' },
 }
 
 /**

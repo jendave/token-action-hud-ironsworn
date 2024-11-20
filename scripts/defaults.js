@@ -35,7 +35,8 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.SubtypeProgress'),
                 groups: [
                     { ...groups.progress, nestId: 'progress_progress' },
-                    { ...groups.vow, nestId: 'progress_vow' }
+                    { ...groups.vow, nestId: 'progress_vow' },
+                    { ...groups.bondset, nestId: 'progress_bondset' }
                 ]
             },
             {

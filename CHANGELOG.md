@@ -2,6 +2,18 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.0.8](https://github.com/jendave/token-note-hover/commits/main) (2024-11-19)
+
+* Resetting the layout is necessary to ensure the HUD works correctly.
+  * [Troubleshooting and Tips](https://github.com/jendave/token-action-hud-ironsworn?tab=readme-ov-file#troubleshooting-and-tips)
+* Added buttons to mark progress on Legacies
+* Added ticks to Legacies and Progress tracks
+* Added tooltips to the progress, vow and legacy tracks.
+* Cleaned up Meter increase and decrease buttons.
+* Fixed labels for Ironsworn debilities.
+* Ironsworn character no longer have an incorrect `Legacies` button.
+* Added BondSets to Ironsworn characters
+
 ## [1.0.7](https://github.com/jendave/token-note-hover/commits/main) (2024-11-17)
 
 * Bugfix for Meters. (Thanks @graygeist)
