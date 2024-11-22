@@ -168,7 +168,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     }
                 })
 
-                if (groupId === 'connection') {
+                if (groupId === 'connection' || groupId === 'progress' || groupId === 'vow') {
                     let actionsTemp = []
                     for (const item of actions) {
                         actionsTemp.push(item)
