@@ -123,6 +123,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const typeMap = inventoryMap.get(type) ?? new Map()
                 typeMap.set(itemId, itemDataTemp)
                 inventoryMap.set(type, typeMap)
+                // if (itemDataTemp.type === 'progress' || itemDataTemp.type === 'vow' || itemDataTemp.type === 'connection') {
+                //     typeMap.set(itemId, itemDataTemp)
+                //     inventoryMap.set(type, typeMap)
+                //     itemDataTemp.type = 'markProgress'
+                //     inventoryMap.set(type, typeMap)
+                //     itemDataTemp.type = 'fulfillProgress'
+                //     inventoryMap.set(type, typeMap)
+                // } else {
+                //     typeMap.set(itemId, itemDataTemp)
+                //     inventoryMap.set(type, typeMap)
+                // }
             }
 
             for (const [type, typeMap] of inventoryMap) {
@@ -142,7 +153,11 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const info1 = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { text: Math.floor(itemData.system.current / 4).toString() + ',\u00A0' + Math.floor(itemData.system.current % 4).toString() } : itemData.type === 'bondset' ? { text: Math.floor(itemData.system.bonds.length / 4).toString() + ',\u00A0' + Math.floor(itemData.system.bonds.length % 4).toString() } : ''
                     const tooltip = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { content: Math.floor(itemData.system.current / 4).toString() + '\u00A0boxes,\u00A0' + Math.floor(itemData.system.current % 4).toString() + '\u00A0ticks' } : itemData.type === 'bondset' ? { content: Math.floor(itemData.system.bonds.length / 4).toString() + '\u00A0boxes,\u00A0' + Math.floor(itemData.system.bonds.length % 4).toString() + '\u00A0ticks' } : ''
 
+                    // actionTypeId = 'markProgress'
+                    // \u23F5 mark progress
+                    // actionTypeId = 'fulfillProgress'
                     // '\u23ED' fulfill vow
+                    // put into encodedValue
                     return {
                         id,
                         name,
@@ -152,8 +167,42 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         tooltip
                     }
                 })
-                // TAH Core method to add actions to the action list
-                this.addActions(actions, groupData)
+
+                if (groupId === 'connection') {
+                    let actionsTemp = []
+                    for (const item of actions) {
+                        actionsTemp.push(item)
+                        const markProgressItem = structuredClone(item)
+                        const markProgressName = '\u23F5'
+                        const markProgressActionTypeId = 'markProgress'
+                        const markProgressListName = 'markProgress'
+                        markProgressItem.encodedValue = [markProgressActionTypeId, markProgressItem.id].join(this.delimiter)
+                        markProgressItem.name = markProgressName
+                        markProgressItem.listName = markProgressListName
+                        markProgressItem.info1 = ''
+                        markProgressItem.tooltip = { content: coreModule.api.Utils.i18n('IRONSWORN.MarkProgress') }
+                        markProgressItem.id = `${markProgressItem.id}_markProgress`
+                        actionsTemp.push(markProgressItem)
+
+                        const progressRollItem = structuredClone(item)
+                        const progressRollName = '\u23ED'
+                        const progressRollActionTypeId = 'progressRoll'
+                        const progressRollListName = 'progressRoll'
+                        progressRollItem.encodedValue = [progressRollActionTypeId, progressRollItem.id].join(this.delimiter)
+                        progressRollItem.name = progressRollName
+                        progressRollItem.listName = progressRollListName
+                        progressRollItem.info1 = ''
+                        progressRollItem.tooltip = { content: coreModule.api.Utils.i18n('IRONSWORN.ProgressRoll') }
+                        progressRollItem.id = `${progressRollItem.id}_progressRoll`
+                        actionsTemp.push(progressRollItem)
+                    }
+                    //actions.push(...actionsAdditional)
+                    // this.addActions(actions, groupData)
+                    this.addActions(actionsTemp, groupData)
+                } else {
+                    // TAH Core method to add actions to the action list
+                    this.addActions(actions, groupData)
+                }
             }
         }
 

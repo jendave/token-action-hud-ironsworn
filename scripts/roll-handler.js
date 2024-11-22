@@ -103,6 +103,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'moveSunderedIsles':
                     this.#handleMoveAction(event, actor, actionId, actionTypeId)
                     break
+                case 'markProgress':
+                    this.#handleMarkProgressAction(event, actor, actionId, actionTypeId)
+                    break
+                case 'progressRoll':
+                    this.#handleProgressRollAction(event, actor, actionId, actionTypeId)
+                    break
             }
         }
 
@@ -115,8 +121,28 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #handleProgressAction(event, actor, actionId) {
             actor.items.get(actionId).sheet.render(true)
-            // actor.items.get(actionId).system.fulfill()
-            // actor.items.get(actionId).system.markProgress()
+        }
+
+        /**
+         * Handle Mark Progress action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        #handleMarkProgressAction(event, actor, actionId) {
+            actor.items.get(actionId).system.markProgress()
+        }
+
+        /**
+         * Handle Fulfill Progress action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        #handleProgressRollAction(event, actor, actionId) {
+            actor.items.get(actionId).system.fulfill()
         }
 
         /**
