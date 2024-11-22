@@ -3,6 +3,18 @@ import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS_IS, M
 
 export let ActionHandler = null
 
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
+    }
+    return result;
+}
+
 Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
     /**
      * Extends Token Action HUD Core's ActionHandler class and builds system-defined actions for the HUD
@@ -196,8 +208,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         progressRollItem.tooltip = { content: coreModule.api.Utils.i18n('IRONSWORN.ProgressRoll') }
                         progressRollItem.id = `${progressRollItem.id}_progressRoll`
                         actionsTemp.push(progressRollItem)
+
+                        const subGroupData = { id: makeid(10), type: 'system', settings: { showTitle: false } }
+                        this.addGroup(subGroupData, groupData)
+                        this.addActions(actionsTemp, subGroupData)
+                        actionsTemp = []
                     }
-                    this.addActions(actionsTemp, groupData)
                 } else if (groupId === 'bondset') {
                     let actionsTemp = []
                     for (const item of actions) {
@@ -214,8 +230,12 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         writeEpilogueItem.tooltip = { content: coreModule.api.Utils.i18n('IRONSWORN.ProgressRoll') }
                         writeEpilogueItem.id = `${writeEpilogueItem.id}_writeEpilogue`
                         actionsTemp.push(writeEpilogueItem)
+
+                        const subGroupData = { id: makeid(10), type: 'system', settings: { showTitle: false } }
+                        this.addGroup(subGroupData, groupData)
+                        this.addActions(actionsTemp, subGroupData)
+                        actionsTemp = []
                     }
-                    this.addActions(actionsTemp, groupData)
                 } else {
                     // TAH Core method to add actions to the action list
                     this.addActions(actions, groupData)
