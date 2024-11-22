@@ -109,6 +109,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'progressRoll':
                     this.#handleProgressRollAction(event, actor, actionId, actionTypeId)
                     break
+                case 'writeEpilogue':
+                    this.#handleWriteEpilogueAction(event, actor, actionId, actionTypeId)
+                    break
             }
         }
 
@@ -143,6 +146,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #handleProgressRollAction(event, actor, actionId) {
             actor.items.get(actionId).system.fulfill()
+        }
+
+        /**
+         * Handle Write Epilogue action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        #handleWriteEpilogueAction(event, actor, actionId) {
+            actor.items.get(actionId).system.writeEpilogue()
         }
 
         /**

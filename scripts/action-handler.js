@@ -172,6 +172,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     let actionsTemp = []
                     for (const item of actions) {
                         actionsTemp.push(item)
+
                         const markProgressItem = structuredClone(item)
                         const markProgressName = '\u23F5'
                         const markProgressActionTypeId = 'markProgress'
@@ -196,8 +197,24 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         progressRollItem.id = `${progressRollItem.id}_progressRoll`
                         actionsTemp.push(progressRollItem)
                     }
-                    //actions.push(...actionsAdditional)
-                    // this.addActions(actions, groupData)
+                    this.addActions(actionsTemp, groupData)
+                } else if (groupId === 'bondset') {
+                    let actionsTemp = []
+                    for (const item of actions) {
+                        actionsTemp.push(item)
+
+                        const writeEpilogueItem = structuredClone(item)
+                        const writeEpilogueName = '\u23ED'
+                        const writeEpilogueActionTypeId = 'writeEpilogue'
+                        const writeEpilogueListName = 'writeEpilogue'
+                        writeEpilogueItem.encodedValue = [writeEpilogueActionTypeId, writeEpilogueItem.id].join(this.delimiter)
+                        writeEpilogueItem.name = writeEpilogueName
+                        writeEpilogueItem.listName = writeEpilogueListName
+                        writeEpilogueItem.info1 = ''
+                        writeEpilogueItem.tooltip = { content: coreModule.api.Utils.i18n('IRONSWORN.ProgressRoll') }
+                        writeEpilogueItem.id = `${writeEpilogueItem.id}_writeEpilogue`
+                        actionsTemp.push(writeEpilogueItem)
+                    }
                     this.addActions(actionsTemp, groupData)
                 } else {
                     // TAH Core method to add actions to the action list
