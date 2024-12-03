@@ -96,8 +96,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         async #buildInventory() {
-            if (this.items.size === 0) return
-
             const actionTypeId = 'item'
             const inventoryMap = new Map()
 
@@ -135,17 +133,16 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const typeMap = inventoryMap.get(type) ?? new Map()
                 typeMap.set(itemId, itemDataTemp)
                 inventoryMap.set(type, typeMap)
-                // if (itemDataTemp.type === 'progress' || itemDataTemp.type === 'vow' || itemDataTemp.type === 'connection') {
-                //     typeMap.set(itemId, itemDataTemp)
-                //     inventoryMap.set(type, typeMap)
-                //     itemDataTemp.type = 'markProgress'
-                //     inventoryMap.set(type, typeMap)
-                //     itemDataTemp.type = 'fulfillProgress'
-                //     inventoryMap.set(type, typeMap)
-                // } else {
-                //     typeMap.set(itemId, itemDataTemp)
-                //     inventoryMap.set(type, typeMap)
-                // }
+            }
+
+            if (!inventoryMap.get('progress')) {
+                inventoryMap.set('progress', new Map())
+            }
+            if (!inventoryMap.get('vow')) {
+                inventoryMap.set('vow', new Map())
+            }
+            if (!inventoryMap.get('connection')) {
+                inventoryMap.set('connection', new Map())
             }
 
             for (const [type, typeMap] of inventoryMap) {
@@ -165,11 +162,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const info1 = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { text: Math.floor(itemData.system.current / 4).toString() + ',\u00A0' + Math.floor(itemData.system.current % 4).toString() } : itemData.type === 'bondset' ? { text: Math.floor(itemData.system.bonds.length / 4).toString() + ',\u00A0' + Math.floor(itemData.system.bonds.length % 4).toString() } : ''
                     const tooltip = (itemData.type === 'progress' || itemData.system.subtype === 'vow' || itemData.type === 'connection') ? { content: Math.floor(itemData.system.current / 4).toString() + '\u00A0boxes,\u00A0' + Math.floor(itemData.system.current % 4).toString() + '\u00A0ticks' } : itemData.type === 'bondset' ? { content: Math.floor(itemData.system.bonds.length / 4).toString() + '\u00A0boxes,\u00A0' + Math.floor(itemData.system.bonds.length % 4).toString() + '\u00A0ticks' } : ''
 
-                    // actionTypeId = 'markProgress'
-                    // \u23F5 mark progress
-                    // actionTypeId = 'fulfillProgress'
-                    // '\u23ED' fulfill vow
-                    // put into encodedValue
                     return {
                         id,
                         name,
@@ -217,16 +209,17 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     }
 
                     const subGroupData = { id: makeid(10), type: 'system', settings: { showTitle: false } }
-                    const newProgressItem = structuredClone(actions[0])
                     const newProgressName = '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>')
                     const newProgressActionTypeId = 'new' + groupId
                     const newProgressListName = 'new' + groupId
-                    newProgressItem.id = 'new' + groupId
-                    newProgressItem.encodedValue = [newProgressActionTypeId, newProgressItem.id].join(this.delimiter)
-                    newProgressItem.name = newProgressName
-                    newProgressItem.listName = newProgressListName
-                    newProgressItem.info1 = ''
-                    newProgressItem.tooltip = { content: '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>') }
+                    const newProgressItem = {
+                        id: 'new' + groupId,
+                        encodedValue: [newProgressActionTypeId, 'new' + groupId].join(this.delimiter),
+                        name: newProgressName,
+                        listName: newProgressListName,
+                        info1:'',
+                        tooltip: { content: '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>') }
+                    };
                     actionsTemp.push(newProgressItem)
                     this.addGroup(subGroupData, groupData)
                     this.addActions(actionsTemp, subGroupData)

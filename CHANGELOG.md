@@ -2,6 +2,12 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.0.12](https://github.com/jendave/token-note-hover/commits/main) (2024-12-03)
+
+* Fixed bug where buttons to create new Connections, Vows and Progress Tracks would not appear unless there were already tracks present.
+* Resetting the layout may be necessary to ensure the HUD works correctly.
+  * [Troubleshooting and Tips](https://github.com/jendave/token-action-hud-ironsworn?tab=readme-ov-file#troubleshooting-and-tips)
+
 ## [1.0.11](https://github.com/jendave/token-note-hover/commits/main) (2024-12-03)
 
 * Added buttons to create new Connections, Vows and Progress Tracks.
