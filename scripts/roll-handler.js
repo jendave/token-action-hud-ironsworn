@@ -112,6 +112,18 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'writeEpilogue':
                     this.#handleWriteEpilogueAction(event, actor, actionId, actionTypeId)
                     break
+                case 'newprogress':
+                    actionId = 'progress'
+                    this.#handleNewProgressAction(event, actor, actionId, actionTypeId)
+                    break
+                case 'newvow':
+                    actionId = 'vow'
+                    this.#handleNewProgressAction(event, actor, actionId, actionTypeId)
+                    break
+                case 'newconnection':
+                    actionId = 'bond'
+                    this.#handleNewProgressAction(event, actor, actionId, actionTypeId)
+                    break
             }
         }
 
@@ -146,6 +158,43 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          */
         #handleProgressRollAction(event, actor, actionId) {
             actor.items.get(actionId).system.fulfill()
+        }
+
+        /**
+         * Handle New Progress action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        async #handleNewProgressAction(event, actor, actionId) {
+            let name
+            let type
+            let subType
+            if (actionId === 'progress') {
+                name = 'Progress'
+                type = 'progress'
+                subType = 'progress'
+            } else if (actionId === 'vow') {
+                name = 'Vow'
+                type = 'progress'
+                subType = 'vow'
+            } else if (actionId === 'bond') {
+                name = 'Connection'
+                type = 'progress'
+                subType = 'bond'
+            }
+            const itemData = {
+                name: name,
+                type: type,
+                system: { subtype: subType },
+                sort: 9000000
+            }
+
+            const item = await actor.items.documentClass.create(itemData, { parent: actor })
+            actor.items.get(item.id).sheet.render(true)
+            await actor.update({ 'data.items': actor.items })
+            Hooks.call('tokenActionHudCoreApiReady', actor)
         }
 
         /**

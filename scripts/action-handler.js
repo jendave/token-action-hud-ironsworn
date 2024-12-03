@@ -182,6 +182,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
                 if (groupId === 'connection' || groupId === 'progress' || groupId === 'vow') {
                     let actionsTemp = []
+
                     for (const item of actions) {
                         actionsTemp.push(item)
 
@@ -214,6 +215,21 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         this.addActions(actionsTemp, subGroupData)
                         actionsTemp = []
                     }
+
+                    const subGroupData = { id: makeid(10), type: 'system', settings: { showTitle: false } }
+                    const newProgressItem = structuredClone(actions[0])
+                    const newProgressName = '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>')
+                    const newProgressActionTypeId = 'new' + groupId
+                    const newProgressListName = 'new' + groupId
+                    newProgressItem.id = 'new' + groupId
+                    newProgressItem.encodedValue = [newProgressActionTypeId, newProgressItem.id].join(this.delimiter)
+                    newProgressItem.name = newProgressName
+                    newProgressItem.listName = newProgressListName
+                    newProgressItem.info1 = ''
+                    newProgressItem.tooltip = { content: '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>') }
+                    actionsTemp.push(newProgressItem)
+                    this.addGroup(subGroupData, groupData)
+                    this.addActions(actionsTemp, subGroupData)
                 } else if (groupId === 'bondset') {
                     let actionsTemp = []
                     for (const item of actions) {
