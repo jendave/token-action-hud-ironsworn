@@ -2,6 +2,10 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.0.13](https://github.com/jendave/token-note-hover/commits/main) (2024-12-03)
+
+* Shared Sheets no longer show new a Connection button.
+
 ## [1.0.12](https://github.com/jendave/token-note-hover/commits/main) (2024-12-03)
 
 * Fixed bug where buttons to create new Connections, Vows and Progress Tracks would not appear unless there were already tracks present.

@@ -80,7 +80,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         #buildSharedActions() {
-            this.#buildInventory()
+            this.#buildInventory(true)
         }
 
         /**
@@ -95,7 +95,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * Build inventory
          * @private
          */
-        async #buildInventory() {
+        async #buildInventory(sharedAction = false) {
             const actionTypeId = 'item'
             const inventoryMap = new Map()
 
@@ -208,21 +208,24 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                         actionsTemp = []
                     }
 
-                    const subGroupData = { id: makeid(10), type: 'system', settings: { showTitle: false } }
-                    const newProgressName = '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>')
-                    const newProgressActionTypeId = 'new' + groupId
-                    const newProgressListName = 'new' + groupId
-                    const newProgressItem = {
-                        id: 'new' + groupId,
-                        encodedValue: [newProgressActionTypeId, 'new' + groupId].join(this.delimiter),
-                        name: newProgressName,
-                        listName: newProgressListName,
-                        info1:'',
-                        tooltip: { content: '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>') }
-                    };
-                    actionsTemp.push(newProgressItem)
-                    this.addGroup(subGroupData, groupData)
-                    this.addActions(actionsTemp, subGroupData)
+                    if (!sharedAction || groupId !== 'connection') {
+                        const subGroupData = { id: makeid(10), type: 'system', settings: { showTitle: false } }
+                        const newProgressName = '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>')
+                        const newProgressActionTypeId = 'new' + groupId
+                        const newProgressListName = 'new' + groupId
+                        const newProgressItem = {
+                            id: 'new' + groupId,
+                            encodedValue: [newProgressActionTypeId, 'new' + groupId].join(this.delimiter),
+                            name: newProgressName,
+                            listName: newProgressListName,
+                            info1: '',
+                            tooltip: { content: '<< Create new ' + groupId + (groupId === 'progress' ? ' track >>' : ' >>') }
+                        };
+                        actionsTemp.push(newProgressItem)
+                        this.addGroup(subGroupData, groupData)
+                        this.addActions(actionsTemp, subGroupData)
+                        actionsTemp = []
+                    }
                 } else if (groupId === 'bondset') {
                     let actionsTemp = []
                     for (const item of actions) {
