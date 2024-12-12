@@ -77,6 +77,7 @@ This Foundry VTT module is licensed under a [Creative Commons Attribution 4.0 In
 - [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
 - [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
 - [GitHub Repository](https://github.com/jendave/token-action-hud-ironsworn)
+- [Itch.io](https://jendave.itch.io/)
 
 ## FoundryVTT Modules and Other Resources
 
@@ -96,5 +97,5 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 - [The City on the Breeze - Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
 - [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
 - [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
-- [I Owe My Soul to the Corporate Planet - Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-corporate-planet)
+- [I Owe My Soul to the Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-company-planet)
 - [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
