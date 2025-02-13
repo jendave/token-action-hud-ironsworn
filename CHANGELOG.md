@@ -2,6 +2,10 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.0.14](https://github.com/jendave/token-note-hover/commits/main) (2024-02-13)
+
+* Starship HUD now has a drop-down for Assets.
+
 ## [1.0.13](https://github.com/jendave/token-note-hover/commits/main) (2024-12-03)
 
 * Shared Sheets no longer show new a Connection button.

@@ -72,6 +72,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @private
          */
         #buildStarshipActions() {
+            this.#buildInventory(false, true)
             this.#buildImpacts(true)
         }
 
@@ -95,7 +96,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * Build inventory
          * @private
          */
-        async #buildInventory(sharedAction = false) {
+        async #buildInventory(sharedAction = false, isStarship = false) {
             const actionTypeId = 'item'
             const inventoryMap = new Map()
 
@@ -172,7 +173,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     }
                 })
 
-                if (groupId === 'connection' || groupId === 'progress' || groupId === 'vow') {
+                if ((groupId === 'connection' || groupId === 'progress' || groupId === 'vow') && !isStarship) {
                     let actionsTemp = []
 
                     for (const item of actions) {
