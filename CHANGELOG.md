@@ -2,6 +2,10 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.0.15](https://github.com/jendave/token-note-hover/commits/main) (2024-05-11)
+
+* Starship HUD now has a drop-down for Assets.Update to Foundry v13.
+
 ## [1.0.14](https://github.com/jendave/token-note-hover/commits/main) (2024-02-13)
 
 * Starship HUD now has a drop-down for Assets.
