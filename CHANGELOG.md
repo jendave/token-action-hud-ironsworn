@@ -2,6 +2,10 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.1.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-11-18)
+
+* Minimum supported version is Foundry v13.
+
 ## [1.0.15](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-05-11)
 
 * Update to Foundry v13.
