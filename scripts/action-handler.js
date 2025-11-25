@@ -476,7 +476,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
-                const info1 = ''//{ text: this.actor.system?.combatPosition ? '\u{1F518}' : null }
+                const info1 = { text: this.actor.system?.combatPosition === id ? '\u{1F518}' : null }
                 actions.push({
                     id,
                     name,

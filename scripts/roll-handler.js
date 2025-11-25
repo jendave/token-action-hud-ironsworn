@@ -125,8 +125,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     this.#handleNewProgressAction(event, actor, actionId, actionTypeId)
                     break
                 case 'combatPosition':
-                    actionId = 'combatPosition'
-                    this.#handleCombatPositionAction(event, actor, actionId, actionTypeId)
+                    this.#handleCombatPositionAction(event, actor, actionId)
                     break            
             }
         }
@@ -563,12 +562,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {string} actionId The action id
          */
         async #handleCombatPositionAction(_event, actor, actionId) {
-            const tempValue = !actor.system.combatPosition[actionId]
+            //const tempValue = actor.system?.combatPosition
             const data = {
                 system: {
-                    combatPosition: {
-                        [actionId]: tempValue
-                    }
+                    combatPosition: actionId
                 }
             }
             await actor.update(data)
