@@ -26,12 +26,13 @@
         "increase": "Hold +1",
         "decrease": "Hold -1"
       },
-      "combatStatus": {
+      "combatPosition": {
         "in_control": "In Control",
-        "in_a_bad_spot": "In a Bad Spot"
+        "in_a_bad_spot": "In a Bad Spot",
+        "none": "None"
       }
     },
-    "utility": "Utility",
-    "combatStatus": "Combat Status"
+    "utility": "utility",
+    "combatPosition": "Combat Position"
   }
 }

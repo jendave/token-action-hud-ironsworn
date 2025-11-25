@@ -124,6 +124,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     actionId = 'bond'
                     this.#handleNewProgressAction(event, actor, actionId, actionTypeId)
                     break
+                case 'combatPosition':
+                    actionId = 'combatPosition'
+                    this.#handleCombatPositionAction(event, actor, actionId, actionTypeId)
+                    break            
             }
         }
 
@@ -550,6 +554,25 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             await actor.moveSheet?.render(true)
             await resolveAfterMilliseconds()
             await CONFIG.IRONSWORN.emitter.emit('highlightMove', MOVES[actionId].uuid)
+        }
+        /**
+         * Handle combat position action
+         * @private
+         * @param {object} event    The event
+         * @param {object} actor    The actor
+         * @param {string} actionId The action id
+         */
+        async #handleCombatPositionAction(_event, actor, actionId) {
+            const tempValue = !actor.system.combatPosition[actionId]
+            const data = {
+                system: {
+                    combatPosition: {
+                        [actionId]: tempValue
+                    }
+                }
+            }
+            await actor.update(data)
+            Hooks.call('tokenActionHudCoreApiReady', actor)
         }
     }
 

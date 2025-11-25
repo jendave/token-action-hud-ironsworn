@@ -33,7 +33,8 @@ export const ACTION_TYPE = {
     moveClassic: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.classic',
     moveDelve: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.delve',
     moveStarforged: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.starforged',
-    moveSunderedIsles: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.sundered_isles'
+    moveSunderedIsles: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.sundered_isles',
+    combatPosition: 'tokenActionHud.combatPosition'
 }
 
 /**
@@ -94,7 +95,7 @@ export const GROUP = {
     failureMoveDelve: { id: 'failureMoveDelve', name: 'IRONSWORN.MOVES.Failure Moves', type: 'system' },
     threatMoveDelve: { id: 'threatMoveDelve', name: 'IRONSWORN.MOVES.Threat Moves', type: 'system' },
     rarityMoveDelve: { id: 'rarityMoveDelve', name: 'IRONSWORN.MOVES.Rarity Moves', type: 'system' },
-    combatStatus: { id: 'combatStatus', name: 'tokenActionHud.combatStatus', type: 'system' }
+    combatPosition: { id: 'combatPosition', name: 'tokenActionHud.combatPosition', type: 'system' }
 }
 
 /**
@@ -220,11 +221,12 @@ export const IMPACTS_STARSHIP = {
 }
 
 /**
- * Combat Status for Characters
+ * Combat Position for Characters
  */
-export const COMBAT_STATUS = {
-    in_control: { name: 'tokenActionHud.ironsworn.combatStatus.in_control', groupId: 'combatStatus' },
-    in_a_bad_spot: { name: 'tokenActionHud.ironsworn.combatStatus.in_a_bad_spot', groupId: 'combatStatus' }
+export const COMBAT_POSITION = {
+    inControl: { name: 'tokenActionHud.ironsworn.combatPosition.in_control', groupId: 'combatPosition' },
+    inABadSpot: { name: 'tokenActionHud.ironsworn.combatPosition.in_a_bad_spot', groupId: 'combatPosition' },
+    none: { name: 'tokenActionHud.ironsworn.combatPosition.none', groupId: 'combatPosition' }
 }
 
 /**

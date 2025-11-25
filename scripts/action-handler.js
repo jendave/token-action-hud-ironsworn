@@ -1,5 +1,5 @@
 // System Module Imports
-import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS_IS, METERS_SUNDERED_ISLES, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES, COMBAT_STATUS } from './constants.js'
+import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS_IS, METERS_SUNDERED_ISLES, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES, COMBAT_POSITION } from './constants.js'
 
 export let ActionHandler = null
 
@@ -61,7 +61,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             this.#buildStats()
             this.#buildMeters()
             this.#buildImpacts()
-            this.#buildCombatStatus()
+            this.#buildCombatPosition()
             this.#buildMoves()
             if (this.actor.flags.core?.sheetClass !== 'ironsworn.IronswornCharacterSheetV2') {
                 this.#buildLegacies()
@@ -464,19 +464,19 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * Build impacts
          * @private
          */
-        async #buildCombatStatus() {
-            const actionTypeId = 'combatStatus'
-            const groupData = { id: 'combatStatus', type: 'system' }
+        async #buildCombatPosition() {
+            const actionTypeId = 'combatPosition'
+            const groupData = { id: 'combatPosition', type: 'system' }
         
             // Get actions
             const actions = []
-            for (const combatStatus in COMBAT_STATUS) {
-                const id = combatStatus
-                const name = coreModule.api.Utils.i18n(COMBAT_STATUS[combatStatus].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(COMBAT_STATUS[combatStatus].name).slice(1)
+            for (const combatPosition in COMBAT_POSITION) {
+                const id = combatPosition
+                const name = coreModule.api.Utils.i18n(COMBAT_POSITION[combatPosition].name).charAt(0).toUpperCase() + coreModule.api.Utils.i18n(COMBAT_POSITION[combatPosition].name).slice(1)
                 const actionTypeName = coreModule.api.Utils.i18n(ACTION_TYPE[actionTypeId])
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
-                const info1 = { text: this.actor.system[combatStatus] }
+                const info1 = ''//{ text: this.actor.system?.combatPosition ? '\u{1F518}' : null }
                 actions.push({
                     id,
                     name,

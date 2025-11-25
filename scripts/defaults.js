@@ -81,11 +81,11 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ]
             },
             {
-                nestId: 'combatStatus',
-                id: 'combatStatus',
-                name: coreModule.api.Utils.i18n('tokenActionHud.combatStatus'),
+                nestId: 'combatPosition',
+                id: 'combatPosition',
+                name: coreModule.api.Utils.i18n('tokenActionHud.combatPosition'),
                 groups: [
-                    { ...groups.combatStatus, nestId: 'combatStatus_combatStatus', settings: { showTitle: false } }
+                    { ...groups.combatPosition, nestId: 'combatPosition_combatPosition', settings: { showTitle: false } }
                 ]
             },
             {
