@@ -562,7 +562,6 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {string} actionId The action id
          */
         async #handleCombatPositionAction(_event, actor, actionId) {
-            //const tempValue = actor.system?.combatPosition
             const data = {
                 system: {
                     combatPosition: actionId
