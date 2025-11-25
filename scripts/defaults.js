@@ -81,6 +81,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ]
             },
             {
+                nestId: 'combatStatus',
+                id: 'combatStatus',
+                name: coreModule.api.Utils.i18n('tokenActionHud.combatStatus'),
+                groups: [
+                    { ...groups.combatStatus, nestId: 'combatStatus_combatStatus', settings: { showTitle: false } }
+                ]
+            },
+            {
                 nestId: 'legacy',
                 id: 'legacy',
                 name: coreModule.api.Utils.i18n('IRONSWORN.Legacies'),

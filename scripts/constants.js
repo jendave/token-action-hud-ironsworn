@@ -93,7 +93,8 @@ export const GROUP = {
     delveMoveDelve: { id: 'delveMoveDelve', name: 'IRONSWORN.MOVES.Delve Moves', type: 'system' },
     failureMoveDelve: { id: 'failureMoveDelve', name: 'IRONSWORN.MOVES.Failure Moves', type: 'system' },
     threatMoveDelve: { id: 'threatMoveDelve', name: 'IRONSWORN.MOVES.Threat Moves', type: 'system' },
-    rarityMoveDelve: { id: 'rarityMoveDelve', name: 'IRONSWORN.MOVES.Rarity Moves', type: 'system' }
+    rarityMoveDelve: { id: 'rarityMoveDelve', name: 'IRONSWORN.MOVES.Rarity Moves', type: 'system' },
+    combatStatus: { id: 'combatStatus', name: 'tokenActionHud.combatStatus', type: 'system' }
 }
 
 /**
@@ -216,6 +217,14 @@ export const IMPACTS_IS = {
 export const IMPACTS_STARSHIP = {
     battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
     cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
+}
+
+/**
+ * Combat Status for Characters
+ */
+export const COMBAT_STATUS = {
+    in_control: { name: 'tokenActionHud.ironsworn.combatStatus.in_control', groupId: 'combatStatus' },
+    in_a_bad_spot: { name: 'tokenActionHud.ironsworn.combatStatus.in_a_bad_spot', groupId: 'combatStatus' }
 }
 
 /**
