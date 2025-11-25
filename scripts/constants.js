@@ -224,8 +224,8 @@ export const IMPACTS_STARSHIP = {
  * Combat Position for Characters
  */
 export const COMBAT_POSITION = {
-    inControl: { name: 'tokenActionHud.ironsworn.combatPosition.in_control', groupId: 'combatPosition' },
-    inABadSpot: { name: 'tokenActionHud.ironsworn.combatPosition.in_a_bad_spot', groupId: 'combatPosition' },
+    inControl: { name: 'tokenActionHud.ironsworn.combatPosition.inControl', groupId: 'combatPosition' },
+    inABadSpot: { name: 'tokenActionHud.ironsworn.combatPosition.inABadSpot', groupId: 'combatPosition' },
     none: { name: 'tokenActionHud.ironsworn.combatPosition.none', groupId: 'combatPosition' }
 }
 

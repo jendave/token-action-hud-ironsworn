@@ -27,8 +27,8 @@
         "decrease": "Hold -1"
       },
       "combatPosition": {
-        "in_control": "In Control",
-        "in_a_bad_spot": "In a Bad Spot",
+        "inControl": "In Control",
+        "inABadSpot": "In a Bad Spot",
         "none": "None"
       }
     },
