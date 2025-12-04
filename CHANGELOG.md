@@ -2,9 +2,10 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
-## [1.1.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-11-xx)
+## [1.1.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-03)
 
-* Add Combat Position (*In Control*, *In a Bad Spot*)
+* Add Combat Position (*In Control*, *In a Bad Spot*),
+* Requires [Ironsworn & Starforged](https://foundryvtt.com/packages/foundry-ironsworn) system 1.25.6.
 
 ## [1.1.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-11-18)
 
