@@ -6,6 +6,8 @@
 
 * Add Combat Position (*In Control*, *In a Bad Spot*),
 * Requires [Ironsworn & Starforged](https://foundryvtt.com/packages/foundry-ironsworn) system 1.25.6.
+* Resetting the layout may be necessary to ensure the HUD works correctly.
+  * [Troubleshooting and Tips](https://github.com/jendave/token-action-hud-ironsworn?tab=readme-ov-file#troubleshooting-and-tips)
 
 ## [1.1.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-11-18)
 
