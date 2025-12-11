@@ -30,6 +30,34 @@
         "inControl": "In Control",
         "inABadSpot": "In a Bad Spot",
         "none": "None"
+      },
+      "stats": {
+        "edge": {
+          "description": "Quickness, agility, and prowess when fighting at a distance."
+        },
+        "heart": {
+          "description": "Courage, willpower, empathy, sociability, and loyalty."
+        },
+        "iron": {
+          "description": "Physical strength, endurance, aggressiveness, and prowess when fighting at close quarters."
+        },
+        "shadow": {
+          "description": "Sneakiness, deceptiveness, and cunning."
+        },
+        "wits": {
+          "description": "Expertise, knowledge, and observation."
+        }
+      },
+      "vehicle_troubles": {
+        "description": "Vehicle troubles are linked to a specific vehicle, either your command vehicle asset or a support vehicle asset. These impacts are only a factor when you are piloting or aboard that vehicle. Otherwise, they do not count as an impact and do not affect your maximum momentum and momentum reset.",
+        "contents": {
+          "battered": {
+            "description": "Battered may be marked when your vehicle is at 0 integrity and you fail to Withstand Damage. The vehicle is barely holding together."
+          },
+          "cursed": {
+            "description": "Cursed may be marked when your command vehicle is at 0 integrity and you fail to Withstand Damage. This is a permanent impact. Your ship will never be quite right again."
+          }
+        }
       }
     },
     "utility": "utility",

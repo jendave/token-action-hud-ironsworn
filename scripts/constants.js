@@ -216,8 +216,8 @@ export const IMPACTS_IS = {
  * Impacts for Starships
  */
 export const IMPACTS_STARSHIP = {
-    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
-    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
+    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble', description: 'tokenActionHud.ironsworn.vehicle_troubles.contents.battered.description' },
+    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble', description: 'tokenActionHud.ironsworn.vehicle_troubles.contents.cursed.description' }
 }
 
 /**

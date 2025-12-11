@@ -447,12 +447,14 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                     const encodedValue = [actionTypeId, id].join(this.delimiter)
                     const info1 = { text: this.actor.system.debility[impactId] ? '\u{1F518}' : null }
+                    const tooltip = { content: coreModule.api.Utils.i18n(IMPACTS[impactId].description) }
                     return {
                         id,
                         name,
                         listName,
                         encodedValue,
-                        info1
+                        info1,
+                        tooltip
                     }
                 })
                 // TAH Core method to add actions to the action list
@@ -477,12 +479,15 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 const listName = `${actionTypeName ? `${actionTypeName}: ` : ''}${name}`
                 const encodedValue = [actionTypeId, id].join(this.delimiter)
                 const info1 = { text: this.actor.system?.combatPosition === id ? '\u{1F518}' : null }
+                //const tooltip = { content: coreModule.api.Utils.i18n(COMBAT_POSITION[combatPosition].name) }
+                const tooltip = { content: "Hey there!" }
                 actions.push({
                     id,
                     name,
                     listName,
                     encodedValue,
-                    info1
+                    info1,
+                    tooltip
                 })
             }
             // TAH Core method to add actions to the action list
