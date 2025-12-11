@@ -121,11 +121,11 @@ export const ITEM_TYPE = {
  * Stats
  */
 export const STATS = {
-    edge: 'IRONSWORN.Edge',
-    heart: 'IRONSWORN.Heart',
-    iron: 'IRONSWORN.Iron',
-    shadow: 'IRONSWORN.Shadow',
-    wits: 'IRONSWORN.Wits'
+    edge: {'name': 'IRONSWORN.Edge', 'description': 'tokenActionHud.ironsworn.stats.edge.description' },
+    heart: {'name': 'IRONSWORN.Heart', 'description': 'tokenActionHud.ironsworn.stats.heart.description' },
+    iron: {'name': 'IRONSWORN.Iron', 'description': 'tokenActionHud.ironsworn.stats.iron.description' },
+    shadow: {'name': 'IRONSWORN.Shadow', 'description': 'tokenActionHud.ironsworn.stats.shadow.description' },
+    wits: {'name': 'IRONSWORN.Wits', 'description': 'tokenActionHud.ironsworn.stats.wits.description' }
 }
 
 /**
@@ -144,72 +144,72 @@ export const LEGACIES = {
  * Meters
  */
 export const METERS_IS = {
-    healthDecrease: { name: '\u23F4', groupId: 'health' },
-    health: { name: 'IRONSWORN.Health', groupId: 'health' },
-    healthIncrease: { name: '\u23F5', groupId: 'health' },
-    spiritDecrease: { name: '\u23F4', groupId: 'spirit' },
-    spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit' },
-    spiritIncrease: { name: '\u23F5', groupId: 'spirit' },
-    supplyDecrease: { name: '\u23F4', groupId: 'supply' },
-    supply: { name: 'IRONSWORN.Supply', groupId: 'supply' },
-    supplyIncrease: { name: '\u23F5', groupId: 'supply' },
-    momentumDecrease: { name: '\u23F4', groupId: 'momentum' },
-    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum' },
-    momentumIncrease: { name: '\u23F5', groupId: 'momentum' },
-    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum' },
-    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' }
+    healthDecrease: { name: '\u23F4', groupId: 'health', description: '' },
+    health: { name: 'IRONSWORN.Health', groupId: 'health', description: 'tokenActionHud.ironsworn.condition_meters.health.description' },
+    healthIncrease: { name: '\u23F5', groupId: 'health', description: '' },
+    spiritDecrease: { name: '\u23F4', groupId: 'spirit', description: '' },
+    spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit', description: 'tokenActionHud.ironsworn.condition_meters.spirit.description' },
+    spiritIncrease: { name: '\u23F5', groupId: 'spirit', description: '' },
+    supplyDecrease: { name: '\u23F4', groupId: 'supply', description: '' },
+    supply: { name: 'IRONSWORN.Supply', groupId: 'supply', description: 'tokenActionHud.ironsworn.condition_meters.supply.description' },
+    supplyIncrease: { name: '\u23F5', groupId: 'supply', description: '' },
+    momentumDecrease: { name: '\u23F4', groupId: 'momentum', description: '' },
+    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum', description: '' },
+    momentumIncrease: { name: '\u23F5', groupId: 'momentum', description: '' },
+    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum', description: '' },
+    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum', description: '' }
 }
 
 /**
  * Meters
  */
 export const METERS_SUNDERED_ISLES = {
-    healthDecrease: { name: '\u23F4', groupId: 'health' },
-    health: { name: 'IRONSWORN.Health', groupId: 'health' },
-    healthIncrease: { name: '\u23F5', groupId: 'health' },
-    spiritDecrease: { name: '\u23F4', groupId: 'spirit' },
-    spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit' },
-    spiritIncrease: { name: '\u23F5', groupId: 'spirit' },
-    supplyDecrease: { name: '\u23F4', groupId: 'supply' },
-    supply: { name: 'IRONSWORN.Supply', groupId: 'supply' },
-    supplyIncrease: { name: '\u23F5', groupId: 'supply' },
+    healthDecrease: { name: '\u23F4', groupId: 'health', description: '' },
+    health: { name: 'IRONSWORN.Health', groupId: 'health', description: 'tokenActionHud.ironsworn.condition_meters.health.description' },
+    healthIncrease: { name: '\u23F5', groupId: 'health', description: '' },
+    spiritDecrease: { name: '\u23F4', groupId: 'spirit', description: '' },
+    spirit: { name: 'IRONSWORN.Spirit', groupId: 'spirit', description: 'tokenActionHud.ironsworn.condition_meters.spirit.description' },
+    spiritIncrease: { name: '\u23F5', groupId: 'spirit', description: '' },
+    supplyDecrease: { name: '\u23F4', groupId: 'supply', description: '' },
+    supply: { name: 'IRONSWORN.Supply', groupId: 'supply', description: 'tokenActionHud.ironsworn.condition_meters.supply.description' },
+    supplyIncrease: { name: '\u23F5', groupId: 'supply', description: '' },
     holdDecrease: { name: '\u23F4', groupId: 'hold' },
-    hold: { name: 'IRONSWORN.Hold', groupId: 'hold' },
-    holdIncrease: { name: '\u23F5', groupId: 'hold' },
-    momentumDecrease: { name: '\u23F4', groupId: 'momentum' },
-    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum' },
-    momentumIncrease: { name: '\u23F5', groupId: 'momentum' },
-    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum' },
-    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum' }
+    hold: { name: 'IRONSWORN.Hold', groupId: 'hold', description: 'tokenActionHud.ironsworn.condition_meters.hold.description' },
+    holdIncrease: { name: '\u23F5', groupId: 'hold', description: '' },
+    momentumDecrease: { name: '\u23F4', groupId: 'momentum', description: '' },
+    momentum: { name: 'IRONSWORN.Momentum', groupId: 'momentum', description: 'tokenActionHud.ironsworn.condition_meters.momentum.description' },
+    momentumIncrease: { name: '\u23F5', groupId: 'momentum', description: '' },
+    momentumReset: { name: 'tokenActionHud.ironsworn.momentum.reset', groupId: 'momentum', description: '' },
+    momentumMax: { name: 'tokenActionHud.ironsworn.momentum.max', groupId: 'momentum', description: '' }
 }
 
 /**
  * Impacts for Starforged
  */
 export const IMPACTS_SF = {
-    wounded: { name: 'IRONSWORN.IMPACT.Wounded', groupId: 'misfortune' },
-    shaken: { name: 'IRONSWORN.IMPACT.Shaken', groupId: 'misfortune' },
-    unprepared: { name: 'IRONSWORN.IMPACT.Unprepared', groupId: 'misfortune' },
-    permanentlyharmed: { name: 'IRONSWORN.IMPACT.Permanentlyharmed', groupId: 'lastingEffect' },
-    traumatized: { name: 'IRONSWORN.IMPACT.Traumatized', groupId: 'lastingEffect' },
-    doomed: { name: 'IRONSWORN.IMPACT.Doomed', groupId: 'burden' },
-    tormented: { name: 'IRONSWORN.IMPACT.Tormented', groupId: 'burden' },
-    indebted: { name: 'IRONSWORN.IMPACT.Indebted', groupId: 'burden' },
-    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble' },
-    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble' }
+    wounded: { name: 'IRONSWORN.IMPACT.Wounded', groupId: 'misfortune', description: 'tokenActionHud.ironsworn.starforged.misfortunes.contents.wounded.description' },
+    shaken: { name: 'IRONSWORN.IMPACT.Shaken', groupId: 'misfortune', description: 'tokenActionHud.ironsworn.starforged.misfortunes.contents.shaken.description' },
+    unprepared: { name: 'IRONSWORN.IMPACT.Unprepared', groupId: 'misfortune', description: 'tokenActionHud.ironsworn.starforged.misfortunes.contents.unprepared.description' },
+    permanentlyharmed: { name: 'IRONSWORN.IMPACT.Permanentlyharmed', groupId: 'lastingEffect', description: 'tokenActionHud.ironsworn.starforged.lasting_effects.contents.permanently_harmed.description' },
+    traumatized: { name: 'IRONSWORN.IMPACT.Traumatized', groupId: 'lastingEffect', description: 'tokenActionHud.ironsworn.starforged.lasting_effects.contents.traumatized.description' },
+    doomed: { name: 'IRONSWORN.IMPACT.Doomed', groupId: 'burden', description: 'tokenActionHud.ironsworn.starforged.burdens.contents.doomed.description' },
+    tormented: { name: 'IRONSWORN.IMPACT.Tormented', groupId: 'burden', description: 'tokenActionHud.ironsworn.starforged.burdens.contents.tormented.description' },
+    indebted: { name: 'IRONSWORN.IMPACT.Indebted', groupId: 'burden', description: 'tokenActionHud.ironsworn.starforged.burdens.contents.indebted.description' },
+    battered: { name: 'IRONSWORN.IMPACT.Battered', groupId: 'vehicleTrouble', description: 'tokenActionHud.ironsworn.starforged.vehicle_troubles.contents.battered.description' },
+    cursed: { name: 'IRONSWORN.IMPACT.Cursed', groupId: 'vehicleTrouble', description: 'tokenActionHud.ironsworn.starforged.vehicle_troubles.contents.cursed.description' }
 }
 /**
  * Impacts for Ironsworn
  */
 export const IMPACTS_IS = {
-    wounded: { name: 'IRONSWORN.DEBILITY.Wounded', groupId: 'condition' },
-    unprepared: { name: 'IRONSWORN.DEBILITY.Unprepared', groupId: 'condition' },
-    shaken: { name: 'IRONSWORN.DEBILITY.Shaken', groupId: 'condition' },
-    encumbered: { name: 'IRONSWORN.DEBILITY.Encumbered', groupId: 'condition' },
-    maimed: { name: 'IRONSWORN.DEBILITY.Maimed', groupId: 'bane' },
-    corrupted: { name: 'IRONSWORN.DEBILITY.Corrupted', groupId: 'bane' },
-    cursed: { name: 'IRONSWORN.DEBILITY.Cursed', groupId: 'burden' },
-    tormented: { name: 'IRONSWORN.DEBILITY.Tormented', groupId: 'burden' },
+    wounded: { name: 'IRONSWORN.DEBILITY.Wounded', groupId: 'condition', description: 'tokenActionHud.ironsworn.ironsworn.conditions.contents.wounded.description' },
+    unprepared: { name: 'IRONSWORN.DEBILITY.Unprepared', groupId: 'condition', description: 'tokenActionHud.ironsworn.ironsworn.conditions.contents.unprepared.description' },
+    shaken: { name: 'IRONSWORN.DEBILITY.Shaken', groupId: 'condition', description: 'tokenActionHud.ironsworn.ironsworn.conditions.contents.shaken.description' },
+    encumbered: { name: 'IRONSWORN.DEBILITY.Encumbered', groupId: 'condition', description: 'tokenActionHud.ironsworn.ironsworn.conditions.contents.encumbered.description' },
+    maimed: { name: 'IRONSWORN.DEBILITY.Maimed', groupId: 'bane', description: 'tokenActionHud.ironsworn.ironsworn.banes.contents.maimed.description' },
+    corrupted: { name: 'IRONSWORN.DEBILITY.Corrupted', groupId: 'bane', description: 'tokenActionHud.ironsworn.ironsworn.banes.contents.corrupted.description' },
+    cursed: { name: 'IRONSWORN.DEBILITY.Cursed', groupId: 'burden', description: 'tokenActionHud.ironsworn.ironsworn.burdens.contents.cursed.description' },
+    tormented: { name: 'IRONSWORN.DEBILITY.Tormented', groupId: 'burden', description: 'tokenActionHud.ironsworn.ironsworn.burdens.contents.tormented.description' },
 }
 
 /**
@@ -224,9 +224,9 @@ export const IMPACTS_STARSHIP = {
  * Combat Position for Characters
  */
 export const COMBAT_POSITION = {
-    inControl: { name: 'tokenActionHud.ironsworn.combatPosition.inControl', groupId: 'combatPosition' },
-    inABadSpot: { name: 'tokenActionHud.ironsworn.combatPosition.inABadSpot', groupId: 'combatPosition' },
-    none: { name: 'tokenActionHud.ironsworn.combatPosition.none', groupId: 'combatPosition' }
+    inControl: { name: 'tokenActionHud.ironsworn.combatPosition.inControl.name', groupId: 'combatPosition', description: 'tokenActionHud.ironsworn.combatPosition.inControl.description' },
+    inABadSpot: { name: 'tokenActionHud.ironsworn.combatPosition.inABadSpot.name', groupId: 'combatPosition', description: 'tokenActionHud.ironsworn.combatPosition.inABadSpot.description' },
+    none: { name: 'tokenActionHud.ironsworn.combatPosition.none.name', groupId: 'combatPosition', description: 'tokenActionHud.ironsworn.combatPosition.none.description' }
 }
 
 /**

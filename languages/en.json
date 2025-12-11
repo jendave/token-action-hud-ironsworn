@@ -27,9 +27,35 @@
         "decrease": "Hold -1"
       },
       "combatPosition": {
-        "inControl": "In Control",
-        "inABadSpot": "In a Bad Spot",
-        "none": "None"
+        "inControl": {
+          "name": "In Control",
+          "description": "When you are in control, you make proactive moves to gain advantage and inflict forceful damage or destruction."
+        },
+        "inABadSpot": {
+          "name": "In a Bad Spot",
+          "description": "When you are in a bad spot, you must make reactive moves to get in position, overcome hazards, and thwart attacks."
+        },
+        "none": {
+          "name": "None",
+          "description": "You are not in combat."
+        }
+      },
+      "condition_meters": {
+        "health": {
+          "description": "Health represents your current physical condition and stamina."
+        },
+        "spirit": {
+          "description": "Spirit is your current morale and mental state."
+        },
+        "supply": {
+          "description": "Supply represents your preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep."
+        },
+        "hold": {
+          "description": "Hold represents shipwide resources such as food and water, rum, gear and tools, weapons for the crew, ammo and powder for the cannons, oil for the lamps, and wood and sailcloth for repairs."
+        },
+        "momentum": {
+          "description": "Momentum represents your inertia, luck, and confidence."
+        }
       },
       "stats": {
         "edge": {
@@ -48,14 +74,96 @@
           "description": "Expertise, knowledge, and observation."
         }
       },
-      "vehicle_troubles": {
-        "description": "Vehicle troubles are linked to a specific vehicle, either your command vehicle asset or a support vehicle asset. These impacts are only a factor when you are piloting or aboard that vehicle. Otherwise, they do not count as an impact and do not affect your maximum momentum and momentum reset.",
-        "contents": {
-          "battered": {
-            "description": "Battered may be marked when your vehicle is at 0 integrity and you fail to Withstand Damage. The vehicle is barely holding together."
-          },
-          "cursed": {
-            "description": "Cursed may be marked when your command vehicle is at 0 integrity and you fail to Withstand Damage. This is a permanent impact. Your ship will never be quite right again."
+      "starforged": {
+        "burdens": {
+          "description": "Burdens are a result of life-changing experiences that leave you bound to new vows. Clearing a burden can only be accomplished by resolving the quest.",
+          "contents": {
+            "doomed": {
+              "description": "Doomed is marked when you Face Death and return from death's door with a soul-bound quest."
+            },
+            "tormented": {
+              "description": "Tormented is marked when you Face Desolation, gain visions of a distressing future, and undertake a quest to prevent that dire fate."
+            },
+            "indebted": {
+              "description": "Indebted is marked when you Overcome Destruction. To replace what was lost and repay the debt, you will take on a duty-bound quest."
+            }
+          }
+        },
+        "lasting_effects": {
+          "description": "Lasting effects are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact of being permanently harmed or traumatized. You should factor this impact into how you perform moves and how you interact with the world.",
+          "contents": {
+            "permanently_harmed": {
+              "description": "Permanently harmed may be marked when you are at 0 health and fail to Endure Harm. You have suffered a wound that you must reckon with, such as the loss of an eye or hand. Or you bear physical scars that are a constant reminder of a harrowing incident."
+            },
+            "traumatized": {
+              "description": "Traumatized may be marked when you are at 0 spirit and fail to Endure Stress. Your experiences have left you emotionally or mentally scarred."
+            }
+          }
+        },
+        "misfortunes": {
+          "description": "As with all impacts, misfortunes affect your max momentum and momentum reset. In addition, if you are wounded, shaken, or unprepared, you cannot increase the associated condition meter.",
+          "contents": {
+            "wounded": {
+              "description": "Wounded may be marked when you are at 0 health and fail to Endure Harm. You are severely injured."
+            },
+            "shaken": {
+              "description": "Shaken may be marked when you are at 0 spirit and fail to Endure Stress. You are despairing or distraught."
+            },
+            "unprepared": {
+              "description": "Unprepared is marked when you Sacrifice Resources and are reduced to 0 supply. You are not properly equipped for the dangers of the Forge. Because you and your allies share the same supply value, you mark unprepared together."
+            }
+          }
+        },
+        "vehicle_troubles": {
+          "description": "Vehicle troubles are linked to a specific vehicle, either your command vehicle asset or a support vehicle asset. These impacts are only a factor when you are piloting or aboard that vehicle. Otherwise, they do not count as an impact and do not affect your maximum momentum and momentum reset.",
+          "contents": {
+            "battered": {
+              "description": "Battered may be marked when your vehicle is at 0 integrity and you fail to Withstand Damage. The vehicle is barely holding together."
+            },
+            "cursed": {
+              "description": "Cursed may be marked when your command vehicle is at 0 integrity and you fail to Withstand Damage. This is a permanent impact. Your ship will never be quite right again."
+            }
+          }
+        }
+      },
+      "ironsworn": {
+        "conditions": {
+          "description": "As with all debilities, conditions impact your max momentum and momentum reset. In addition, if you are wounded, shaken, or unprepared, you cannot increase the associated track.",
+          "contents": {
+            "wounded": {
+              "description": "You are severely injured and need treatment to recover."
+            },
+            "shaken": {
+              "description": "You are despairing or distraught, and need comfort to recover."
+            },
+            "unprepared": {
+              "description": "You and your allies have exhausted their supplies, and must gather provisions in a community to recover."
+            },
+            "encumbered": {
+              "description": "You are carrying excessive or cumbersome weight."
+            }
+          }
+        },
+        "banes": {
+          "description": "Banes are permanent. They forever impact your character through the momentum penalty and—more importantly—through the narrative impact of being maimed or corrupted.",
+          "contents": {
+            "maimed": {
+              "description": "You have suffered a wound which causes you ongoing physical challenges, such as the loss of an eye or hand. Or, you bear horrific scars which serve as a constant reminder of your failures."
+            },
+            "corrupted": {
+              "description": "Your experiences have left you emotionally scarred. You are at the threshold of losing yourself to darkness."
+            }
+          }
+        },
+        "burdens": {
+          "description": "Burdens are a result of life-changing experiences that leave you bound to quests. Clearing a burden can only be accomplished by resolving the quest.",
+          "contents": {
+            "cursed": {
+              "description": "Cursed is marked when you Face Death and return with a soul-bound quest. This burden can only be cleared by completing the quest."
+            },
+            "tormented": {
+              "description": "Tormented is marked when you Face Desolation and undertake a quest to prevent a dire future."
+            }
           }
         }
       }

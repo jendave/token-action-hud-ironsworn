@@ -68,6 +68,8 @@ Created for the incredible [Ironsworn & Ironsworn: Starforged](https://tomkinpre
 
 Many thanks to Ben Straub for his fantastic [Ironsworn & Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn).
 
+Many thanks to the [Datasworn](https://github.com/tbsvttr/datasworn) project for distilling the rules into a JSON format.
+
 ## License
 
 This Foundry VTT module is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) and this work is licensed under [Foundry Virtual Tabletop EULA - Limited License Agreement for module development](https://foundryvtt.com/article/license/).
