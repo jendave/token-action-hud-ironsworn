@@ -17,6 +17,7 @@ The `Token Action HUD Ironsworn` is a repositionable HUD of actions for a select
 - Mark progress, make Progress Rolls for Connection, Vow and Progress tracks.
 - Create new Connection, Vow and Progress tracks.
 - Make Progress Roll for Ironsworn Bondset track.
+- Tooltips for Stats, Meters, Impacts, and Combat Position.
 - Move the HUD and choose to expand the menus up or down.
 
 ### Supported Systems
