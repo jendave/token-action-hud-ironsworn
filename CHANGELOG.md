@@ -2,6 +2,10 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.1.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-11)
+
+* Fixed bug with Starship Impacts.
+
 ## [1.1.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-11)
 
 * Added tooltips to Stats, Meters, Impacts, and Combat positions HUD items.
