@@ -2,9 +2,14 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.1.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-11)
+
+* Added tooltips to Stats, Meters, Impacts, and Combat positions HUD items.
+  * Some descriptions are taken from the [Datasworn](https://github.com/tbsvttr/datasworn) project.
+
 ## [1.1.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2025-12-03)
 
-* Add Combat Position (*In Control*, *In a Bad Spot*),
+* Added Combat Position (*In Control*, *In a Bad Spot*),
 * Requires [Ironsworn & Starforged](https://foundryvtt.com/packages/foundry-ironsworn) system 1.25.6.
 * Resetting the layout may be necessary to ensure the HUD works correctly.
   * [Troubleshooting and Tips](https://github.com/jendave/token-action-hud-ironsworn?tab=readme-ov-file#troubleshooting-and-tips)
