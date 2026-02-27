@@ -13,8 +13,8 @@
   "version": "#{VERSION}#",
   "compatibility": {
     "minimum": "13",
-    "verified": "13",
-    "maximum": "13"
+    "verified": "14",
+    "maximum": "14"
   },
   "esmodules": ["./scripts/init.js"],
   "scripts": [],
@@ -34,8 +34,8 @@
         "type": "system",
         "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
         "compatibility": {
-          "minimum": "1.25.6",
-          "verified": "1.25"
+          "minimum": "1.26.0",
+          "verified": "1.26"
         }
       }
     ],
@@ -45,7 +45,7 @@
         "type": "module",
         "compatibility": [
           {
-            "minimum": "2.0.12",
+            "minimum": "2.0.16",
             "verified": "2.0"
           }
         ]
