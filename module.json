@@ -45,7 +45,7 @@
         "type": "module",
         "compatibility": [
           {
-            "minimum": "2.1.0",
+            "minimum": "2.1.1",
             "verified": "2.1"
           }
         ]
