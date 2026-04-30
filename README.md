@@ -9,20 +9,20 @@ The `Token Action HUD Ironsworn` is a repositionable HUD of actions for a select
 
 ## HUD Features
 
-- Open moves, assets, progress tracks, connections and bondsets.
-- Make stat and meter rolls directly from the HUD.
-- Increase and decrease meters.
-- Toggle impacts and combat position.
-- View and increase Legacy tracks.
-- Mark progress, make Progress Rolls for Connection, Vow and Progress tracks.
-- Create new Connection, Vow and Progress tracks.
-- Make Progress Roll for Ironsworn Bondset track.
-- Tooltips for Stats, Meters, Impacts, and Combat Position.
-- Move the HUD and choose to expand the menus up or down.
+* Open moves, assets, progress tracks, connections and bondsets.
+* Make stat and meter rolls directly from the HUD.
+* Increase and decrease meters.
+* Toggle impacts and combat position.
+* View and increase Legacy tracks.
+* Mark progress, make Progress Rolls for Connection, Vow and Progress tracks.
+* Create new Connection, Vow and Progress tracks.
+* Make Progress Roll for Ironsworn Bondset track.
+* Tooltips for Stats, Meters, Impacts, and Combat Position.
+* Move the HUD and choose to expand the menus up or down.
 
 ### Supported Systems
 
-- [Ironsworn & Ironsworn: Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
+* [Ironsworn & Ironsworn: Starforged](https://foundryvtt.com/packages/foundry-ironsworn)
 
 ## Installation
 
@@ -42,7 +42,7 @@ The `Token Action HUD Ironsworn` is a repositionable HUD of actions for a select
 
 ### Required Modules
 
-**IMPORTANT** - Token Action HUD Ironsworn/Starforged requires the [Token Action HUD Core](https://foundryvtt.com/packages/token-action-hud-core) module to be installed.
+**IMPORTANT** Token Action HUD Ironsworn/Starforged requires the [Token Action HUD Core](https://foundryvtt.com/packages/token-action-hud-core) module to be installed.
 
 ### Recommended Modules
 
@@ -58,10 +58,10 @@ For questions, feature requests or bug reports, please open an [issue](https://g
 
 ## Troubleshooting and Tips
 
-- If the HUD layout appears incomplete or is inconsistent among users:
-  - In `Configure Settings`, select `Token Action HUD Core`, select `Layout`, click on `Reset All Layouts` and click on `Yes`.
-  - This will reset the layout for all users.
-- When a Move is selected from the HUD, the auto-scrolling in the Move Sheet does not always work. Clicking on the HUD item twice should work.
+* If the HUD layout appears incomplete or is inconsistent among users:
+  * In `Configure Settings`, select `Token Action HUD Core`, select `Layout`, click on `Reset All Layouts` and click on `Yes`.
+  * This will reset the layout for all users.
+* When a Move is selected from the HUD, the auto-scrolling in the Move Sheet does not always work. Clicking on the HUD item twice should work.
 
 ## Acknowledgements
 
@@ -77,11 +77,11 @@ This Foundry VTT module is licensed under a [Creative Commons Attribution 4.0 In
 
 ## Contact
 
-- [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
-- [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
-- [VOID Affiliate Network Discord Server - Game Hacks Channel](https://discord.com/channels/1222986351272787990/1222986351792619687) (jendave)
-- [GitHub Repository](https://github.com/jendave/token-action-hud-ironsworn)
-- [Itch.io](https://jendave.itch.io/)
+* [Ironsworn/Starforged Discord Server - FoundryVTT Channel](https://discord.com/channels/437120373436186625/867434336201605160) (jendave)
+* [FoundryVTT Discord Server - Module Discussion Channel](https://discord.com/channels/170995199584108546/513918036919713802) (jendave)
+* [VOID Affiliate Network Discord Server - Game Hacks Channel](https://discord.com/channels/1222986351272787990/1222986351792619687) (jendave)
+* [GitHub Repository](https://github.com/jendave/token-action-hud-ironsworn)
+* [Itch.io](https://jendave.itch.io/)
 
 ## FoundryVTT Modules and Other Resources
 
@@ -89,21 +89,22 @@ Please check out my other modules and resources for Ironsworn, Ironsworn: Starfo
 
 ### [FoundryVTT](https://foundryvtt.com/community/david-hudson/packages) Modules
 
-- [Starforged Custom Compendiums](https://foundryvtt.com/packages/starforged-custom-oracles)
-- [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
-- [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
-- [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
-- [Token Note Hover](https://github.com/jendave/token-note-hover)
-- [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
-- [VOID 1680 AM for FoundryVTT](https://foundryvtt.com/packages/void-1680-am)
-- [Ancient Wonders](https://foundryvtt.com/packages/ancient-wonders)
-- [Rise & Shiningstar - An Adventure for Ironsworn: Starforged](https://foundryvtt.com/packages/rise-and-shining-star)
-- [Roll Table Importer](https://foundryvtt.com/packages/roll-table-importer)
+* [Starforged Custom Compendiums](https://foundryvtt.com/packages/starforged-custom-oracles)
+* [Starsmith Compendiums for Ironsworn: Starforged](https://foundryvtt.com/packages/starsmith-expanded-oracles)
+* [Ironsmith Expanded Oracles for Ironsworn](https://foundryvtt.com/packages/ironsmith-expanded-oracles)
+* [Augmented Reality Cyberpunk City Kit](https://foundryvtt.com/packages/augmented-reality-foundry)
+* [Token Note Hover](https://github.com/jendave/token-note-hover)
+* [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
+* [VOID 1680 AM for FoundryVTT](https://foundryvtt.com/packages/void-1680-am)
+* [Ancient Wonders](https://foundryvtt.com/packages/ancient-wonders)
+* [Rise & Shiningstar * An Adventure for Ironsworn: Starforged](https://foundryvtt.com/packages/rise-and-shining-star)
+* [Roll Table Importer](https://foundryvtt.com/packages/roll-table-importer)
+* [Ironsworn Impacts](https://foundryvtt.com/packages/ironsworn-impacts)
 
 ### [Itch.io](https://jendave.itch.io/) Resources
 
-- [The City on the Breeze - Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
-- [I'll Be Home for Life Day! - Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
-- [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
-- [I Owe My Soul to the Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-company-planet)
-- [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
+* [The City on the Breeze * Cyberpunk-inspired Oracle arrays](https://jendave.itch.io/the-city-on-the-breeze)
+* [I'll Be Home for Life Day! * Star Wars Life Day Oracle](https://jendave.itch.io/ill-be-home-for-life-day)
+* [Critical Success Oracles](https://jendave.itch.io/critical-success-oracles)
+* [I Owe My Soul to the Company Planet Oracles](https://jendave.itch.io/i-owe-my-soul-to-the-company-planet)
+* [Creature Rank Generator](https://jendave.itch.io/creature-rank-generator)
