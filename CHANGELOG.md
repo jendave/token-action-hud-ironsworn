@@ -2,6 +2,10 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.2.1](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
+
+* Updated build system.
+
 ## [1.2.0](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-04-20)
 
 * Updated to [Token Action HUD Core 2.1](https://foundryvtt.com/packages/token-action-hud-core).
