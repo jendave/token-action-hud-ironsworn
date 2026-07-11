@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "token-action-hud-ironsworn",
+  "description": "Token Action HUD Ironsworn module for Foundry VTT",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && script/stage-dist"
+  }
+}
