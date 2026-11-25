@@ -2,7 +2,7 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
-## [1.2.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-11-24)
+## [1.2.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-11-25)
 
 * Add Moves from Lodestar.
   * Make sure to reset the layout for all players.
