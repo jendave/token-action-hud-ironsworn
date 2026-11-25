@@ -2,6 +2,16 @@
 
 [Token Action HUD Ironsworn](https://foundryvtt.com/packages/token-action-hud-ironsworn)
 
+## [1.2.3](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-11-24)
+
+* Add Moves from Lodestar.
+  * Make sure to reset the layout for all players.
+    * Open `Settings`.
+    * Select `Token Action HUD Core`.
+    * Click on `Layout` button.
+    * Click on `Reset all layouts`.
+* Requires [Ironsworn & Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn) 1.28.5 and higher.
+
 ## [1.2.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
 
 * More fixes to build system.

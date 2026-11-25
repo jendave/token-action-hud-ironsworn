@@ -34,8 +34,8 @@
         "type": "system",
         "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
         "compatibility": {
-          "minimum": "1.26.0",
-          "verified": "1.26"
+          "minimum": "1.28.5",
+          "verified": "1.28"
         }
       }
     ],

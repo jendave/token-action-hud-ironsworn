@@ -157,6 +157,16 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 ]
             },
             {
+                nestId: 'moveLodestar',
+                id: 'moveLodestar',
+                name: coreModule.api.Utils.i18n('IRONSWORN.ITEMS.TypeMove') + " " + coreModule.api.Utils.i18n('IRONSWORN.RULESETS.lodestar'),
+                settings: { collapse: true },
+                groups: [
+                    { ...groups.adventureMoveLodestar, nestId: 'moveLodestar_adventureMoveLodestar', settings: { collapse: true } },
+                    { ...groups.sceneChallengeMoveLodestar, nestId: 'moveLodestar_sceneChallengeMoveLodestar', settings: { collapse: true } }
+                ]
+            },
+            {
                 nestId: 'utility',
                 id: 'utility',
                 name: coreModule.api.Utils.i18n('tokenActionHud.utility'),

@@ -1,4 +1,4 @@
-import { MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES } from './constants.js'
+import { MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES, MOVES_LODESTAR } from './constants.js'
 
 export let RollHandler = null
 
@@ -103,6 +103,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                 case 'moveSunderedIsles':
                     this.#handleMoveAction(event, actor, actionId, actionTypeId)
                     break
+                case 'moveLodestar':
+                    this.#handleMoveAction(event, actor, actionId, actionTypeId)
+                    break        
                 case 'markProgress':
                     this.#handleMarkProgressAction(event, actor, actionId, actionTypeId)
                     break
@@ -543,6 +546,9 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
                     break
                 case 'moveSunderedIsles':
                     MOVES = MOVES_SUNDERED_ISLES
+                    break
+                case 'moveLodestar':
+                    MOVES = MOVES_LODESTAR
                     break
             }
 

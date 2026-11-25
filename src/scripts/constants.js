@@ -34,6 +34,7 @@ export const ACTION_TYPE = {
     moveDelve: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.delve',
     moveStarforged: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.starforged',
     moveSunderedIsles: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.sundered_isles',
+    moveLodestar: 'IRONSWORN.ITEMS.TypeMove' + ' ' + 'IRONSWORN.RULESETS.lodestar',
     combatPosition: 'tokenActionHud.combatPosition'
 }
 
@@ -85,6 +86,8 @@ export const GROUP = {
     combatMoveSunderedIsles: { id: 'combatMoveSunderedIsles', name: 'IRONSWORN.MOVES.Combat Moves', type: 'system' },
     sufferMoveSunderedIsles: { id: 'sufferMoveSunderedIsles', name: 'IRONSWORN.MOVES.Suffer Moves', type: 'system' },
     recoverMoveSunderedIsles: { id: 'recoverMoveSunderedIsles', name: 'IRONSWORN.MOVES.Recover Moves', type: 'system' },
+    adventureMoveLodestar: { id: 'adventureMoveLodestar', name: 'IRONSWORN.MOVES.Adventure Moves', type: 'system' },
+    sceneChallengeMoveLodestar: { id: 'sceneChallengeMoveLodestar', name: 'IRONSWORN.MOVES.Scene Challenge Moves', type: 'system' },
     adventureMoveClassic: { id: 'adventureMoveClassic', name: 'IRONSWORN.MOVES.Adventure Moves', type: 'system' },
     relationshipMoveClassic: { id: 'relationshipMoveClassic', name: 'IRONSWORN.MOVES.Relationship Moves', type: 'system' },
     combatMoveClassic: { id: 'combatMoveClassic', name: 'IRONSWORN.MOVES.Combat Moves', type: 'system' },
@@ -363,4 +366,16 @@ export const MOVES_SUNDERED_ISLES = {
     withstandDamage: { name: 'Withstand Damage', groupId: 'sufferMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.a03a648bb3a06d93', actionTypeId: 'moveSunderedIsles' },
     resupply: { name: 'Resupply', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.c96bafd5cbda43bc', actionTypeId: 'moveSunderedIsles' },
     repair: { name: 'Repair', groupId: 'recoverMoveSunderedIsles', uuid: 'Compendium.foundry-ironsworn.sunderedislesmoves.Item.8a164fecb3029c76', actionTypeId: 'moveSunderedIsles' }
+}
+
+/**
+ * Moves for Lodestar
+ */
+export const MOVES_LODESTAR = {
+    faceDanger: { name: 'Face Danger', groupId: 'adventureMoveLodestar', uuid: 'Compendium.foundry-ironsworn.ironswornlodestarmoves.Item.2cae78764c2877b9', actionTypeId: 'moveLodestar' },
+    followAPath: { name: 'Follow a Path', groupId: 'adventureMoveLodestar', uuid: 'Compendium.foundry-ironsworn.ironswornlodestarmoves.Item.ed72e784c7b5eb07', actionTypeId: 'moveLodestar' },
+    beginTheScene: { name: 'Begin the Scene', groupId: 'sceneChallengeMoveLodestar', uuid: 'Compendium.foundry-ironsworn.ironswornlodestarmoves.Item.a54dcc1606541cc9', actionTypeId: 'moveLodestar' },
+    faceDangerSceneChallenge: { name: 'Face Danger (Scene Challenge)', groupId: 'sceneChallengeMoveLodestar', uuid: 'Compendium.foundry-ironsworn.ironswornlodestarmoves.Item.13be249ae65798ac', actionTypeId: 'moveLodestar' },
+    finishTheScene: { name: 'Finish the Scene', groupId: 'sceneChallengeMoveLodestar', uuid: 'Compendium.foundry-ironsworn.ironswornlodestarmoves.Item.891c56f566092f8e', actionTypeId: 'moveLodestar' },
+    secureAnAdvantageSceneChallenge: { name: 'Secure an Advantage (Scene Challenge)', groupId: 'sceneChallengeMoveLodestar', uuid: 'Compendium.foundry-ironsworn.ironswornlodestarmoves.Item.29d091067086ac7f', actionTypeId: 'moveLodestar' }
 }

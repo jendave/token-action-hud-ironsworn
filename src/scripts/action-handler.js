@@ -1,5 +1,5 @@
 // System Module Imports
-import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS_IS, METERS_SUNDERED_ISLES, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES, COMBAT_POSITION } from './constants.js'
+import { MODULE_IRONSWORN, ACTION_TYPE, ITEM_TYPE, STATS, LEGACIES, METERS_IS, METERS_SUNDERED_ISLES, IMPACTS_SF, IMPACTS_IS, IMPACTS_STARSHIP, MOVES_CLASSIC, MOVES_DELVE, MOVES_STARFORGED, MOVES_SUNDERED_ISLES, MOVES_LODESTAR, COMBAT_POSITION } from './constants.js'
 
 export let ActionHandler = null
 
@@ -516,6 +516,10 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
             if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-sundered_isles')) {
                 moveArray.push(MOVES_SUNDERED_ISLES)
+            }
+
+            if (game.settings.get(MODULE_IRONSWORN.ID, 'ruleset-lodestar')) {
+                moveArray.push(MOVES_LODESTAR)
             }
 
             for (const key of moveArray) {
