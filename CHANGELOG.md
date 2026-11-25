@@ -10,6 +10,7 @@
     * Select `Token Action HUD Core`.
     * Click on `Layout` button.
     * Click on `Reset all layouts`.
+  * The size of the layout may need adjustment due to the high number of menu items.
 * Requires [Ironsworn & Starforged Game System](https://foundryvtt.com/packages/foundry-ironsworn) 1.28.5 and higher.
 
 ## [1.2.2](https://github.com/jendave/token-note-hover/blob/main/CHANGELOG.md) (2026-07-03)
